@@ -22,12 +22,12 @@
        	</header>
 
         <nav>
-            <form>
+            <form id="form_login">
                 <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
-                <input type="text" name="input_email" value="" placeholder="E-mail">
+                <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
                 <img src="" alt="icon_pass"><!-- Pass LOGIN -->
-                <input type="text" name="input_pass" value="" placeholder="Contrase&ntilde;a">
+                <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
                 <input type="submit" name="input_submit" value="Conectar">
@@ -35,6 +35,21 @@
         </nav>
 
         <main>
+            <h1>Advance Search</h1>
+            <form id="form_search"><!--Advance Search Form-->
+                <a>Title: </a><input type="text" name="input_title" value="" placeholder="Title">
+                <br>
+                <a>Author: </a><input type="text" name="input_author" value="" placeholder="Author">
+                <br>
+                <a>Album: </a><input type="text" name="input_album" value="" placeholder="Album">
+                <br>
+                <a>Date: </a><input type="date" name="input_date" value="" placeholder="Date">
+                <br>
+                <a>Country: </a><input type="text" name="input_country" value="" placeholder="Country">
+                <br>
+                <button type="button" id="Advance Search Button" >Search</button>
+                <!--End Form-->
+            </form>
 
         </main>
 
