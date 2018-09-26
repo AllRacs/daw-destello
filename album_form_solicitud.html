@@ -12,7 +12,7 @@
   				<form><!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="submit" id="avanzada">Avanzada</button>
+  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
   				</form>
   				<div id="user_status"><!-- Botones segun estado sesion usuario -->
   					<button type="button" name="button_log">Iniciar Sesion</button>
@@ -35,7 +35,77 @@
         </nav>
 
         <main>
-
+            <h2>Solicitud impresi&oacute;n &aacute;lbum</h2>
+            <div>
+                <label>Descripci&oacute;n y tarifa</label>
+                <span id="icon_row">[icono_flecha]</span>
+            </div>
+            <div id="box_info">
+                <p>A través de este formulario va a solicitar que se le imprima de forma física el álbum que usted seleccione y se le enviará a la dirección y fecha (estimada) que se desee.</p>
+                <br>
+                <h4>Tarifas</h4>
+                <br>
+                <ul id="lista_concepto">
+                    <li>Concepto</li>
+                    <li>&lt; 5 p&aacute;ginas</li>
+                    <li>entre 5 y 10 p&aacute;ginas</li>
+                    <li>&gt; 11 p&aacute;ginas</li>
+                    <li>Blanco y negro</li>
+                    <li>Color</li>
+                    <li>Resoluci&oacute;n &gt; 300 dpi</li>
+                </ul>
+                <ul id="lista_tarifa">
+                    <li>Tarifa</li>
+                    <li>0.10 &euro; por p&aacute;g.</li>
+                    <li>0.08 &euro; por p&aactue;g.</li>
+                    <li>0.07 &euro; por p&aacute;g.</li>
+                    <li>0 &euro;</li>
+                    <li>0.05 &euro; por foto</li>
+                    <li>0.02 &euro; por foto</li>
+                </ul>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Autor">
+                <br>
+                <input type="text" placeholder="T&iacute;tulo">
+                <br>
+                <input type="text" placeholder="Descripci&oacute;n, dedicatoria, ...">
+                <br>
+                <input type="text" placeholder="email">
+                <br>
+                <input type="text" placeholder="Dir. env&iacute;o">
+                <br>
+                <input type="text" placeholder="Localidad">
+                <br>
+                <input type="text" placeholder="C.P.">
+                <br>
+                <input type="text" placeholder="Tel&eacute;fono">
+                <br>
+                <label>Color de portada</label>
+                <input type="color" name="color_portada" value="#222">
+                <br>
+                <label>N&uacute;m. copias</label>
+                <input type="number" name="num_copias" value="1" step="1">
+                <br>
+                <label>Resoluci&oacute;n impresi&oacute;n</label>
+                <input type="number" name="num_copias" value="150" step="150" min="150" max="900">
+                <br>
+                <label>&Aacute;lbum a imprimir</label>
+                <select name="album_selector" id="album_selector">
+                    <option value="album1">Album1</option>
+                    <option value="album2">Album2</option>
+                    <option value="album3">Album3</option>
+                </select>
+                <br>
+                <label>Fecha recepi&oacute;n (aprox.)</label>
+                <input type="date" name="fecha_recepcion">
+                <br>
+                <label>Tipo impresi&oacute;n</label>
+                <input type="radio" name="color_bw" value="color"> Color<br>
+                <input type="radio" name="color_bw" value="bnw"> Blanco / Negro
+                <br>
+                <input type="submit" name="enviar_form_impresion" value="Enviar">
+            </form>
         </main>
 
         <footer>
