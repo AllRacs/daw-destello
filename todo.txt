@@ -1,0 +1,7 @@
+TODO:
+    0 - logo
+    1 - iconos
+    2 - fotos (inicio, resultado busqueda, detalle foto)
+    3 - relación entre ficheros
+
+DONE:
