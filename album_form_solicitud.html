@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -6,25 +6,27 @@
     </head>
     <body>
         <header>
-    		<img id="logo" alt="Spark logo" src=""></img>
-    		<h1><a href="index.html" >SPARK</a></h1>
-    		<div class="top_header">
-                <form action="resultado_busqueda.html"><!-- Busqueda -->
-  					<input type="text" placeholder="Search..." autofocus>
-  					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
-  				</form>
-  				<div id="user_status"><!-- Botones segun estado sesion usuario -->
-  					<button type="button" name="button_log">Iniciar Sesion</button>
-  					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
-                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
-  				</div>
-			</div>
-       	</header>
+            <a href="index.html"><img id="logo" alt="Spark logo" src="img/logo.jpg"></a>
+            <h1><a href="index.html">SPARK</a></h1>
+            <div class="top_header">
+                <form action="resultado_busqueda.html">
+                    <!-- Busqueda -->
+                    <input type="text" placeholder="Search..." autofocus>
+                    <button type="submit" id="busqueda">Busqueda</button>
+                    <a href="formulario_busqueda.html">Avanzada</a>
+                </form>
+                <div id="user_status">
+                    <!-- Botones segun estado sesion usuario -->
+                    <button type="button" name="button_log">Iniciar Sesion</button>
+                    <a href="registro.html">Registrarse</a>
+                    <a href="mi_perfil.html">Perfil</a>
+                </div>
+            </div>
+        </header>
 
         <nav>
             <form id="form_login">
-                <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
+                <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
                 <span class="">[icon_pass]</span><!-- Pass LOGIN -->
@@ -58,43 +60,43 @@
                 <ul id="lista_tarifa">
                     <li>Tarifa</li>
                     <li>0.10 &euro; por p&aacute;g.</li>
-                    <li>0.08 &euro; por p&aactue;g.</li>
+                    <li>0.08 &euro; por p&aacute;g.</li>
                     <li>0.07 &euro; por p&aacute;g.</li>
                     <li>0 &euro;</li>
                     <li>0.05 &euro; por foto</li>
                     <li>0.02 &euro; por foto</li>
                 </ul>
             </div>
-            <form action="">
-                <input type="text" placeholder="Autor">
+            <form action="album_respuesta.html">
+                <input type="text" placeholder="Autor" required>
                 <br>
-                <input type="text" placeholder="T&iacute;tulo">
+                <input type="text" placeholder="T&iacute;tulo" required>
                 <br>
                 <input type="text" placeholder="Descripci&oacute;n, dedicatoria, ...">
                 <br>
-                <input type="text" placeholder="email">
+                <input type="text" placeholder="email" required>
                 <br>
-                <input type="text" placeholder="Dir. env&iacute;o">
+                <input type="text" placeholder="Dir. env&iacute;o" required>
                 <br>
-                <input type="text" placeholder="Localidad">
+                <input type="text" placeholder="Localidad" required>
                 <br>
-                <input type="text" placeholder="C.P.">
+                <input type="text" placeholder="C.P." required>
                 <br>
                 <input type="text" placeholder="Tel&eacute;fono">
                 <br>
                 <label>Color de portada</label>
-                <input type="color" name="color_portada" value="#222">
+                <input type="color" name="color_portada" value="#bbbbbb">
                 <br>
                 <label>N&uacute;m. copias</label>
                 <input type="number" name="num_copias" value="1" step="1" min="1">
                 <br>
                 <label>Resoluci&oacute;n impresi&oacute;n</label>
                 <input type="range" name="resolucion" id="input_res" value="150" step="150" min="150" max="900"
-                onchange="document.getElementById('output_res').textContent = value">
+                       onchange="document.getElementById('output_res').textContent = value">
                 <output name="result" id="output_res">150</output>
                 <br>
                 <label>&Aacute;lbum a imprimir</label>
-                <select name="album_selector" id="album_selector">
+                <select name="album_selector" id="album_selector" required>
                     <option value="album1">Album1</option>
                     <option value="album2">Album2</option>
                     <option value="album3">Album3</option>
@@ -109,7 +111,7 @@
                 <label><input type="radio" name="color_bw" value="bnw"> Blanco / Negro</label>
                 <br>
                 <!--<input type="submit" name="enviar_form_impresion" value="Enviar">-->
-                <button type="button" name="boton_solicitud_enviar"><a href="album_respuesta.html">Enviar</a></button>
+                <button type="submit" name="boton_solicitud_enviar">Enviar<br />algo</button>
             </form>
         </main>
 

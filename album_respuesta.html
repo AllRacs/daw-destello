@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -6,25 +6,27 @@
     </head>
     <body>
         <header>
-    		<img id="logo" alt="Spark logo" src=""></img>
-    		<h1><a href="index.html" >SPARK</a></h1>
-    		<div class="top_header">
-                <form action="resultado_busqueda.html"><!-- Busqueda -->
-  					<input type="text" placeholder="Search..." autofocus>
-  					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
-  				</form>
-  				<div id="user_status"><!-- Botones segun estado sesion usuario -->
-  					<button type="button" name="button_log">Iniciar Sesion</button>
-  					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
-                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
-  				</div>
-			</div>
-       	</header>
+            <a href="index.html"><img id="logo" alt="Spark logo" src="img/logo.jpg"></a>
+            <h1><a href="index.html">SPARK</a></h1>
+            <div class="top_header">
+                <form action="resultado_busqueda.html">
+                    <!-- Busqueda -->
+                    <input type="text" placeholder="Search..." autofocus>
+                    <button type="submit" id="busqueda">Busqueda</button>
+                    <a href="formulario_busqueda.html">Avanzada</a>
+                </form>
+                <div id="user_status">
+                    <!-- Botones segun estado sesion usuario -->
+                    <button type="button" name="button_log">Iniciar Sesion</button>
+                    <a href="registro.html">Registrarse</a>
+                    <a href="mi_perfil.html">Perfil</a>
+                </div>
+            </div>
+        </header>
 
         <nav>
             <form id="form_login">
-                <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
+                <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
                 <span class="">[icon_pass]</span><!-- Pass LOGIN -->
