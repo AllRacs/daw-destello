@@ -1,7 +1,7 @@
 TODO:
     0 - logo
     1 - iconos
+DONE:
     2 - fotos (inicio, resultado busqueda, detalle foto)
     3 - relación entre ficheros
-
-DONE:
+    4 - box de imagenes en index y busqueda_resultado

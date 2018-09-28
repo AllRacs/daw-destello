@@ -9,14 +9,15 @@
     		<img id="logo" alt="Spark logo" src=""></img>
     		<h1><a href="index.html" >SPARK</a></h1>
     		<div class="top_header">
-  				<form><!-- Busqueda -->
+                <form action="resultado_busqueda.html"><!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="submit" id="avanzada">Avanzada</button>
+  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
   				</form>
   				<div id="user_status"><!-- Botones segun estado sesion usuario -->
   					<button type="button" name="button_log">Iniciar Sesion</button>
   					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
+                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
   				</div>
 			</div>
        	</header>
@@ -26,7 +27,7 @@
                 <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
-                <img src="" alt="icon_pass"><!-- Pass LOGIN -->
+                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
@@ -36,18 +37,28 @@
 
         <main>
             <h1>Advance Search</h1>
-            <form id="form_search"><!--Advance Search Form-->
-                <a>Title: </a><input type="text" name="input_title" value="" placeholder="Title">
+            <form id="form_search" action="resultado_busqueda.html"><!--Advance Search Form-->
+                <label>
+                    Title: <input type="text" name="input_title" value="" placeholder="Title">
+                </label>
                 <br>
-                <a>Author: </a><input type="text" name="input_author" value="" placeholder="Author">
+                <label>
+                    Author: <input type="text" name="input_author" value="" placeholder="Author">
+                </label>
                 <br>
-                <a>Album: </a><input type="text" name="input_album" value="" placeholder="Album">
+                <label>
+                    Album: <input type="text" name="input_album" value="" placeholder="Album">
+                </label>
                 <br>
-                <a>Date: </a><input type="date" name="input_date" value="" placeholder="Date">
+                <label>
+                    Date: <input type="date" name="input_date" value="" placeholder="Date">
+                </label>
                 <br>
-                <a>Country: </a><input type="text" name="input_country" value="" placeholder="Country">
+                <label>
+                    Country: <input type="text" name="input_country" value="" placeholder="Country">
+                </label>
                 <br>
-                <button type="button" id="Advance Search Button" >Search</button>
+                <button type="submit" id="Advance Search Button" >Search</button>
                 <!--End Form-->
             </form>
 

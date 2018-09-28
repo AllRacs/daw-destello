@@ -9,7 +9,7 @@
     		<img id="logo" alt="Spark logo" src=""></img>
     		<h1><a href="index.html" >SPARK</a></h1>
     		<div class="top_header">
-  				<form><!-- Busqueda -->
+                <form action="resultado_busqueda.html"><!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
   					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
@@ -17,17 +17,18 @@
   				<div id="user_status"><!-- Botones segun estado sesion usuario -->
   					<button type="button" name="button_log">Iniciar Sesion</button>
   					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
+                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
   				</div>
 			</div>
        	</header>
 
         <nav>
-            <form>
+            <form id="form_login">
                 <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
-                <input type="text" name="input_email" value="" placeholder="E-mail">
+                <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
-                <img src="" alt="icon_pass"><!-- Pass LOGIN -->
-                <input type="text" name="input_pass" value="" placeholder="Contrase&ntilde;a">
+                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
+                <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
                 <input type="submit" name="input_submit" value="Conectar">
@@ -85,10 +86,12 @@
                 <input type="color" name="color_portada" value="#222">
                 <br>
                 <label>N&uacute;m. copias</label>
-                <input type="number" name="num_copias" value="1" step="1">
+                <input type="number" name="num_copias" value="1" step="1" min="1">
                 <br>
                 <label>Resoluci&oacute;n impresi&oacute;n</label>
-                <input type="number" name="num_copias" value="150" step="150" min="150" max="900">
+                <input type="range" name="resolucion" id="input_res" value="150" step="150" min="150" max="900"
+                onchange="document.getElementById('output_res').textContent = value">
+                <output name="result" id="output_res">150</output>
                 <br>
                 <label>&Aacute;lbum a imprimir</label>
                 <select name="album_selector" id="album_selector">
@@ -101,8 +104,9 @@
                 <input type="date" name="fecha_recepcion">
                 <br>
                 <label>Tipo impresi&oacute;n</label>
-                <input type="radio" name="color_bw" value="color"> Color<br>
-                <input type="radio" name="color_bw" value="bnw"> Blanco / Negro
+                <label><input type="radio" name="color_bw" value="color"> Color</label>
+                <br>
+                <label><input type="radio" name="color_bw" value="bnw"> Blanco / Negro</label>
                 <br>
                 <!--<input type="submit" name="enviar_form_impresion" value="Enviar">-->
                 <button type="button" name="boton_solicitud_enviar"><a href="album_respuesta.html">Enviar</a></button>

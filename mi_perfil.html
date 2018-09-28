@@ -9,14 +9,15 @@
     		<img id="logo" alt="Spark logo" src=""></img>
     		<h1><a href="index.html" >SPARK</a></h1>
     		<div class="top_header">
-  				<form><!-- Busqueda -->
+                <form action="resultado_busqueda.html"><!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="submit" id="avanzada">Avanzada</button>
+  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
   				</form>
   				<div id="user_status"><!-- Botones segun estado sesion usuario -->
   					<button type="button" name="button_log">Iniciar Sesion</button>
   					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
+                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
   				</div>
 			</div>
        	</header>
@@ -26,7 +27,7 @@
                 <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
-                <img src="" alt="icon_pass"><!-- Pass LOGIN -->
+                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
@@ -35,7 +36,14 @@
         </nav>
 
         <main>
-            
+            <h3>Mi perfil</h3>
+            <a href="mis_datos.html">Mis datos</a>
+            <a href="baja_usuario.html">Darme de baja</a>
+            <a href="mis_albumes.html">Mis álbumes</a>
+            <a href="crear_album.html">Crear álbum</a>
+            <a href="album_form_solicitud.html">Solicutud impresión álbum</a>
+
+
         </main>
 
         <footer>

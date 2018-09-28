@@ -9,14 +9,15 @@
     		<img id="logo" alt="Spark logo" src=""></img>
     		<h1><a href="index.html" >SPARK</a></h1>
     		<div class="top_header">
-  				<form><!-- Busqueda -->
+                <form action="resultado_busqueda.html"><!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
-  					<button type="submit" id="avanzada">Avanzada</button>
+  					<button type="button" id="avanzada"><a href="formulario_busqueda.html">Avanzada</a></button>
   				</form>
   				<div id="user_status"><!-- Botones segun estado sesion usuario -->
   					<button type="button" name="button_log">Iniciar Sesion</button>
   					<button type="button" name="button_reg"><a href="registro.html">Registrarse</a></button>
+                    <button type="button" name="button_profile"><a href="mi_perfil.html">Perfil</a></button>
   				</div>
 			</div>
        	</header>
@@ -26,7 +27,7 @@
                 <img src="" alt="icon_user_default"><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
-                <img src="" alt="icon_pass"><!-- Pass LOGIN -->
+                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
@@ -35,33 +36,45 @@
         </nav>
 
         <main>
-            <form id="form_registro"><!--Register_Form-->
-                <img src="" alt="icon_user_upload"><!-- User Picture REGISTER -->
+            <form id="form_registro" action="index.html"><!--Register_Form-->
+                <span>[icon_img]</span><!-- User Picture REGISTER -->
                 <p>Profile Picture</p>
-                <button type="button" name="upload_photo" >Upload</button>
+                <input type="image" name="user_img" value="Upload image">
                 <br>
-                <img src="" alt="icon_user_default"><!-- User/email REGISTER -->
-                <input type="text" name="input_name" value="" placeholder="User Name">
+                <label>
+                    <span class="icon_user">[icon_user_not_found]</span><!-- User/email REGISTER -->
+                    <input type="text" name="input_name" value="" placeholder="User Name">
+                </label>
                 <br>
-                <img src="" alt="icon_pass"><!-- Password REGISTER -->
-                <input type="password" name="input_pass" value="" placeholder="Password">
+                <label>
+                    <span>[icon_pass]</span><!-- Password REGISTER -->
+                    <input type="password" name="input_pass" value="" placeholder="Password">
+                </label>
                 <br>
-                <img src="" alt="icon_pass"><!-- Password Confirm REGISTER -->
-                <input type="password" name="input_pass_confirm" value="" placeholder="Repeat Password">
+                <label>
+                    <span>[icon_pass]</span><!-- Password Confirm REGISTER -->
+                    <input type="password" name="input_pass_confirm" value="" placeholder="Repeat Password">
+                </label>
                 <br>
-                <img src="" alt="icon_email"><!-- E-mail REGISTER -->
-                <input type="email" name="input_email" value="" placeholder="E-mail">
+                <label>
+                    <span>[icon_email]</span><!-- E-mail REGISTER -->
+                    <input type="email" name="input_email" value="" placeholder="E-mail">
+                </label>
                 <br>
-                <img src="" alt="icon_calendar"><!-- Birthday REGISTER -->
-                <input type="date" name="input_calendar" value="" placeholder="Birthday">
+                <label>
+                    <span>[icon_calendar]</span><!-- Birthday REGISTER -->
+                    <input type="date" name="input_calendar" value="" placeholder="Birthday">
+                </label>
                 <br>
-                <img src="" alt="icon_house"><!-- Location REGISTER -->
-                <input type="text" name="input_city" value="" placeholder="City">
-                <input type="text" name="input_country" value="" placeholder="Country">
+                <label>
+                    <span>[icon_house]</span><!-- Location REGISTER -->
+                    <input type="text" name="input_city" value="" placeholder="City">
+                    <input type="text" name="input_country" value="" placeholder="Country">
+                </label>
                 <br>
                 <!--Register_End-->
-                <a href="#">Already have an account?</a>
-                <input type="submit" name="input_submit" value="Registrar">
+                <label>Already have an account?</label>
+                <input type="submit" name="input_submit" value="Registrar" onclick="index.html">
             </form>
         </main>
 
