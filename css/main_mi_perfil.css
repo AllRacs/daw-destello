@@ -1,0 +1,21 @@
+/*Mi Perfil*/
+body > main {
+    text-align:center;
+}
+
+body > main > p > button{
+    padding: 0.75em;
+    border-radius: 10px;
+    background-color: #fefefe;
+    width: 15em;
+    box-shadow: 0.5px 0.5px grey;
+    cursor:pointer;
+}
+
+body > main > p > button:hover{
+    background-color: #5495ff;
+    color:black;
+    box-shadow: 2px 2px grey;
+    
+}
+
