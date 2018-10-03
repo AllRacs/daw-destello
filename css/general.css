@@ -1,7 +1,8 @@
 /* header, nav and footer*/
 
 body {
-    margin: 0px;
+    margin: 0px auto;
+    max-width: 1250px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -18,6 +19,10 @@ body > header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.top_header > form > input, .top_header > form > input + button {
+    margin-right: 0.2em;
 }
 
 .top_header > form > #busqueda:hover {
