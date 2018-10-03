@@ -1,0 +1,87 @@
+/* header, nav and footer*/
+
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body > header {
+    border-bottom: 1px solid #5b5b5b;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5em;
+}
+
+.top_header {
+    padding-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.top_header > form > #busqueda:hover {
+    cursor: pointer;
+}
+
+.top_header > form, #user_status > label, #user_status > a {
+    border: 1px solid #5b5b5b;
+    height: 1.3em;
+    padding: 0.6em 1em;
+    border-radius: 0px;
+}
+
+#user_status {
+    padding-top: 0.8em;
+}
+
+#user_status > label, #user_status > a {
+    background-color: #fff;
+}
+
+#user_status > label:hover, #user_status > a:hover {
+    background-color: #a0a0a0;
+    cursor: pointer;
+}
+
+#user_status > a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* body > nav: tab for login */
+body > nav {
+    padding: 1em;
+    width: 18em;
+    display: none;
+    background-color: #c6dcff;
+    border: 1px solid #5495ff;
+    position: absolute;
+    right: 6em;
+    top: 4.5em;
+}
+
+body > nav > form > span + input {
+    margin-bottom: 1em;
+}
+
+/* when you click con "Login" a tab appears to do the log*/
+#check_login:checked + nav {
+    display: flex;
+    align-content: center;
+}
+
+/* checkbox not displayed */
+body > input {
+    display: none;
+}
+
+/* footer */
+body > footer {
+    background-color: #aaa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.4em 1em;
+    margin-top: 2em;
+}

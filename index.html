@@ -3,32 +3,36 @@
     <head>
         <meta charset="utf-8">
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="css/general.css">
     </head>
     <body>
         <header>
             <a href="index.html"><img id="logo" alt="Spark logo" src="img/logo.jpg"></a>
-    		<h1><a href="index.html" >SPARK</a></h1>
     		<div class="top_header">
-  				<form action="resultado_busqueda.html"><!-- Busqueda -->
+  				<form action="resultado_busqueda.html">
+                    <!-- Busqueda -->
   					<input type="text" placeholder="Search..." autofocus>
   					<button type="submit" id="busqueda">Busqueda</button>
   					<a href="formulario_busqueda.html">Avanzada</a>
   				</form>
-  				<div id="user_status"><!-- Botones segun estado sesion usuario -->
-  					<button type="button" name="button_log">Iniciar Sesion</button>
+  				<div id="user_status">
+                    <!-- Botones segun estado sesion usuario -->
+  					<label for="check_login">Iniciar sesión</label>
   					<a href="registro.html">Registrarse</a>
                     <a href="mi_perfil.html">Perfil</a>
   				</div>
 			</div>
        	</header>
 
+        <input type="checkbox" id="check_login">
         <nav>
-            <form id="form_login">
+            <form id="form_login" action="mi_perfil.html">
                 <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN -->
-                <input type="email" name="input_email" value="" placeholder="E-mail">
+                <input type="email" name="input_email" value="" placeholder="E-mail" required>
                 <br>
                 <span class="">[icon_pass]</span><!-- Pass LOGIN -->
-                <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
+                <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a" required>
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
                 <input type="submit" name="input_submit" value="Conectar">
