@@ -5,6 +5,7 @@
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/main_form_busqueda.css">
     </head>
     <body>
         <header>
@@ -18,8 +19,8 @@
                 </form>
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
-  					<label for="check_login">Iniciar sesión</label>
-  					<a href="registro.html">Registrarse</a>
+                    <label for="check_login">Iniciar sesión</label>
+                    <a href="registro.html">Registrarse</a>
                     <a href="mi_perfil.html">Perfil</a>
   				</div>
             </div>
@@ -41,31 +42,38 @@
 
         <main>
             <h1>Advance Search</h1>
+            <section>
             <form id="form_search" action="resultado_busqueda.html">
                 <!--Advance Search Form-->
                 <label>
-                    Title: <input type="text" name="input_title" value="" placeholder="Title">
+                    Title: 
                 </label>
+                <input type="text" name="input_title" value="" placeholder="Title">
                 <br>
                 <label>
-                    Author: <input type="text" name="input_author" value="" placeholder="Author">
+                    Author: 
                 </label>
+                <input type="text" name="input_author" value="" placeholder="Author">
                 <br>
                 <label>
-                    Album: <input type="text" name="input_album" value="" placeholder="Album">
+                    Album: 
                 </label>
+                <input type="text" name="input_album" value="" placeholder="Album">
                 <br>
                 <label>
-                    Date: <input type="date" name="input_date" value="">
+                    Date: 
                 </label>
+                <input type="date" name="input_date" value="">
                 <br>
                 <label>
-                    Country: <input type="text" name="input_country" value="" placeholder="Country">
+                    Country: 
                 </label>
-                <br>
+                <input type="text" name="input_country" value="" placeholder="Country">
+                <br><br>
                 <button type="submit" id="Advance Search Button">Search</button>
                 <!--End Form-->
             </form>
+            </section>
 
         </main>
 
