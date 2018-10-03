@@ -7,18 +7,24 @@ body {
 }
 
 body > header {
+    height: 4.2em;
     border-bottom: 1px solid #5b5b5b;
     display: flex;
     flex-direction: row;
     margin-bottom: 1.5em;
 }
 
+body > header > a > img {
+    margin-top: 0.8em;
+    height: 3em;
+}
+
 .top_header {
-    padding-top: 1em;
+    padding: 1em 0.5em 0em 2em;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .top_header > form > input, .top_header > form > input + button {
