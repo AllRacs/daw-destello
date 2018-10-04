@@ -1,0 +1,45 @@
+
+body > main > section{
+    width: 30em;
+    display:table; 
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body > main > section > form >label> button{
+    padding: 0.75em;
+    border-radius: 10px;
+    background-color: #fefefe;
+    width: 15em;
+    box-shadow: 0.5px 0.5px grey;
+    cursor:pointer;
+}
+
+body > main > section > form >label> button:hover{
+   background-color: #5495ff;
+   color:black;
+   box-shadow: 2px 2px grey;
+}
+body > main > section > form > label{
+    text-align: right;
+    height: 10px;
+}
+
+body > main > section > form > label> input{
+    width: 10em;
+}
+
+body > main > section > form > label > span{
+    width:5em;
+    clear:left;
+    padding-right:6em;
+}
+
+
+body > main > section > form > label> input{
+    float:left;
+}
+
+body > main > section > form > label>span{
+    float:left;
+}
