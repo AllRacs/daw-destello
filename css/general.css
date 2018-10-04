@@ -27,6 +27,13 @@ body > header > a > img {
     justify-content: space-between;
 }
 
+.top_header > form {
+    width: 30em;
+}
+.top_header > form > input {
+    width: 60%;
+}
+
 .top_header > form > input, .top_header > form > input , button {
     margin-right: 0.2em;
 }
@@ -42,7 +49,7 @@ body > header > a > img {
     border-radius: 0px;
     margin-right: 0.2em;
     margin-left: 0.2em;
-    
+
 }
 
 #user_status {
@@ -68,8 +75,8 @@ body > nav {
     padding: 1em;
     width: 18em;
     display: none;
-    background-color: #c6dcff;
-    border: 1px solid #5495ff;
+    background-color: #bbb;
+    border: 1px solid #666;
     position: absolute;
     right: 21em;
     top: 4.5em;
@@ -82,7 +89,7 @@ body > nav > form > span + input {
 /* when you click con "Login" a tab appears to do the log*/
 #check_login:checked + nav {
     display: flex;
-    align-content: center
+    flex-direction: column;
 }
 
 /* checkbox not displayed */
@@ -92,13 +99,10 @@ body > input {
 
 /* footer */
 body > footer {
-    background-color: #5495ff;
+    background-color: #999;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0.4em 1em;
     margin-top: 2em;
-    bottom:0;
-    width:1250px;
-    position:fixed;
 }

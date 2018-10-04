@@ -30,12 +30,12 @@
         <input type="checkbox" id="check_login">
         <nav>
             <form id="form_login">
-                <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN --
+                <span id="icon_user">[icon_user]</span>
                 <input type="email" name="input_email" value="" placeholder="E-mail">
                 <br>
-                <span class="">[icon_pass]</span><!-- Pass LOGIN --
+                <span class="">[icon_pass]</span>
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a">
-                <br><!-- Fin campos form --
+                <br>
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
                 <input type="submit" name="input_submit" value="Conectar">
             </form>
@@ -43,11 +43,16 @@
 
         <main>
             <h3>Mi perfil</h3>
-            <p><button onclick="location.href='mis_datos'" type="button">Mis Datos</button></p>
-            <p><button onclick="location.href='mis_albumes'" type="button">Mis Álbumes</button></p>
-            <p><button onclick="location.href='crear_album'" type="button">Crear Album</button></p>
-            <p><button onclick="location.href='album_form_solicitud.html'" type="button">Solicitar Impresión de Album</button></p>
-            <p><button onclick="location.href='baja_usuario.html'" type="button">Darme de Baja</button></p>
+            <div id="navegacion_perfil">
+                <label><button onclick="location.href='mis_datos'" type="button">Mis Datos</button></label>
+                <label><button onclick="location.href='mis_albumes'" type="button">Mis Álbumes</button></label>
+                <label><button onclick="location.href='crear_album'" type="button">Crear Album</button></label>
+                <label><button onclick="location.href='album_form_solicitud.html'" type="button">Solicitar Impresión de Album</button></label>
+                <label><button onclick="location.href='baja_usuario.html'" type="button">Darme de Baja</button></label>
+            </div>
+            <div id="container_posting_perfil">
+                
+            </div>
          </main>
 
         <footer>
