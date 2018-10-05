@@ -1,45 +1,54 @@
 
 body > main > section{
     width: 30em;
-    display:table; 
+    display:table;
     margin-left:auto;
     margin-right:auto;
 }
 
-body > main > section > form >label> button{
+#form_registro {
+    display: flex;
+    flex-direction: column;
+}
+
+body > main > section > form > span > button {
     padding: 0.75em;
-    border-radius: 10px;
+    border-radius: 1px;
+    border: 1px solid #666;
     background-color: #fefefe;
     width: 15em;
     box-shadow: 0.5px 0.5px grey;
     cursor:pointer;
 }
 
-body > main > section > form >label> button:hover{
+body > main > section > form > span > button:hover {
    background-color: #5495ff;
    color:black;
    box-shadow: 2px 2px grey;
 }
-body > main > section > form > label{
+body > main > section > form > label {
     text-align: right;
     height: 10px;
 }
 
-body > main > section > form > label> input{
+body > main > section > form > label> input {
     width: 10em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    float:left;
 }
 
-body > main > section > form > label > span{
+body > main > section > form > label > span {
     width:5em;
     clear:left;
     padding-right:6em;
-}
-
-
-body > main > section > form > label> input{
     float:left;
 }
 
-body > main > section > form > label>span{
-    float:left;
+body > main > section > form > span {
+    margin-top: 1em;
+}
+
+body > main > section > form > span > button {
+    margin-left: 1em;
 }

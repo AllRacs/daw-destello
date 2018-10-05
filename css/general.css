@@ -53,7 +53,7 @@ body > header > a > img {
 }
 
 #user_status {
-    padding-top: 0.8em
+    padding-top: 0.8em;
 }
 
 #user_status > label, #user_status > a {

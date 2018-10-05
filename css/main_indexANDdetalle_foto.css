@@ -1,3 +1,5 @@
+/*----index.html----*/
+/*------------------*/
 /* h1 */
 h1 {
     margin-left: 2em;
@@ -25,7 +27,8 @@ h1 {
     width: 25em;
 }
 
-/*detalle_foto.html*/
+/*----detalle_foto.html----*/
+/*-------------------------*/
 .main_detalle_foto {
     width: 100%;
     margin: 0 auto;
@@ -33,9 +36,18 @@ h1 {
 }
 
 .main_detalle_foto > .p_box {
-    margin: 0em;
-    align-self: center;
+    margin: auto;
+    border: 0px solid black;
     width: 80%;
+}
+
+.main_detalle_foto > .p_box > label {
+    margin: 0 0.5em;
+}
+
+.main_detalle_foto > .p_box > figure {
+    width: 100%;
+    margin: 1em 0;
 }
 
 .main_detalle_foto > .p_box > figure > a > img {

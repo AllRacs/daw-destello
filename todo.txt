@@ -1,11 +1,11 @@
 TODO:
     1 - iconos
     2 - css: general.css, y mains_X.css
-        - minimas propiedades: font, background, border, margin, padding
-        - usar las etiquetas class (2 mín.)
+        -+ minimas propiedades: font, background, border, margin, padding
+        -+ usar las etiquetas class (2 mín.)
         - formularios alineados (tamañano flexible)
         - no responsive (de momento)
-        
+
 DONE:
     - fotos (inicio, resultado busqueda, detalle foto)
     - relación entre ficheros

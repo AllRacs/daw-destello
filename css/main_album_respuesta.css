@@ -8,17 +8,18 @@ body > main > section{
 
 body > main > section> button{
     padding: 0.60em;
-    border-radius: 10px;
+    border-radius: 1px;
+    border: 1px solid #666;
     background-color: #fefefe;
     width: 12em;
     box-shadow: 0.5px 0.5px grey;
     cursor:pointer;
-    
+
 }
 
 body > main > section> button:hover{
     background-color: #5495ff;
     color:black;
     box-shadow: 2px 2px grey;
-    
+
 }
