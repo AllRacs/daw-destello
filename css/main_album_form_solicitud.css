@@ -1,0 +1,61 @@
+main {
+    margin-left: 5em;
+}
+
+main > h2 + label {
+    border: 1px solid #666;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40em;
+    padding: 0.4em;
+    cursor: pointer;
+}
+
+#check_info {
+    display: none;
+}
+
+#box_info {
+    display: none;
+    width: 40em;
+    padding: 0.4em;
+    border: 1px solid #666;
+}
+
+#box_info > h4 {
+    margin: 0.5em;
+}
+
+#check_info:checked + #box_info {
+    display: block;
+}
+
+#lista_concepto {
+    margin: 0 0 1em 1em;
+}
+
+#lista_concepto td {
+    padding: 0.3em;
+    border-bottom: 1px solid #666;
+}
+
+#lista_concepto td:first-of-type {
+    border-right: 1px solid #666;
+}
+
+main > form {
+    margin-top: 1em;
+}
+
+main > form > input {
+    margin-bottom: 1em
+}
+
+main > form > select {
+    margin-bottom: 1em;
+}
+
+main > form > button {
+    margin-top: 1em;
+}

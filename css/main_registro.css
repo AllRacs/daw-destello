@@ -52,3 +52,9 @@ body > main > section > form > span {
 body > main > section > form > span > button {
     margin-left: 1em;
 }
+
+#have_an_acc {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #119;
+}

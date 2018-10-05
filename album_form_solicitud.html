@@ -5,6 +5,7 @@
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/main_album_form_solicitud.css">
     </head>
     <body>
         <header>
@@ -41,79 +42,89 @@
 
         <main>
             <h2>Solicitud impresi&oacute;n &aacute;lbum</h2>
-            <div>
+            <label for="check_info">
                 <label>Descripci&oacute;n y tarifa</label>
+                <span>[pointer_icon]</span>
                 <span id="icon_row">[icono_flecha]</span>
-            </div>
+            </label>
+            <input type="checkbox" id="check_info" value="">
             <div id="box_info">
                 <p>A través de este formulario va a solicitar que se le imprima de forma física el álbum que usted seleccione y se le enviará a la dirección y fecha (estimada) que se desee.</p>
-                <br>
-                <h4>Tarifas</h4>
-                <br>
-                <ul id="lista_concepto">
-                    <li>Concepto</li>
-                    <li>&lt; 5 p&aacute;ginas</li>
-                    <li>entre 5 y 10 p&aacute;ginas</li>
-                    <li>&gt; 11 p&aacute;ginas</li>
-                    <li>Blanco y negro</li>
-                    <li>Color</li>
-                    <li>Resoluci&oacute;n &gt; 300 dpi</li>
-                </ul>
-                <ul id="lista_tarifa">
-                    <li>Tarifa</li>
-                    <li>0.10 &euro; por p&aacute;g.</li>
-                    <li>0.08 &euro; por p&aacute;g.</li>
-                    <li>0.07 &euro; por p&aacute;g.</li>
-                    <li>0 &euro;</li>
-                    <li>0.05 &euro; por foto</li>
-                    <li>0.02 &euro; por foto</li>
-                </ul>
+                <h4>Prices</h4>
+                <table id="lista_concepto">
+                    <tr>
+                        <td>Concept</td>
+                        <td>Price</td>
+                    </tr>
+                    <tr>
+                        <td>&lt; 5 pages</td>
+                        <td>0.10 &euro;/page</td>
+                    </tr>
+                    <tr>
+                        <td>between 5 and 10 pages</td>
+                        <td>0.08 &euro;/page</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 11 pages</td>
+                        <td>0.07 &euro;/page</td>
+                    </tr>
+                    <tr>
+                        <td>Black and white</td>
+                        <td>0.03 &euro;/image</td>
+                    </tr>
+                    <tr>
+                        <td>Colored</td>
+                        <td>0.05 &euro;/image</td>
+                    </tr>
+                    <tr>
+                        <td>Resolution &gt; 300 dpi</td>
+                        <td>0.02 &euro;/image</td>
+                    </tr>
+                </table>
             </div>
             <form action="album_respuesta.html">
                 <input type="text" placeholder="Autor" required>
                 <br>
-                <input type="text" placeholder="T&iacute;tulo" required>
+                <input type="text" placeholder="Title" required>
                 <br>
-                <input type="text" placeholder="Descripci&oacute;n, dedicatoria, ...">
+                <input type="text" placeholder="Description, dedicatory, ...">
                 <br>
                 <input type="text" placeholder="email" required>
                 <br>
-                <input type="text" placeholder="Dir. env&iacute;o" required>
+                <input type="text" placeholder="Shipping direction" required>
                 <br>
-                <input type="text" placeholder="Localidad" required>
+                <input type="text" placeholder="City" required>
                 <br>
                 <input type="text" placeholder="C.P." required>
                 <br>
-                <input type="text" placeholder="Tel&eacute;fono">
+                <input type="text" placeholder="Tel.">
                 <br>
-                <label>Color de portada</label>
-                <input type="color" name="color_portada" value="#bbbbbb">
+                <label>Cover color</label>
+                <input type="color" name="color_cover" value="#bbbbbb">
                 <br>
-                <label>N&uacute;m. copias</label>
-                <input type="number" name="num_copias" value="1" step="1" min="1">
+                <input type="number" name="num_copies" placeholder="Num. copies" step="1" min="1">
                 <br>
-                <label>Resoluci&oacute;n impresi&oacute;n</label>
+                <label>Res. print</label>
                 <input type="range" name="resolucion" id="input_res" value="150" step="150" min="150" max="900"
                        onchange="document.getElementById('output_res').textContent = value">
                 <output name="result" id="output_res">150</output>
                 <br>
-                <label>&Aacute;lbum a imprimir</label>
+                <label>Album to print</label>
                 <select name="album_selector" id="album_selector" required>
                     <option value="album1">Album1</option>
                     <option value="album2">Album2</option>
                     <option value="album3">Album3</option>
                 </select>
                 <br>
-                <label>Fecha recepi&oacute;n (aprox.)</label>
-                <input type="date" name="fecha_recepcion">
+                <label>Reception date</label>
+                <input type="date" name="recep_date">
                 <br>
-                <label>Tipo impresi&oacute;n</label>
+                <label>Print type</label>
                 <label><input type="radio" name="color_bw" value="color"> Color</label>
-                <br>
-                <label><input type="radio" name="color_bw" value="bnw"> Blanco / Negro</label>
+                <label><input type="radio" name="color_bw" value="bnw"> Black / White</label>
                 <br>
                 <!--<input type="submit" name="enviar_form_impresion" value="Enviar">-->
-                <button type="submit" name="boton_solicitud_enviar">Enviar<br />algo</button>
+                <button type="submit" name="boton_solicitud_enviar">Send</button>
             </form>
         </main>
 
@@ -123,7 +134,7 @@
             </div>
             <div class="footer_items">
                 <span>SPARK </span>
-                <a href="#" class="icon_row_up">SUBIR</a>
+                <a href="#" class="icon_row_up">UP</a>
             </div>
         </footer>
     </body>
