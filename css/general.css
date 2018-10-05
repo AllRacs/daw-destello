@@ -1,5 +1,7 @@
 /* header, nav and footer*/
-
+html {
+    overflow-y: scroll;
+}
 body {
     margin: 0px auto;
     max-width: 1250px;
