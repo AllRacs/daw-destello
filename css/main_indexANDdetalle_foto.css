@@ -1,16 +1,22 @@
 /*----index.html----*/
 /*------------------*/
+
+/*body > main {
+    background-color: #9ec3ff;
+}*/
 /* h1 */
 h1 {
-    margin-left: 2em;
+    margin: 1em 0 0 2em;
     font-size: 1.4em;
 }
 
 /* container_posting */
 .container_posting {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /* p_box */
@@ -19,7 +25,15 @@ h1 {
     border: 1px solid #555;
     margin: 1em 0em;
     padding: 1em;
+    background-color: white;
+    font-family: 'Charmonman', bold;
+    font-size: 1.1em;
 }
+
+.p_box:hover {
+
+}
+
 .p_box > figure {
     width: 25em;
 }
@@ -27,18 +41,22 @@ h1 {
     width: 25em;
 }
 
+.p_box  img:hover {
+    box-shadow: 3px 3px #666;
+}
+
 /*----detalle_foto.html----*/
 /*-------------------------*/
 .main_detalle_foto {
     width: 100%;
-    margin: 0 auto;
-    align-items: center;
 }
 
 .main_detalle_foto > .p_box {
     margin: auto;
     border: 0px solid black;
     width: 80%;
+    font-family: 'Charmonman', bold;
+    font-size: 1.1em;    
 }
 
 .main_detalle_foto > .p_box > label {
@@ -46,10 +64,12 @@ h1 {
 }
 
 .main_detalle_foto > .p_box > figure {
-    width: 100%;
+    width: 50em;
     margin: 1em 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .main_detalle_foto > .p_box > figure > a > img {
-    width: 50em;
+    width: 100%;
 }

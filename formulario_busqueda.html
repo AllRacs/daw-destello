@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/main_formulario_busqueda.css">
+        <link rel="stylesheet" href="css/fontello.css">
     </head>
     <body>
         <header>
@@ -29,10 +31,10 @@
         <input type="checkbox" id="check_login">
         <nav>
             <form id="form_login" action="mi_perfil.html">
-                <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN -->
+                <span id="icon_user" class="icon-user-circle-o" aria-hidden="true"></span><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail" required>
                 <br>
-                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
+                <span class="icon-key" aria-hidden="true"></span><!-- Pass LOGIN -->
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a" required>
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
@@ -43,36 +45,36 @@
         <main>
             <h1>Advance Search</h1>
             <section>
-            <form id="form_search" action="resultado_busqueda.html">
-                <!--Advance Search Form-->
-                <label>
-                    Title:
-                </label>
-                <input type="text" name="input_title" value="" placeholder="Title">
-                <br>
-                <label>
-                    Author:
-                </label>
-                <input type="text" name="input_author" value="" placeholder="Author">
-                <br>
-                <label>
-                    Album:
-                </label>
-                <input type="text" name="input_album" value="" placeholder="Album">
-                <br>
-                <label>
-                    Date:
-                </label>
-                <input type="date" name="input_date" value="">
-                <br>
-                <label>
-                    Country:
-                </label>
-                <input type="text" name="input_country" value="" placeholder="Country">
-                <br><br>
-                <button type="submit" id="Advance Search Button">Search</button>
-                <!--End Form-->
-            </form>
+                <form id="form_search" action="resultado_busqueda.html">
+                    <!--Advance Search Form-->
+                    <label>
+                        <span>Title:</span>
+                        <input type="text" name="input_title" value="" placeholder="Title">
+                    </label>
+                    <br>
+                    <label>
+                        <span>Author:</span>
+                        <input type="text" name="input_author" value="" placeholder="Author">
+                    </label>
+                    <br>
+                    <label>
+                        <span>Album:</span>
+                        <input type="text" name="input_album" value="" placeholder="Album">
+                    </label>
+                    <br>
+                    <label>
+                        <span>Date:</span>
+                        <input type="date" name="input_date" value="">
+                    </label>
+                    <br>
+                    <label>
+                        <span>Country:</span>
+                        <input type="text" name="input_country" value="" placeholder="Country">
+                    </label>
+                    <br><br>
+                    <button type="submit" id="Advance Search Button">Search</button>
+                    <!--End Form-->
+                </form>
             </section>
 
         </main>

@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/main_registro.css">
+        <link rel="stylesheet" href="css/fontello.css">
     </head>
     <body>
         <header>
@@ -29,10 +31,10 @@
         <input type="checkbox" id="check_login">
         <nav>
             <form id="form_login" action="mi_perfil.html">
-                <span id="icon_user">[icon_user]</span><!-- Usuario/email LOGIN -->
+                <span id="icon_user" class="icon-user-circle-o" aria-hidden="true"></span><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail" required>
                 <br>
-                <span class="">[icon_pass]</span><!-- Pass LOGIN -->
+                <span class="icon-key" aria-hidden="true"></span><!-- Pass LOGIN -->
                 <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a" required>
                 <br><!-- Fin campos form -->
                 <a href="#">He oldivadado la contrase&ntilde;a</a>
@@ -45,37 +47,37 @@
                 <h3>Register</h3>
                 <form id="form_registro" action="index.html">
                     <!--Register_Form-->
-                    <span>[icon_img]</span><!-- User Picture REGISTER -->
-                    <p>Profile Picture</p>
+                    <label>Profile Picture</label>
+                    <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
                     <input type="file" name="user_img" value="Upload image">
                     <br>
                     <label>
-                        <span class="icon_user">[icon_user_not_found]</span><!-- User/email REGISTER -->
+                        <span class="icon-user-circle-o" aria-hidden="true"></span><!-- User/email REGISTER -->
                         <input type="text" name="input_name" value="" placeholder="User Name" required>
                     </label>
                     <br>
                     <label>
-                        <span>[icon_pass]</span><!-- Password REGISTER -->
+                        <span class="icon-key" aria-hidden="true"></span><!-- Password REGISTER -->
                         <input type="password" name="input_pass" value="" placeholder="Password" required>
                     </label>
                     <br>
                     <label>
-                        <span>[icon_pass]</span><!-- Password Confirm REGISTER -->
+                        <span class="icon-key" aria-hidden="true"></span><!-- Password Confirm REGISTER -->
                         <input type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" required>
                     </label>
                     <br>
                     <label>
-                        <span>[icon_email]</span><!-- E-mail REGISTER -->
+                        <span class="icon-at" aria-hidden="true"></span><!-- E-mail REGISTER -->
                         <input type="email" name="input_email" value="" placeholder="E-mail" required>
                     </label>
                     <br>
                     <label>
-                        <span>[icon_calendar]</span><!-- Birthday REGISTER -->
+                        <span class="icon-calendar" aria-hidden="true"></span><!-- Birthday REGISTER -->
                         <input type="date" name="input_calendar" value="" placeholder="Birthday">
                     </label>
                     <br>
                     <label>
-                        <span>[icon_house]</span><!-- Location REGISTER -->
+                        <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->
                         <input type="text" name="input_city" value="" placeholder="City">
                         <input type="text" name="input_country" value="" placeholder="Country">
                     </label>
