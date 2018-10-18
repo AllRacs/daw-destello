@@ -1,0 +1,29 @@
+/*Printer CSS*/
+@media print{
+    .top_header{
+        display:none!important;
+    }
+
+    body>a:after {
+        content:" <" attr(href) ">";
+    }
+    #box_info{ /*Mostrar abierto*/
+        display:block;
+    }
+
+    .p_box>label:after{
+        content:" <" attr(href) ">";
+    }
+
+    figure>a:after{
+        content:" <" attr(href) ">";
+    }
+   /*Index se cortan las fotos*/
+   #navegacion_perfil>label:after{
+        content:" <" attr(href) ">";
+   }
+   #form_registro>span>label:after,button:after{
+        content:" <" attr(href) ">";
+   }
+
+}
