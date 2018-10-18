@@ -1,5 +1,5 @@
 
-body > main > section{
+body > main {
     width: 30em;
     display:table;
     margin-left:auto;
@@ -12,7 +12,7 @@ body > main > section{
     padding-left: 5em;
 }
 
-body > main > section > form > span > button {
+body > main > form > span > button {
     padding: 0.75em;
     border-radius: 1px;
     border: 1px solid #666;
@@ -22,34 +22,34 @@ body > main > section > form > span > button {
     cursor:pointer;
 }
 
-body > main > section > form > span > button:hover {
+body > main > form > span > button:hover {
    background-color: #5495ff;
    color:black;
    box-shadow: 2px 2px grey;
 }
 
-body > main > section > form > label {
+body > main > form > label {
     height: 10px;
 }
 
-body > main > section > form > label> input {
+body > main > form > label> input {
     width: 10em;
     margin-bottom: 1em;
     margin-right: 1em;
     float:left;
 }
 
-body > main > section > form > label > span {
+body > main > form > label > span {
     width:1.5em;
     clear:left;
     float:left;
 }
 
-body > main > section > form > span {
+body > main > form > span {
     margin-top: 1em;
 }
 
-body > main > section > form > span > button {
+body > main > form > span > button {
     margin-left: 1em;
     padding: 0.6em;
     width: 8em;
