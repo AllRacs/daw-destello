@@ -7,7 +7,7 @@
     body>a:after {
         content:" <" attr(href) ">";
     }
-    #box_info{ /*Mostrar abierto*/
+    #check_info:checked + #box_info, #check_info:not(:checked) + #box_info { /*Mostrar abierto*/
         display:block;
     }
 

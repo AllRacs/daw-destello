@@ -1,3 +1,31 @@
+/*HEADER*/
+#logo:hover {
+    border: 1px solid black;
+}
+
+#busqueda:hover {
+   background-color: black;
+   color: white;
+   box-shadow: 2px 2px grey;
+}
+
+#busqueda + a:hover {
+    background-color: black;
+    color: white;
+}
+
+#user_status > label:hover, #user_status > a:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/*NAV*/
+nav > form > a:hover, nav > form > a + input:hover {
+    background-color: black;
+    color: white;
+}
+
 /*INDEX AND DETALLE_FOTO*/
 body > main > h1 {
   font-size: 2.5em;
@@ -9,4 +37,77 @@ body > main > h1 {
 
 .container_posting > .p_box > figure > a > img:hover {
   box-shadow: 5px 5px #666;
+}
+
+/*AVANZADA*/
+#form_search > button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*PERFIL*/
+#navegacion_perfil > label > button:hover {
+    background-color: black;
+    color: white;
+}
+
+#container_posting_perfil > p {
+    font-size: 1.2em;
+}
+
+/*ALBUM FORM SOLICITUD*/
+.main_form_solicitud  h2 {
+    font-size: 2em;
+}
+
+.main_form_solicitud > label:hover {
+    background-color: black;
+    color: white;
+}
+
+.main_form_solicitud > label > span {
+    font-size: 1.2em;
+}
+
+.main_form_solicitud > #box_info {
+    font-size: 1.2em;
+}
+
+.main_form_solicitud > form > input {
+    font-size: 1.2em;
+}
+
+.main_form_solicitud > form > button {
+    margin-top: 1em;
+    padding: 0.6em;
+    font-size: 1em;
+}
+
+.main_form_solicitud > form > button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*CONFIRMACION IMPRESION*/
+h3 + section > ul > li {
+    font-size: 1.2em;
+}
+
+.main_album_respuesta  h3 + section > button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*REGISTRO*/
+#form_registro > label {
+    font-size: 1.4em;
+}
+
+#form_registro > label > input {
+    font-size: 0.8em;
+}
+
+#form_registro > span > button:hover, #form_registro > span > label:hover {
+    background-color: black;
+    color: white;
 }

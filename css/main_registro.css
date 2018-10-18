@@ -9,7 +9,6 @@ body > main {
 #form_registro {
     display: flex;
     flex-direction: column;
-    padding-left: 5em;
 }
 
 body > main > form > span > button {

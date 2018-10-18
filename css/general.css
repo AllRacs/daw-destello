@@ -16,6 +16,10 @@ body > header {
     margin-bottom: 0em;
 }
 
+#logo {
+    border: 1px solid white;
+}
+
 #busqueda {
     padding: 0.3em;
     border-radius: 1px;
