@@ -1,6 +1,7 @@
 /* header, nav and footer*/
 html {
     overflow-y: scroll;
+    min-width: 480px;
 }
 body {
     margin: 0px auto;
@@ -127,4 +128,63 @@ body > footer {
     justify-content: space-between;
     padding: 0.4em 1em;
     margin-top: 2em;
+}
+
+
+@media all and (max-width: 1200px) {
+    body > header {
+        height: 8em;
+    }
+
+    .top_header {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2em;
+    }
+
+    body > nav {
+        right: 10em;
+        top: 8.5em;
+    }
+}
+
+@media all and (max-width: 780px) {
+    body > header {
+        height: 12em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body > header > .top_header > form {
+        margin: 0.5em 0 0.5em 0;
+    }
+    .top_header {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2em;
+        align-items: center;
+        width: 32em;
+    }
+
+    body > nav {
+        right: 5em;
+        top: 12.5em;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .top_header {
+        width: 22em;
+    }
+    .top_header > form {
+        width: 20em;
+    }
+    .top_header > form > input {
+        width: 10em;
+    }
+
+    body > nav {
+        right: 5em;
+        top: 12.5em;
+    }
 }
