@@ -16,27 +16,19 @@
     #check_info:checked + #box_info, #check_info:not(:checked) + #box_info { /*Mostrar abierto*/
         display:block;
     }
-
-    /*.p_box>label:after{
-        content:" <" attr(href) ">";
-    }*/
-
+    .p_box {
+        display: block;
+        /*max-height: 100%!important;
+        overflow: hidden!important;
+        page-break-after: always;*/
+    }
     figure>a:after{
         content:" <" attr(href) ">";
     }
-
     .icon-heart-empty, .icon-comment-empty {
       display: none;
     }
     div.p_box {
         page-break-before: always;
     }
-   /*Index se cortan las fotos*/
-   /*#navegacion_perfil>label:after{
-        content:" <" attr(href) ">";
-   }*/
-   /*#form_registro>span>label:after,button:after{
-        content:" <" attr(href) ">";
-   }*/
-
 }
