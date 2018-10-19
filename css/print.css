@@ -1,5 +1,11 @@
 /*Printer CSS*/
 @media print{
+    html {
+        filter: grayscale(100%);
+    }
+    .container_posting {
+        flex-direction: column;
+    }
     .top_header{
         display:none!important;
     }
@@ -17,6 +23,13 @@
 
     figure>a:after{
         content:" <" attr(href) ">";
+    }
+
+    .icon-heart-empty, .icon-comment-empty {
+      display: none;
+    }
+    div.p_box {
+        page-break-before: always;
     }
    /*Index se cortan las fotos*/
    /*#navegacion_perfil>label:after{

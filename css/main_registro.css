@@ -28,7 +28,7 @@ body > main > form > span > button:hover {
 }
 
 body > main > form > label {
-    height: 10px;
+    height: 1.5em;
 }
 
 body > main > form > label> input {

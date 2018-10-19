@@ -2,6 +2,8 @@
 html {
     overflow-y: scroll;
     min-width: 480px;
+    max-width: 1200px;
+    margin: auto;
 }
 body {
     margin: 0px auto;
