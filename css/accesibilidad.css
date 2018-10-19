@@ -1,27 +1,27 @@
 /*HEADER*/
-#logo:hover {
+#logo:hover,#logo:focus {
     border: 1px solid black;
 }
 
-#busqueda:hover {
+#busqueda:hover,#busqueda:focus {
    background-color: black;
    color: white;
    box-shadow: 2px 2px grey;
 }
 
-#busqueda + a:hover {
+#busqueda + a:hover,#busqueda + a:focus {
     background-color: black;
     color: white;
 }
 
-#user_status > label:hover, #user_status > a:hover {
+#user_status > label:hover, #user_status > a:hover,#user_status > label:focus, #user_status > a:focus {
     background-color: black;
     color: white;
     cursor: pointer;
 }
 
 /*ALL*/
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus,input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
     background-color: black;
     color: white;
 }
@@ -32,7 +32,7 @@ input[type=text]:focus::placeholder, input[type=email]:focus::placeholder, input
 
 
 /*NAV*/
-nav > form > a:hover, nav > form > a + input:hover {
+nav > form > a:hover, nav > form > a + input:hover,nav > form > a:focus, nav > form > a + input:focus {
     background-color: black;
     color: white;
 }
