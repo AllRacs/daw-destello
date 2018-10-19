@@ -5,7 +5,7 @@ html {
 }
 body {
     margin: 0px auto;
-    max-width: 1250px;
+    max-width: 1920px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -19,6 +19,8 @@ body > header {
 
 #logo {
     border: 1px solid white;
+    margin-top: 0.8em;
+    height: 3em;
 }
 
 #busqueda {
@@ -35,11 +37,6 @@ body > header {
    background-color: #5495ff;
    color:black;
    box-shadow: 2px 2px grey;
-}
-
-body > header > a > img {
-    margin-top: 0.8em;
-    height: 3em;
 }
 
 .top_header {
@@ -131,7 +128,7 @@ body > footer {
 }
 
 
-@media all and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     body > header {
         height: 8em;
     }
@@ -148,7 +145,7 @@ body > footer {
     }
 }
 
-@media all and (max-width: 780px) {
+@media screen and (max-width: 780px) {
     body > header {
         height: 12em;
         display: flex;
@@ -172,7 +169,7 @@ body > footer {
     }
 }
 
-@media all and (max-width: 550px) {
+@media screen and (max-width: 550px) {
     .top_header {
         width: 22em;
     }

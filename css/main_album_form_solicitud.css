@@ -18,7 +18,7 @@ main > h2 + label {
 
 #box_info {
     display: none;
-    width: 40em;
+    width: 33.2em;
     padding: 0.4em;
     border: 1px solid #666;
 }
@@ -59,4 +59,22 @@ main > form > select {
 main > form > button {
     margin-top: 1em;
     padding: 0.6em;
+}
+
+@media screen and (max-width: 780px) {
+    h2 + label {
+        width: 26.6em!important;
+    }
+    #check_info + #box_info {
+        width: 22em!important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    h2 + label {
+        width: 24.15em!important;
+    }
+    #check_info + #box_info {
+        width: 20em!important;
+    }
 }

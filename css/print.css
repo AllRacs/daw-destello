@@ -11,19 +11,19 @@
         display:block;
     }
 
-    .p_box>label:after{
+    /*.p_box>label:after{
         content:" <" attr(href) ">";
-    }
+    }*/
 
     figure>a:after{
         content:" <" attr(href) ">";
     }
    /*Index se cortan las fotos*/
-   #navegacion_perfil>label:after{
+   /*#navegacion_perfil>label:after{
         content:" <" attr(href) ">";
-   }
-   #form_registro>span>label:after,button:after{
+   }*/
+   /*#form_registro>span>label:after,button:after{
         content:" <" attr(href) ">";
-   }
+   }*/
 
 }

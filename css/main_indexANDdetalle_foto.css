@@ -34,7 +34,7 @@ h1 {
     width: 25em;
 }
 .p_box  img {
-    width: 25em;
+    width: 100%;
 }
 
 .p_box  img:hover {
@@ -43,6 +43,18 @@ h1 {
 
 .icon-heart-empty:hover, .icon-comment-empty:hover {
   cursor:pointer;
+}
+
+
+@media screen and (max-width: 590px) {
+    .p_box {
+        width: 24em;
+    }
+
+    .p_box  figure {
+        width: 22em;
+        margin: auto;
+    }
 }
 
 /*----detalle_foto.html----*/
@@ -72,4 +84,16 @@ h1 {
 
 .main_detalle_foto > .p_box > figure > a > img {
     width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .main_detalle_foto > .p_box > figure {
+        width: 35em;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .main_detalle_foto > .p_box > figure {
+        width: 22em;
+    }
 }
