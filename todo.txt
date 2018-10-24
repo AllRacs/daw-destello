@@ -1,12 +1,6 @@
 TODO:
-    1 - iconos
-    2 - css: general.css, y mains_X.css
-        -+ minimas propiedades: font, background, border, margin, padding
-        -+ usar las etiquetas class (2 mín.)
-        - formularios alineados (tamañano flexible)
-        - no responsive (de momento)
+focus, en login y registro title en los labels para
+accesibilidad.css (para el modo normal poner los titulos fuera de la
+pantalla left:-10000px), copiar el alter en todos los ficheros
 
-DONE:
-    - fotos (inicio, resultado busqueda, detalle foto)
-    - relación entre ficheros
-    - box de imagenes en index y busqueda_resultado
+OP --> login

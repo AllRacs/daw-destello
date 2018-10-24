@@ -5,7 +5,7 @@
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto|Charmonman" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/accesibilidad.css">
+        <link rel="alternate stylesheet" title="estilo accesible" href="css/accesibilidad.css">
         <link rel="stylesheet" href="css/print.css">
         <link rel="stylesheet" href="css/main_registro.css">
         <link rel="stylesheet" href="css/fontello.css">
@@ -47,44 +47,56 @@
                 <h1>Register</h1>
                 <form id="form_registro" action="index.php">
                     <!--Register_Form-->
-                    <label>Profile Picture</label>
-                    <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
-                    <input type="file" name="user_img" value="Upload image">
+                    <label for="user_img">
+                        <span class="hiddeofscreen">Profile Picture</span>
+                        <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
+                    </label>
+                    <input id="user_img" type="file" name="user_img" value="Upload image">
                     <br>
-                    <label for="input_name"><span style="position:absolute;left:-10000px">Usuario:</span><span class="icon-user-circle-o" aria-hidden="true"></span></label><!-- User/email REGISTER -->
-                        <input id="input_name"type="text" name="input_name" value="" placeholder="User Name" required>
-
+                    <label for="input_name">
+                        <span class="hiddeofscreen">Usuario:</span>
+                        <span class="icon-user-circle-o" aria-hidden="true"></span>
+                    </label><!-- User/email REGISTER -->
+                    <input id="input_name" type="text" name="input_name" value="" placeholder="User Name" required>
                     <br>
-                    <label>
+                    <label for="input_pass">
+                        <span class="hiddeofscreen">Password:</span>
                         <span class="icon-key" aria-hidden="true"></span><!-- Password REGISTER -->
-                        <input type="password" name="input_pass" value="" placeholder="Password" required>
                     </label>
+                    <input id="input_pass" type="password" name="input_pass" value="" placeholder="Password" required>
                     <br>
-                    <label>
+                    <label for="input_pass_confirm">
+                        <span class="hiddeofscreen">Repeat password:</span>
                         <span class="icon-key" aria-hidden="true"></span><!-- Password Confirm REGISTER -->
-                        <input type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" required>
                     </label>
+                    <input id="input_pass_confirm"type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" required>
                     <br>
-                    <label>
+                    <label for="input_email">
+                        <span class="hiddeofscreen">Email:</span>
                         <span class="icon-at" aria-hidden="true"></span><!-- E-mail REGISTER -->
-                        <input type="email" name="input_email" value="" placeholder="E-mail" required>
                     </label>
+                    <input id="input_email" type="email" name="input_email" value="" placeholder="E-mail" required>
                     <br>
-                    <label>
+                    <label for="input_calendar">
+                        <span class="hiddeofscreen">Birthday:</span>
                         <span class="icon-calendar" aria-hidden="true"></span><!-- Birthday REGISTER -->
-                        <input type="date" name="input_calendar" value="" placeholder="Birthday">
                     </label>
+                    <input id="input_calendar" type="date" name="input_calendar" value="" placeholder="Birthday">
                     <br>
-                    <label>
+                    <label for="input_city">
                         <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->
-                        <input type="text" name="input_city" value="" placeholder="City">
-                        <input type="text" name="input_country" value="" placeholder="Country">
                     </label>
+                    <input id="input_city" type="text" name="input_city" value="" placeholder="City">
+                    <br>
+                    <label for="input_country">
+                        <span class="icon-home-outline" aria-hidden="true" style="color:grey"></span>
+                    </label>
+                    <input id="input_country" type="text" name="input_country" value="" placeholder="Country">
                     <br>
                     <!--Register_End-->
                     <span>
-                            <label for="check_login" id="have_an_acc">Already have an account?</label>
-                            <button type="submit" name="input_submit" value="Registrar">Registrar</button>
+                        <label for="check_login" id="have_an_acc">Already have an account?</label>
+                        <button type="submit" name="input_submit" value="Registrar">Registrar</button>
                     </span>
                 </form>
         </main>

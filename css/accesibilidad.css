@@ -46,18 +46,18 @@ body > main > h1 {
   font-size: 1.4em;
 }
 
-.container_posting > .p_box > figure > a > img:hover {
+.container_posting > .p_box > figure > a > img:hover, .container_posting > .p_box > figure > a > img:focus {
   box-shadow: 5px 5px #666;
 }
 
 /*AVANZADA*/
-#form_search > button:hover {
+#form_search > button:hover, #form_search > button:focus {
     background-color: black;
     color: white;
 }
 
 /*PERFIL*/
-#navegacion_perfil > label > button:hover {
+#navegacion_perfil > label > button:hover, #navegacion_perfil > label > button:focus {
     background-color: black;
     color: white;
 }
@@ -71,7 +71,7 @@ body > main > h1 {
     font-size: 2em;
 }
 
-.main_form_solicitud > label:hover {
+.main_form_solicitud > label:hover, .main_form_solicitud > label:focus {
     background-color: black;
     color: white;
 }
@@ -94,7 +94,7 @@ body > main > h1 {
     font-size: 1em;
 }
 
-.main_form_solicitud > form > button:hover {
+.main_form_solicitud > form > button:hover, .main_form_solicitud > form > button:focus {
     background-color: black;
     color: white;
 }
@@ -104,7 +104,7 @@ h3 + section > ul > li {
     font-size: 1.2em;
 }
 
-.main_album_respuesta  h3 + section > button:hover {
+.main_album_respuesta  h3 + section > button:hover, .main_album_respuesta  h3 + section > button:focus {
     background-color: black;
     color: white;
 }
@@ -118,7 +118,7 @@ h3 + section > ul > li {
     font-size: 0.8em;
 }
 
-#form_registro > span > button:hover, #form_registro > span > label:hover {
+#form_registro > span > button:hover, #form_registro > span > label:hover, #form_registro > span > button:focus, #form_registro > span > label:focus {
     background-color: black;
     color: white;
 }

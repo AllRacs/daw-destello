@@ -9,6 +9,14 @@ body > main {
 #form_registro {
     display: flex;
     flex-direction: column;
+    padding-left: 2em;
+    width: 20em;
+    margin: auto;
+}
+
+.hiddeofscreen {
+    position : absolute;
+    left : -10000px;
 }
 
 body > main > form > span > button {
@@ -29,13 +37,14 @@ body > main > form > span > button:hover {
 
 body > main > form > label {
     height: 1.5em;
+    width: 2em;
 }
 
-body > main > form > label> input {
-    width: 10em;
+body > main > form > input {
+    width: 16em;
     margin-bottom: 1em;
     margin-right: 1em;
-    float:left;
+    float: right;
 }
 
 body > main > form > label > span {

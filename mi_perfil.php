@@ -5,7 +5,7 @@
         <title>Spark - Fotos, fotos y m&aacute;s fotos</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto|Charmonman" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/accesibilidad.css">
+        <link rel="alternate stylesheet" title="estilo accesible" href="css/accesibilidad.css">
         <link rel="stylesheet" href="css/print.css">
         <link rel="stylesheet" href="css/main_mi_perfil.css">
         <link rel="stylesheet" href="css/fontello.css">
@@ -25,6 +25,7 @@
                     <!--<button type="button" name="button_log">Iniciar Sesion</button>
                     <a href="registro.php">Registrarse</a>-->
                     <a href="mi_perfil.php">Perfil</a>
+                    <a href="index.php">Cerrar sesion</a>
                 </div>
             </div>
         </header>
