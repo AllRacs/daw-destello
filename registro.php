@@ -12,26 +12,26 @@
     </head>
     <body>
         <header>
-            <a href="index.html"><img id="logo" alt="Spark logo" src="img/logo.jpg"></a>
+            <a href="index.php"><img id="logo" alt="Spark logo" src="img/logo.jpg"></a>
             <div class="top_header">
-                <form action="resultado_busqueda.html">
+                <form action="resultado_busqueda.php">
                     <!-- Busqueda -->
                     <input type="text" placeholder="Search..." autofocus>
                     <button type="submit" id="busqueda">Busqueda</button>
-                    <a href="formulario_busqueda.html">Avanzada</a>
+                    <a href="formulario_busqueda.php">Avanzada</a>
                 </form>
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
   					<label for="check_login">Iniciar sesión</label>
-  					<a href="registro.html">Registrarse</a>
-                    <a href="mi_perfil.html">Perfil</a>
+  					<a href="registro.php">Registrarse</a>
+                    <a href="mi_perfil.php">Perfil</a>
   				</div>
             </div>
         </header>
 
         <input type="checkbox" id="check_login">
         <nav>
-            <form id="form_login" action="mi_perfil.html">
+            <form id="form_login" action="mi_perfil.php">
                 <span id="icon_user" class="icon-user-circle-o" aria-hidden="true"></span><!-- Usuario/email LOGIN -->
                 <input type="email" name="input_email" value="" placeholder="E-mail" required>
                 <br>
@@ -45,7 +45,7 @@
 
         <main>
                 <h1>Register</h1>
-                <form id="form_registro" action="index.html">
+                <form id="form_registro" action="index.php">
                     <!--Register_Form-->
                     <label>Profile Picture</label>
                     <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
