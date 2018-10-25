@@ -46,31 +46,31 @@
         <main>
             <h1>Advance Search</h1>
             <section>
-                <form id="form_search" action="resultado_busqueda.php" method="get">
+                <form id="form_search" action="resultado_busqueda.php" method="GET">
                     <!--Advance Search Form-->
                     <label>
                         <span>Title:</span>
-                        <input type="text" name="input_title" value="" placeholder="Title">
+                        <input type="text" name="busqueda_avanzada[]" id="input_title" value="" placeholder="Title">
                     </label>
                     <br>
                     <label>
                         <span>Author:</span>
-                        <input type="text" name="input_author" value="" placeholder="Author">
+                        <input type="text" name="busqueda_avanzada[]" id="input_author" value="" placeholder="Author">
                     </label>
                     <br>
                     <label>
                         <span>Album:</span>
-                        <input type="text" name="input_album" value="" placeholder="Album">
-                    </label>
-                    <br>
-                    <label>
-                        <span>Date:</span>
-                        <input type="date" name="input_date" value="">
+                        <input type="text" name="busqueda_avanzada[]" id="input_album" value="" placeholder="Album">
                     </label>
                     <br>
                     <label>
                         <span>Country:</span>
-                        <input type="text" name="input_country" value="" placeholder="Country">
+                        <input type="text" name="busqueda_avanzada[]" id="input_date" value="" placeholder="Country">
+                    </label>
+                    <br>
+                    <label>
+                        <span>Date:</span>
+                        <input type="date" id="input_country" value="">
                     </label>
                     <br><br>
                     <button type="submit" id="Advance Search Button">Search</button>

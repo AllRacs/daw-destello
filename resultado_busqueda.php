@@ -16,7 +16,7 @@
             <div class="top_header">
                 <form action="resultado_busqueda.php" method="GET">
                     <!-- Busqueda -->
-                    <input type="text" name="busqueda_top" placeholder="Search..." autofocus>
+                    <input type="text" name="busqueda_top" placeholder="Search..." autofocus >
                     <button type="submit" id="busqueda">Busqueda</button>
                     <a href="formulario_busqueda.php">Avanzada</a>
                 </form>
@@ -44,7 +44,24 @@
         </nav>
 
         <main>
-           <h1>Resultado de búsqueda:</h1>
+           <h1>Resultado de búsqueda: 
+           <?php if(!empty($_GET['busqueda_top'])){
+                        echo htmlspecialchars($_GET['busqueda_top']);
+                    }else if(!empty($_GET['busqueda_avanzada'])){
+                        foreach ( $_GET["busqueda_avanzada"] as $busqueda_avanzada ) { 
+                           if(!empty($busqueda_avanzada)){
+                             echo $busqueda_avanzada; 
+                             echo ", "; 
+                           }
+                        }
+                        $datebus = array($_GET["busqueda_avanzada"]);
+                        $new_date = date('d-m-Y', strtotime($_GET['busqueda_avanzada'][3]));
+                    }
+                    
+                         ?>
+           
+           
+           </h1>
                 <div class="p_box">
                     <label class="title">Búho</label>
                     <span> - </span>
