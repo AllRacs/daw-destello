@@ -45,12 +45,14 @@
 
         <main class="main_album_respuesta">
             <h1>Datos de Registro</h1>
-                <p>Nombre de Usuario: <?php echo htmlspecialchars($_POST['input_name']); ?></p>
-                <p>Contraseña: <?php echo htmlspecialchars($_POST['input_pass']); ?></p>
-                <p>Email: <?php echo htmlspecialchars($_POST['input_email']); ?></p>
-                <p>Fecha de Nacimiento: <?php echo htmlspecialchars($_POST['input_calendar']); ?></p>
-                <p>Ciudad: <?php echo htmlspecialchars($_POST['input_city']); ?></p>
-                <p>Pais: <?php echo htmlspecialchars($_POST['input_country']); ?></p>
+            <section>
+                <p><b>Nombre de Usuario:</b> <?php echo htmlspecialchars($_POST['input_name']); ?></p>
+                <p><b>Contraseña:</b> <?php echo htmlspecialchars($_POST['input_pass']); ?></p>
+                <p><b>Email:</b> <?php echo htmlspecialchars($_POST['input_email']); ?></p>
+                <p><b>Fecha de Nacimiento:</b> <?php echo htmlspecialchars($_POST['input_calendar']); ?></p>
+                <p><b>Ciudad:</b> <?php echo htmlspecialchars($_POST['input_city']); ?></p>
+                <p><b>Pais:</b> <?php echo htmlspecialchars($_POST['input_country']); ?></p>
+            <section>
         </main>
 
         <footer>

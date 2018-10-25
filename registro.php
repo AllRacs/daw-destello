@@ -82,7 +82,7 @@
                         <span class="hiddeofscreen">Birthday:</span>
                         <span class="icon-calendar" aria-hidden="true"></span><!-- Birthday REGISTER -->
                     </label>
-                    <input id="input_calendar" type="date" name="input_calendar" value="" placeholder="Birthday">
+                    <input id="input_calendar" type="date" name="input_calendar" value="" placeholder="Birthday" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                     <br>
                     <label for="input_city">
                         <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->

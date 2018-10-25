@@ -70,7 +70,7 @@
                     <br>
                     <label>
                         <span>Date:</span>
-                        <input type="date" id="input_country" value="">
+                        <input type="date" id="input_country" value="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                     </label>
                     <br><br>
                     <button type="submit" id="Advance Search Button">Search</button>
