@@ -60,7 +60,6 @@
                     
                          ?>
            
-           
            </h1>
                 <div class="p_box">
                     <label class="title">Búho</label>

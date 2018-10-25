@@ -45,13 +45,14 @@
 
         <main>
                 <h1>Register</h1>
-                <form id="form_registro" action="index.php">
+                
+                <form id="form_registro" action="resultado_registro.php" method="POST">
                     <!--Register_Form-->
                     <label for="user_img">
                         <span class="hiddeofscreen">Profile Picture</span>
                         <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
                     </label>
-                    <input id="user_img" type="file" name="user_img" value="Upload image">
+                    <input id="user_img" type="file" name="register" value="Upload image">
                     <br>
                     <label for="input_name">
                         <span class="hiddeofscreen">Usuario:</span>
@@ -99,6 +100,7 @@
                         <button type="submit" name="input_submit" value="Registrar">Registrar</button>
                     </span>
                 </form>
+               
         </main>
 
         <footer>
