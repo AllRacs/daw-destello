@@ -13,20 +13,26 @@ Si el usuario está registrado, mediante una redirección en la parte del servid
     $usu2 = "usu2@aaa";
     $usu3 = "usu3@aaa";
     $usu4 = "usu4@aaa";
+    $users = array($usu1,$usu2,$usu3,$usu4);
     $pass1 = "a";
     $pass2 = "aa";
     $pass3 = "aaa";
     $pass4 = "aaaa";
+    $passw = array($pass1, $pass2, $pass3, $pass4);
     $err_ini = "bien";
-    if(($user == $usu1 && $pass == $pass1)||($user == $usu2 && $pass == $pass2)||($user == $usu3 && $pass == $pass3)||($user == $usu4 && $pass == $pass4)){
-        /*redirect a index normal, cambiar header mostrando el boton de perfil*/
-        header('Location: mi_perfil.php?user='.$user.'&pass='.$pass);
-        exit;
-    } else {
-        header("Location: index.php?err_ini");
-        /*mostrar mensaje de error*/
-        exit;
+
+    for ($i=0; $i < 4; $i++) {
+      if($users[$i] == $user && $passw[$i] == $pass) {
+          header('Location: mi_perfil.php?user='.$user.'&pass='.$pass);
+          exit;
+      } else {
+          header("Location: index.php?err_ini");
+          /*mostrar mensaje de error*/
+          exit;
+      }
     }
+
+
 
     /* Redirecciona a una página diferente que se encuentra en el directorio actual *
     $host = $_SERVER[’HTTP_HOST’];

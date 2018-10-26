@@ -48,49 +48,49 @@
             </tr>
         </table>
     </div>
-    <form action="album_respuesta.php">
-        <input type="text" placeholder="Autor" required>
+    <form action="album_respuesta.php" method="post">
+        <input type="text" name="Autor" id="autor" placeholder="Autor" required>
         <br>
-        <input type="text" placeholder="Title" required>
+        <input type="text" name="Title" placeholder="Title" required>
         <br>
-        <input type="text" placeholder="Description, dedicatory, ...">
+        <input type="text" name="Text. alt." placeholder="Description, dedicatory, ...">
         <br>
-        <input type="text" placeholder="email" required>
+        <input type="text" name="Email" placeholder="email" required>
         <br>
-        <input type="text" placeholder="Shipping direction" required>
+        <input type="text" name="Dir." placeholder="Shipping direction" required>
         <br>
-        <input type="text" placeholder="City" required>
+        <input type="text" name="City" placeholder="City" required>
         <br>
-        <input type="text" placeholder="C.P." required>
+        <input type="text" name="C.P." placeholder="C.P." required>
         <br>
-        <input type="text" placeholder="Tel.">
+        <input type="text" name="Telf." placeholder="Telf.">
         <br>
         <label>Cover color</label>
-        <input type="color" name="color_cover" value="#bbbbbb">
+        <input type="color" name="Color portada" value="#bbbbbb">
         <br>
-        <input type="number" name="num_copies" placeholder="Num. copies" step="1" min="1">
+        <input type="number" id="numcop" name="numcop" placeholder="Num. copies" step="1" min="1">
         <br>
         <label>Res. print</label>
-        <input type="range" name="resolucion" id="input_res" value="150" step="150" min="150" max="900"
+        <input type="range" name="res" id="res" value="150" step="150" min="150" max="900"
                onchange="document.getElementById('output_res').textContent = value">
         <output name="result" id="output_res">150</output>
         <br>
         <label>Album to print</label>
-        <select name="album_selector" id="album_selector" required>
+        <select name="Album a imprimir" id="album_selector" required>
             <option value="album1">Album1</option>
             <option value="album2">Album2</option>
             <option value="album3">Album3</option>
         </select>
         <br>
         <label>Reception date</label>
-        <input type="date" name="recep_date">
+        <input type="date" name="Fecha de entrega">
         <br>
         <label>Print type</label>
-        <label><input type="radio" name="color_bw" value="color"> Color</label>
-        <label><input type="radio" name="color_bw" value="bnw"> Black / White</label>
+        <label><input type="radio" id="color" name="Color or B/N" value="color"> Color</label>
+        <label><input type="radio" id="bn" name="Color or B/N" value="B/N"> Black / White</label>
         <br>
         <!--<input type="submit" name="enviar_form_impresion" value="Enviar">-->
-        <button type="submit" name="boton_solicitud_enviar">Send</button>
+        <button type="submit">Send</button>
     </form>
 </main>
 <?php

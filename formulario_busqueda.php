@@ -28,12 +28,12 @@
             <br>
             <label>
                 <span>Country:</span>
-                <input type="text" name="busqueda_avanzada[]" id="input_date" value="" placeholder="Country">
+                <input type="text" name="busqueda_avanzada[]" id="input_country" value="" placeholder="Country">
             </label>
             <br>
             <label>
                 <span>Date:</span>
-                <input type="date" id="input_country" value="">
+                <input type="date" name="busqueda_avanzada[]" id="input_date" value="">
             </label>
             <br><br>
             <button type="submit" id="Advance Search Button">Search</button>
