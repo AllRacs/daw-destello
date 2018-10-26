@@ -1,9 +1,12 @@
 /*Mi Perfil*/
-body > main {
+
+main > section > h3 {
+    margin-left: 1em;
 }
 
-main > h3 {
-    margin-left: 1em;
+body > main > section {
+    display: flex;
+    flex-direction: row;
 }
 
 #navegacion_perfil {
@@ -12,12 +15,12 @@ main > h3 {
     width: 16em;
 }
 
-body > main > div > label {
+body > main > section > div > label {
     margin: 0.5em;
     width: 15em;
 }
 
-body > main > div > label > button{
+body > main > section > div > label > button{
     padding: 0.75em;
     border-radius: 1px;
     border: 1px solid #666;
@@ -27,8 +30,14 @@ body > main > div > label > button{
     cursor:pointer;
 }
 
-body > main > div > label > button:hover{
+body > main > section > div > label > button:hover{
     background-color: #7caeff;
     color: black;
     box-shadow: 2px 2px grey;
+}
+
+@media screen and (max-width: 550px) {
+    body > main > section {
+        flex-direction: column;
+    }
 }

@@ -1,7 +1,6 @@
 <?php
     include("include/cabecera.inc");
-    include("include/header.inc");
-    include("include/nav.inc");
+    include("include/header_logged.inc");
 ?>
 <main class="main_album_respuesta">
     <h1>Datos de Registro</h1>

@@ -10,8 +10,7 @@
                 </form>
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
-                    <label for="check_login">Iniciar sesión</label>
-                    <a href="registro.php">Registrarse</a>
+                    <a href="mi_perfil.php?user&pass">Perfil</a>
                 </div>
             </div>
         </header>

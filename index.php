@@ -11,7 +11,9 @@
         /*if ($err_ini != "bien") {
             echo $err_ini;
         }*/
-        echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
+        if(isset($_GET["err_ini"])){
+            echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
+        }
     ?>
     <h1>Fotos, fotos y mas fotos</h1>
     <div class="container_posting">

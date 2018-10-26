@@ -20,13 +20,11 @@ Si el usuario está registrado, mediante una redirección en la parte del servid
     $err_ini = "bien";
     if(($user == $usu1 && $pass == $pass1)||($user == $usu2 && $pass == $pass2)||($user == $usu3 && $pass == $pass3)||($user == $usu4 && $pass == $pass4)){
         /*redirect a index normal, cambiar header mostrando el boton de perfil*/
-        header("Location: mi_perfil.php");
-        printf ($err_ini);
+        header('Location: mi_perfil.php?user='.$user.'&pass='.$pass);
         exit;
     } else {
-        header("Location: index.php");
+        header("Location: index.php?err_ini");
         /*mostrar mensaje de error*/
-        $err_ini = "mal";
         exit;
     }
 
