@@ -14,7 +14,7 @@
     color: white;
 }
 
-#user_status > label:hover, #user_status > a:hover,#user_status > label:focus, #user_status > a:focus {
+#user_status > label:hover, #user_status > a:hover,#user_status > label:focus, #user_status > a:focus, #user_status > button:hover, #user_status > button:focus {
     background-color: black;
     color: white;
     cursor: pointer;

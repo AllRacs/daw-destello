@@ -11,6 +11,7 @@
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
                     <a href="mi_perfil.php?user&pass">Perfil</a>
+                    <button type="button" id="button_salir" name="logout">Salir</button>
                 </div>
             </div>
         </header>
