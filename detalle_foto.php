@@ -3,8 +3,7 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    include("include/header.inc");
-    include("include/nav.inc");
+    include("include/header_logged.inc");
 ?>
 <style>
     <?php include 'CSS/main_indexANDdetalle_foto.css';?>
