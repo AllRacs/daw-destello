@@ -53,7 +53,6 @@
         <br>
         <input type="text" name="Title" placeholder="Title" required>
         <br>
-<<<<<<< HEAD
         <input type="text" name="Text" placeholder="Description, dedicatory, ...">
         <br>
         <input type="text" name="Email" placeholder="email" required>
@@ -68,22 +67,6 @@
         <br>
         <label>Cover color</label>
         <input type="color" name="Portada" value="#bbbbbb">
-=======
-        <input type="text" name="Text. alt." placeholder="Description, dedicatory, ...">
-        <br>
-        <input type="text" name="Email" placeholder="email" required>
-        <br>
-        <input type="text" name="Dir." placeholder="Shipping direction" required>
-        <br>
-        <input type="text" name="City" placeholder="City" required>
-        <br>
-        <input type="text" name="C.P." placeholder="C.P." required>
-        <br>
-        <input type="text" name="Telf." placeholder="Telf.">
-        <br>
-        <label>Cover color</label>
-        <input type="color" name="Color portada" value="#bbbbbb">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
         <br>
         <input type="number" id="numcop" name="numcop" placeholder="Num. copies" step="1" min="1">
         <br>
@@ -93,30 +76,19 @@
         <output name="result" id="output_res">150</output>
         <br>
         <label>Album to print</label>
-<<<<<<< HEAD
         <select name="Album" id="album_selector" required>
-=======
         <select name="Album a imprimir" id="album_selector" required>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
             <option value="album1">Album1</option>
             <option value="album2">Album2</option>
             <option value="album3">Album3</option>
         </select>
         <br>
         <label>Reception date</label>
-<<<<<<< HEAD
         <input type="date" name="Entrega">
         <br>
         <label>Print type</label>
         <label><input type="radio" id="color" name="Impresion" value="color"> Color</label>
         <label><input type="radio" id="bn" name="Impresion" value="B/N"> Black / White</label>
-=======
-        <input type="date" name="Fecha de entrega">
-        <br>
-        <label>Print type</label>
-        <label><input type="radio" id="color" name="Color or B/N" value="color"> Color</label>
-        <label><input type="radio" id="bn" name="Color or B/N" value="B/N"> Black / White</label>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
         <br>
         <!--<input type="submit" name="enviar_form_impresion" value="Enviar">-->
         <button type="submit">Send</button>
