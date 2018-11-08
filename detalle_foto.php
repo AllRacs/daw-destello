@@ -1,4 +1,7 @@
 <?php
+include("sesionstart.php");
+?>
+<?php
     include("include/cabecera.inc");
     include("include/header.inc");
     include("include/nav.inc");
@@ -8,7 +11,7 @@
 </style>
 <?php
 
-if($_SESSION["login"]){/*Si has iniciado sesion puedes ver esto*/
+if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
 ?>
 <!--Muestra toda la información sobre una foto seleccionada en la página anterior (foto, título, fecha, país, álbum de fotos y usuario al que pertenece)-->
 

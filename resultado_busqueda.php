@@ -1,4 +1,7 @@
 <?php
+include("sesionstart.php");
+?>
+<?php
     include("include/cabecera.inc");
     include("include/header.inc");
     include("include/nav.inc");
@@ -10,7 +13,7 @@
    <h1>Resultado de búsqueda:
        <?php
        /*PONERLO EN FORMA DE ETIQUEDAS, NO EN ENUMERACION*/
-   
+
         if(!empty($_GET['busqueda_top'])){
             echo htmlspecialchars($_GET['busqueda_top']);
         } else if(!empty($_GET)){
@@ -18,11 +21,11 @@
                 if(!empty($value)){
                         echo '<li>'.$key.': '.$value.'</li>';
                 }
-            
+
               /*foreach ( $_GET["busqueda_avanzada"] as $busqueda_avanzada ) {
              if(!empty($busqueda_avanzada)){
                     echo $busqueda_avanzada;
-                   
+
                     }
                  if(!($busqueda_avanzada === end($_GET["busqueda_avanzada"]))){
                     echo ", ";

@@ -1,5 +1,5 @@
 <?php
-
+    include("sesionstart.php");
     /*Post*/
     $user = $_POST["input_email"];
     $_SESSION["email"] = $user;

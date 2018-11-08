@@ -1,6 +1,3 @@
-<?php
-include("sesionstart.inc");
-?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
     <head>

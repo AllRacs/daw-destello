@@ -1,7 +1,9 @@
 <?php
+include("sesionstart.php");
+?>
+<?php
     include("include/cabecera.inc");
     include("include/header_logged.inc");
-
 ?>
 <style>
     <?php include 'CSS/main_mi_perfil.css';?>

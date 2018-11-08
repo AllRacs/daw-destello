@@ -1,6 +1,13 @@
 <?php
+include("sesionstart.php");
+?>
+<?php
     include("include/cabecera.inc");
-    include("include/header.inc");
+    if(isset($_SESSION["email"])){
+        include("include/header-logged.inc");
+    } else {
+        include("include/header.inc");
+    }
     include("include/nav.inc");
 ?>
 <style>

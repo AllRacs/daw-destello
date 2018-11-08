@@ -1,6 +1,11 @@
 TODO:
-focus, en login y registro title en los labels para
-accesibilidad.css (para el modo normal poner los titulos fuera de la
-pantalla left:-10000px), copiar el alter en todos los ficheros
-
-OP --> login
+- cambios de php 1
+- acceso con sesiones de PHP
+    - con cookies
+        - recordar usuario "checkbox"
+    - al entrar "campos de login" cambia a "mensaje welcome + [button:acceso/salir]"
+    - Cambiar header a header_logged
+    - ...
+- Pagina menú usuario registrado: se muestra un mensaje de Welcome somewho-USER
+- Pagina detalle foto: solo accesible si se ha iniciado sesión
+- Conservar el estilo seleccionado por el usuario
