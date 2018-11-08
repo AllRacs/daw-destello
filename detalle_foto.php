@@ -6,6 +6,7 @@
 <style>
     <?php include 'CSS/main_indexANDdetalle_foto.css';?>
 </style>
+<<<<<<< HEAD
 <?php
 
 if($_SESSION["login"]){/*Si has iniciado sesion puedes ver esto*/
@@ -32,6 +33,9 @@ if($_SESSION["login"]){/*Si has iniciado sesion puedes ver esto*/
            </div>
     </main>
 <!--
+=======
+<!--Muestra toda la información sobre una foto seleccionada en la página anterior (foto, título, fecha, país, álbum de fotos y usuario al que pertenece)-->
+>>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
 <main class="main_detalle_foto">
     <div class="p_box">
         <label class="title">Búho</label>
@@ -51,6 +55,7 @@ if($_SESSION["login"]){/*Si has iniciado sesion puedes ver esto*/
         <time datetime="2018-10-01">01/10/2018</time>
     </div>
 </main>
+<<<<<<< HEAD
 -->
 <?php
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
@@ -58,5 +63,8 @@ if($_SESSION["login"]){/*Si has iniciado sesion puedes ver esto*/
 }
 
 
+=======
+<?php
+>>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
     require_once("include/fin.inc");
 ?>
