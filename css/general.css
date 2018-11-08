@@ -64,7 +64,7 @@ body > header {
     cursor: pointer;
 }
 
-.top_header > form, #user_status > label, #user_status > a {
+.top_header > form, #user_status > label {
     border: 1px solid #5b5b5b;
     height: 1.3em;
     padding: 0.6em 1em;
@@ -74,23 +74,33 @@ body > header {
 
 }
 
-#user_status {
-    padding-top: 0.8em;
+#user_status > a {
+    border: 1px solid #5b5b5b;
+    height: 1.3em;
+    padding: 0.36em 1em;
+    border-radius: 0px;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+    text-decoration: none;
+    color: #000;
+}
+
+#user_status > button {
+    background: white;
+    border: 1px solid #5b5b5b;
+    padding: 0.4em 1em;
+    font-size: 1em;
 }
 
 #user_status > label, #user_status > a {
     background-color: #fff;
 }
 
-#user_status > label:hover, #user_status > a:hover {
+#user_status > label:hover, #user_status > a:hover, #user_status > button:hover {
     background-color: #a0a0a0;
     cursor: pointer;
 }
 
-#user_status > a {
-    text-decoration: none;
-    color: #000;
-}
 
 /* body > nav: tab for login */
 body > nav {
