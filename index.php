@@ -23,11 +23,7 @@
             <label class="ubicacion">Bosque</label>
             <br>
             <figure>
-<<<<<<< HEAD
                 <a href="detalle_foto.php?titulo=Buho&img=img/buho.jpg&alt=Buho&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-=======
-                <a href="detalle_foto.php">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
                     <img src="img/buho.jpg" alt="[foto_not_found]">
                 </a>
             </figure>
@@ -38,22 +34,13 @@
         </div>
 
         <div class="p_box">
-<<<<<<< HEAD
             <label class="title">cocodrilo</label>
-=======
-            <label class="title">Búho</label>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
             <span> - </span>
             <label class="ubicacion">Bosque</label>
             <br>
             <figure>
-<<<<<<< HEAD
                 <a href="detalle_foto.php?titulo=Cocodrilo&img=img/cocodrilo.jpg&alt=Cocodrilo&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
                     <img src="img/cocodrilo.jpg" alt="[foto_not_found]">
-=======
-                <a href="detalle_foto.php">
-                    <img src="img/buho.jpg" alt="[foto_not_found]">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
                 </a>
             </figure>
             <span class="icon-heart-empty"></span>
@@ -63,22 +50,13 @@
         </div>
 
         <div class="p_box">
-<<<<<<< HEAD
             <label class="title">elefante</label>
-=======
-            <label class="title">Búho</label>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
             <span> - </span>
             <label class="ubicacion">Bosque</label>
             <br>
             <figure>
-<<<<<<< HEAD
                 <a href="detalle_foto.php?titulo=elefante&img=img/elefante.jpg&alt=elefante&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
                     <img src="img/elefante.jpg" alt="[foto_not_found]">
-=======
-                <a href="detalle_foto.php">
-                    <img src="img/buho.jpg" alt="[foto_not_found]">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
                 </a>
             </figure>
             <span class="icon-heart-empty"></span>
@@ -88,22 +66,13 @@
         </div>
 
         <div class="p_box">
-<<<<<<< HEAD
             <label class="title">leon</label>
-=======
-            <label class="title">Búho</label>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
             <span> - </span>
             <label class="ubicacion">Bosque</label>
             <br>
             <figure>
-<<<<<<< HEAD
                 <a href="detalle_foto.php?titulo=leon&img=img/leon.jpg&alt=leon&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
                     <img src="img/leon.jpg" alt="[foto_not_found]">
-=======
-                <a href="detalle_foto.php">
-                    <img src="img/buho.jpg" alt="[foto_not_found]">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
                 </a>
             </figure>
             <span class="icon-heart-empty"></span>
@@ -113,22 +82,13 @@
         </div>
 
         <div class="p_box">
-<<<<<<< HEAD
             <label class="title">pantera</label>
-=======
-            <label class="title">Búho</label>
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
             <span> - </span>
             <label class="ubicacion">Bosque</label>
             <br>
             <figure>
-<<<<<<< HEAD
                 <a href="detalle_foto.php?titulo=pantera&img=img/pantera.jpg&alt=pantera&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
                     <img src="img/pantera.jpg" alt="[foto_not_found]">
-=======
-                <a href="detalle_foto.php">
-                    <img src="img/buho.jpg" alt="[foto_not_found]">
->>>>>>> e36228d17ee040223e5bf0cb42a221e882960639
                 </a>
             </figure>
             <span class="icon-heart-empty"></span>
