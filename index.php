@@ -8,6 +8,13 @@
     if(isset($last_con) && isset($_COOKIE[$last_con])){
         $_SESSION["last_con"] = $_COOKIE[$last_con];
     }
+    if(!isset($_SESSION["flag_home"])){
+        $_SESSION["flag_home"] = 0;
+    }
+    if(isset($_SESSION["email"]) && isset($_SESSION["flag_home"])){
+        setcookie("flag_home", $_SESSION["flag_home"], time() + (86400 * 90), "/"); // 86400 = 1 day
+    }
+
 
     include("include/cabecera.inc");
 
@@ -24,17 +31,14 @@
 </style>
 <main>
     <?php
-        /*if ($err_ini != "bien") {
-            echo $err_ini;
-        }*/
-        $flag_home = "flag_home";
+
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
-        } elseif (isset($_SESSION["email"]) && isset($_SESSION["last_con"])) {
+        } elseif (isset($_SESSION["email"]) && isset($_SESSION["last_con"]) && $_SESSION["flag_home"] == 0) {
             echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["email"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
-            /*$_SESSION["flag_home"] = false;
-            setcookie($flag_home, $_SESSION["flag_home"], time() + (86400 * 90), "/"); // 86400 = 1 day*/
+            $_SESSION["flag_home"]++;
         }
+
     ?>
     <h1>Fotos, fotos y mas fotos</h1>
     <div class="container_posting">

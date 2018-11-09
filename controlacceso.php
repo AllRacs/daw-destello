@@ -35,6 +35,8 @@
 
     }
 
+    $_SESSION["flag_home"] = 1;
+
 
     $flag = true;
     for ($i=0; $i < 4; $i++) {
