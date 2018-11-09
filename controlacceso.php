@@ -1,6 +1,25 @@
 <?php
     include("sesionstart.php");
     /*Post*/
+    if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
+        $flag = true;
+        for ($i=0; $i < 4; $i++) {
+          if($users[$i] == $_COOKIE["c_email"] && $passw[$i] == $_COOKIE["c_pass"]) {
+              $flag = false;
+              /*$host = $_SERVER['HTTP_HOST'];
+              $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');*/
+              $extra = 'mi_perfil.php';
+              /*header("Location: $host$uri/$extra?user=$user&pass=$pass");*/
+              header('Location: $extra?user='.$_COOKIE["c_email"].'&pass='.$_COOKIE["$c_pass"]);
+              exit;
+          }
+        }
+        if($flag) {
+            include("cerrar_sesion.php");
+            header("Location: index.php?err_ini");
+        }
+    }
+
     $user = $_POST["input_email"];
     $_SESSION["email"] = $user;
     $pass = $_POST["input_pass"];
