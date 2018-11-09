@@ -3,17 +3,12 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-<<<<<<< HEAD
     if(isset($_SESSION["email"])){
         include("include/header_logged.inc");
     } else {
         include("include/header.inc");
     }
     include("include/nav.inc");
-=======
-    include("include/header_logged.inc");
-?>
->>>>>>> f71c18040b72e1f7c77d9770f6f5e334dda225c9
 ?>
 <style>
     <?php include 'CSS/main_registro.css';?>
