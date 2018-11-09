@@ -24,14 +24,15 @@
     }
     $last_con = "last_con";
     $flag_home = "flag_home";
-    if (isset($remember) && $remember == "remember") {
+    if (isset($remember) && $remember == "on") {
         $c_email = $user;
         $c_pass = $pass;
-        setcookie($c_email, $c_pass, time() + (86400 * 90), "/"); // 86400 = 1 day
+        setcookie("c_email", $c_email, time() + (86400 * 90), "/"); // 86400 = 1 day
+        setcookie("c_pass", $c_pass, time() + (86400 * 90), "/"); // 86400 = 1 day
         $_SESSION["last_con"] = date("Y/m/d h:i");
         setcookie($last_con, $_SESSION["last_con"], time() + (86400 * 90), "/"); // 86400 = 1 day
-        /*$_SESSION["flag_home"] = true;
-        setcookie($flag_home, $_SESSION["flag_home"], time() + (86400 * 90), "/");*/ // 86400 = 1 day
+        setcookie("style", $_SESSION["style"], time() + (86400 * 90), "/"); // 86400 = 1 day
+
     }
 
 

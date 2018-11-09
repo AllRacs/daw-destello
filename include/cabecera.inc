@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto|Charmonman" rel="stylesheet">
         <link rel="stylesheet" href="css/general.css">
         <?php
-        if(isset($_SESSION["style"]) && $_SESSION["style"] == 1){
+        if((isset($_COOKIE["style"]) && $_COOKIE["style"] == 1) || (isset($_SESSION["style"]) && $_SESSION["style"] == 1)){
             echo <<<GG
             <link rel="stylesheet" title="estilo accesible" href="css/accesibilidad.css">
 GG;

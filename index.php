@@ -1,9 +1,9 @@
 <?php
     include("sesionstart.php");
 
-    if(isset($c_email) && isset($_COOKIE[$c_email])){
-        $_SESSION["email"] = $c_email;
-        $_SESSION["pass"] = $_COOKIE[$c_email];
+    if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
+        $_SESSION["email"] = $_COOKIE["c_email"];
+        $_SESSION["pass"] = $_COOKIE["c_pass"];
     }
     if(isset($last_con) && isset($_COOKIE[$last_con])){
         $_SESSION["last_con"] = $_COOKIE[$last_con];
@@ -27,7 +27,7 @@
         /*if ($err_ini != "bien") {
             echo $err_ini;
         }*/
-        //$flag_home = "flag_home";
+        $flag_home = "flag_home";
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
         } elseif (isset($_SESSION["email"]) && isset($_SESSION["last_con"])) {
