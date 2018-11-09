@@ -1,13 +1,22 @@
 <?php
-include("sesionstart.php");
-?>
-<?php
+    include("sesionstart.php");
+
+    if(isset($c_email) && isset($_COOKIE[$c_email])){
+        $_SESSION["email"] = $c_email;
+        $_SESSION["pass"] = $_COOKIE[$c_email];
+    }
+    if(isset($last_con) && isset($_COOKIE[$last_con])){
+        $_SESSION["last_con"] = $_COOKIE[$last_con];
+    }
+
     include("include/cabecera.inc");
+
     if(isset($_SESSION["email"])){
-        include("include/header-logged.inc");
+        include("include/header_logged.inc");
     } else {
         include("include/header.inc");
     }
+
     include("include/nav.inc");
 ?>
 <style>
@@ -18,8 +27,13 @@ include("sesionstart.php");
         /*if ($err_ini != "bien") {
             echo $err_ini;
         }*/
+        //$flag_home = "flag_home";
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
+        } elseif (isset($_SESSION["email"]) && isset($_SESSION["last_con"])) {
+            echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["email"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
+            /*$_SESSION["flag_home"] = false;
+            setcookie($flag_home, $_SESSION["flag_home"], time() + (86400 * 90), "/"); // 86400 = 1 day*/
         }
     ?>
     <h1>Fotos, fotos y mas fotos</h1>

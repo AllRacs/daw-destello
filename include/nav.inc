@@ -8,6 +8,9 @@
         <input type="password" name="input_pass" value="" placeholder="Contrase&ntilde;a" required>
         <br><!-- Fin campos form -->
         <a href="#">He oldivadado la contrase&ntilde;a</a>
+        <br>
+        <input type="checkbox" name="remember" id="remember" value="remember">
+        <label for="remember">Remember me</label>
         <input type="submit" name="input_submit" value="Conectar">
     </form>
 </nav>

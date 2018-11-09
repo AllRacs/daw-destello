@@ -3,7 +3,11 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    include("include/header.inc");
+    if(isset($_SESSION["email"])){
+        include("include/header_logged.inc");
+    } else {
+        include("include/header.inc");
+    }
     include("include/nav.inc");
 ?>
 <style>
@@ -80,7 +84,6 @@ include("sesionstart.php");
         <br>
         <label>Album to print</label>
         <select name="Album" id="album_selector" required>
-        <select name="Album a imprimir" id="album_selector" required>
             <option value="album1">Album1</option>
             <option value="album2">Album2</option>
             <option value="album3">Album3</option>

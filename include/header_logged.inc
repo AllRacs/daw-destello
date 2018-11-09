@@ -10,7 +10,8 @@
                 </form>
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
-                    <a href="mi_perfil.php?user&pass">Perfil</a>
+
+                    <?php echo '<a href="mi_perfil.php">'.$_SESSION["email"].'</a>'; ?>
                     <a href="cerrar_sesion.php">Salir</a>
                 </div>
             </div>

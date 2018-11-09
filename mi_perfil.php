@@ -31,8 +31,8 @@ END;
         </div>
         <div id="container_posting_perfil">
             <?php
-            if(isset($_GET["datos"])){
-                echo '<p>User: '.$_GET["user"].'</p><p>Pass: '.$_GET["pass"].'</p>';
+            if(isset($_SESSION["email"])){
+                echo '<p>User: '.$_SESSION["email"].'</p>';
             } else {
                 echo '<p>Se muestran todas las fotos del user...</p>';
             }

@@ -14,36 +14,48 @@
     $pass3 = "aaa";
     $pass4 = "aaaa";
     $passw = array($pass1, $pass2, $pass3, $pass4);
-    $err_ini = "bien";
 
-
-    $user_login = "user";
-    $user_email = $user;
-    setcookie($user_login, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day
-
-    if(!isset($_COOKIE[$user_login])) {
-        echo "Cookie named '" . $user_login . "' is not set!";
-    } else {
-        echo "Cookie '" . $user_login . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$user_login];
+    $_SESSION["style"] = -1;
+    if($user == $usu1) {
+        $_SESSION["style"] = 1;
+    }
+    if(isset($_POST["remember"])){
+        $remember = $_POST["remember"];
+    }
+    $last_con = "last_con";
+    $flag_home = "flag_home";
+    if (isset($remember) && $remember == "remember") {
+        $c_email = $user;
+        $c_pass = $pass;
+        setcookie($c_email, $c_pass, time() + (86400 * 90), "/"); // 86400 = 1 day
+        $_SESSION["last_con"] = date("Y/m/d h:i");
+        setcookie($last_con, $_SESSION["last_con"], time() + (86400 * 90), "/"); // 86400 = 1 day
+        /*$_SESSION["flag_home"] = true;
+        setcookie($flag_home, $_SESSION["flag_home"], time() + (86400 * 90), "/");*/ // 86400 = 1 day
     }
 
+
+    $flag = true;
     for ($i=0; $i < 4; $i++) {
       if($users[$i] == $user && $passw[$i] == $pass) {
-          header('Location: mi_perfil.php?user='.$user.'&pass='.$pass);
-          exit;
-      } else {
-          header("Location: index.php?err_ini");
-          /*mostrar mensaje de error*/
+          $flag = false;
+          /*$host = $_SERVER['HTTP_HOST'];
+          $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');*/
+          $extra = 'mi_perfil.php';
+          /*header("Location: $host$uri/$extra?user=$user&pass=$pass");*/
+          header("Location: $extra?user=$user&pass=$pass");
           exit;
       }
     }
-
+    if($flag) {
+        include("cerrar_sesion.php");
+        header("Location: index.php?err_ini");
+    }
 
 
     /* Redirecciona a una página diferente que se encuentra en el directorio actual *
-    $host = $_SERVER[’HTTP_HOST’];
-    $uri  = rtrim(dirname($_SERVER[’PHP_SELF’]), ’/\\’);
-    $extra = ’index.php’;
+    $host = $_SERVER['HTTP_HOST'];
+    $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'index.php';
     header("Location: $host$uri/$extra");*/
  ?>
