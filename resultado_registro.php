@@ -3,7 +3,11 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    include("include/header_logged.inc");
+    if(isset($_SESSION["email"])){
+        include("include/header_logged.inc");
+    } else {
+        include("include/header.inc");
+    }
 ?>
 <main class="main_album_respuesta">
     <h1>Datos de Registro</h1>

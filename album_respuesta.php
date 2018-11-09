@@ -13,6 +13,10 @@ include("sesionstart.php");
 <style>
     <?php include 'CSS/main_album_respuesta.css';?>
 </style>
+<?php
+
+if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
+?>
 <main class="main_album_respuesta">
     <h3>Confirmaci&oacute;n impresi&oacute;n &aacute;lbum</h3>
     <section>
@@ -60,5 +64,10 @@ include("sesionstart.php");
 
 </main>
 <?php
+}else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
+    echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
+}
+
+
     require_once("include/fin.inc");
 ?>

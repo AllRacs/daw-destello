@@ -13,6 +13,10 @@ include("sesionstart.php");
 <style>
     <?php include 'CSS/main_registro.css';?>
 </style>
+<?php
+
+if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
+?>
 <main>
         <h1>New album</h1>
 
@@ -36,5 +40,10 @@ include("sesionstart.php");
 
 </main>
 <?php
+}else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
+    echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
+}
+
+
     require_once("include/fin.inc");
 ?>

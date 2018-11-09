@@ -1,20 +1,15 @@
 <?php
     include("sesionstart.php");
-
+    if(!isset($_SESSION["email"]) && isset($_COOKIE["c_email"])){
+        $_SESSION["flag_home"] = 0;
+    }
     if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
         $_SESSION["email"] = $_COOKIE["c_email"];
         $_SESSION["pass"] = $_COOKIE["c_pass"];
     }
-    if(isset($last_con) && isset($_COOKIE[$last_con])){
-        $_SESSION["last_con"] = $_COOKIE[$last_con];
+    if(isset($_COOKIE["last_con"])){
+        $_SESSION["last_con"] = $_COOKIE["last_con"];
     }
-    if(!isset($_SESSION["flag_home"])){
-        $_SESSION["flag_home"] = 0;
-    }
-    if(isset($_SESSION["email"]) && isset($_SESSION["flag_home"])){
-        setcookie("flag_home", $_SESSION["flag_home"], time() + (86400 * 90), "/"); // 86400 = 1 day
-    }
-
 
     include("include/cabecera.inc");
 
@@ -34,7 +29,7 @@
 
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
-        } elseif (isset($_SESSION["email"]) && isset($_SESSION["last_con"]) && $_SESSION["flag_home"] == 0) {
+        } elseif (isset($_SESSION["email"]) && $_SESSION["flag_home"] == 0 && isset($_SESSION["last_con"])) {
             echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["email"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
             $_SESSION["flag_home"]++;
         }
@@ -57,7 +52,6 @@
             <label>Harry Potter</label>
             <time datetime="2018-10-01">01/10/2018</time>
         </div>
-
         <div class="p_box">
             <label class="title">cocodrilo</label>
             <span> - </span>

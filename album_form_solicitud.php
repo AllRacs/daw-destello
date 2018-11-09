@@ -13,6 +13,10 @@ include("sesionstart.php");
 <style>
     <?php include 'CSS/main_album_form_solicitud.css';?>
 </style>
+<?php
+
+if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
+?>
 <main class="main_form_solicitud">
     <h2>Solicitud impresi&oacute;n &aacute;lbum</h2>
     <label for="check_info">
@@ -101,5 +105,10 @@ include("sesionstart.php");
     </form>
 </main>
 <?php
+}else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
+    echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
+}
+
+
     require_once("include/fin.inc");
 ?>

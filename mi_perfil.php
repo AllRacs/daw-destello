@@ -3,11 +3,19 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    include("include/header_logged.inc");
+    if(isset($_SESSION["email"])){
+        include("include/header_logged.inc");
+    } else {
+        include("include/header.inc");
+    }
 ?>
 <style>
     <?php include 'CSS/main_mi_perfil.css';?>
 </style>
+<?php
+
+if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
+?>
 <main>
     <h3>Mi perfil</h3>
     <section>
@@ -41,5 +49,10 @@ END;
     </section>
  </main>
  <?php
+ }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
+     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
+ }
+
+
      require_once("include/fin.inc");
  ?>
