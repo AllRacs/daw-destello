@@ -10,6 +10,7 @@ include("sesionstart.php");
     }
     include("include/nav.inc");
 ?>
+
 <style>
     <?php include 'CSS/main_album_form_solicitud.css';?>
 </style>
