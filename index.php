@@ -1,19 +1,16 @@
 <?php
     include("sesionstart.php");
-    if(!isset($_SESSION["email"]) && isset($_COOKIE["c_email"])){
+
+    if(isset($_COOKIE["c_email"]) && isset($_SESSION["flag_home"]) && $_SESSION["flag_home"] != 0){       //first acces when remembered
         $_SESSION["flag_home"] = 0;
     }
-    if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
-        $_SESSION["email"] = $_COOKIE["c_email"];
-        $_SESSION["pass"] = $_COOKIE["c_pass"];
-    }
-    if(isset($_COOKIE["last_con"])){
+    if(isset($_COOKIE["last_con"])){                                    //check if there is a last conection
         $_SESSION["last_con"] = $_COOKIE["last_con"];
     }
 
     include("include/cabecera.inc");
 
-    if(isset($_SESSION["email"])){
+    if(isset($_SESSION["email"])){                                      //choose header if loged in or not
         include("include/header_logged.inc");
     } else {
         include("include/header.inc");
