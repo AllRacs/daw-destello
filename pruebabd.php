@@ -10,4 +10,53 @@ if($mysqli->connect_errno) {
   echo '</p>';
   exit;
 }
+
+// Ejecuta una sentencia SQL
+$sentencia = 'SELECT * FROM Usuarios';
+if(!($resultado = $mysqli->query($sentencia))) {
+  echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+  echo '</p>';
+  exit;
+}
+echo 'forma 1';
+echo '<table><tr>';
+echo '<th>IdUsuario</th><th>NomUsuario</th><th>Email</th>';
+echo '</tr>';
+// Recorre el resultado y lo muestra en forma de tabla HTML
+while($fila = $resultado->fetch_assoc()) {
+  echo '<tr>';
+  echo '<td>' . $fila['IdUsuario'] . '</td>';
+  echo '<td>' . $fila['NomUsuario'] . '</td>';
+  echo '<td>' . $fila['Email'] . '</td>';
+  echo '</tr>';
+}
+echo '</table>';
+
+// Ejecuta una sentencia SQL
+$sentencia = 'SELECT * FROM Usuarios';
+if(!($resultado = $mysqli->query($sentencia))) {
+  echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+  echo '</p>';
+  exit;
+}
+echo 'forma 2';
+echo '<table><tr>';
+echo '<th>IdUsuario</th><th>NomUsuario</th><th>Email</th>';
+echo '</tr>';
+// Recorre el resultado y lo muestra en forma de tabla HTML
+while($fila = $resultado->fetch_object()) {
+  echo "<tr>";
+  echo "<td>$fila->IdUsuario</td>";
+  echo "<td>$fila->NomUsuario</td>";
+  echo "<td>$fila->Email</td>";
+  echo "</tr>";
+}
+echo '</table>';
+
+// Libera la memoria ocupada por el resultado
+$resultado->close();
+// Cierra la conexión
+$mysqli->close();
+
+
  ?>
