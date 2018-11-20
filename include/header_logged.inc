@@ -11,7 +11,7 @@
                 <div id="user_status">
                     <!-- Botones segun estado sesion usuario -->
 
-                    <?php echo '<a href="mi_perfil.php">'.$_SESSION["email"].'</a>'; ?>
+                    <?php echo '<a href="mi_perfil.php">'.$_SESSION["user"].'</a>'; ?>
                     <a href="cerrar_sesion.php">Salir</a>
                 </div>
             </div>

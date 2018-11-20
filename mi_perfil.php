@@ -3,7 +3,7 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    if(isset($_SESSION["email"])){
+    if(isset($_SESSION["user"])){
         include("include/header_logged.inc");
     } else {
         include("include/header.inc");
@@ -14,7 +14,7 @@ include("sesionstart.php");
 </style>
 <?php
 
-if(isset($_SESSION["email"])){/*Si has iniciado sesion puedes ver esto*/
+if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 ?>
 <main>
     <h3>Mi perfil</h3>
@@ -39,8 +39,8 @@ END;
         </div>
         <div id="container_posting_perfil">
             <?php
-            if(isset($_SESSION["email"])){
-                echo '<p>User: '.$_SESSION["email"].'</p>';
+            if(isset($_SESSION["user"])){
+                echo '<p>User: '.$_SESSION["user"].'</p>';
             } else {
                 echo '<p>Se muestran todas las fotos del user...</p>';
             }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user = $_SESSION["email"];
+$user = $_SESSION["user"];
 $user_login = "user";
 $user_email = $user;
 setcookie("c_email", $c_email, time() - (86400 * 90), "/"); // 86400 = 1 day

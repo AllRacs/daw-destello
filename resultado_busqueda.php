@@ -3,7 +3,7 @@ include("sesionstart.php");
 ?>
 <?php
     include("include/cabecera.inc");
-    if(isset($_SESSION["email"])){
+    if(isset($_SESSION["user"])){
         include("include/header_logged.inc");
     } else {
         include("include/header.inc");

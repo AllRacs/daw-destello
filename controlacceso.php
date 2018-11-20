@@ -1,8 +1,6 @@
 <?php
     include("sesionstart.php");
 
-    $_SESSION["firstaccess"] = 1;
-
     $usu1 = "usu1@aaa";
     $usu2 = "usu2@aaa";
     $usu3 = "usu3@aaa";
@@ -18,7 +16,7 @@
         $flag = true;
         for ($i=0; $i < 4; $i++) {
           if($users[$i] == $_COOKIE["c_email"] && $passw[$i] == $_COOKIE["c_pass"]) {
-              $_SESSION["email"] = $_COOKIE["c_email"];
+              $_SESSION["user"] = $_COOKIE["c_email"];
               $_SESSION["pass"] = $_COOKIE["c_pass"];
               $flag = false;
               /*$host = $_SERVER['HTTP_HOST'];
@@ -36,15 +34,19 @@
     }
     elseif(isset($_POST["input_email"]) && isset($_POST["input_pass"])){   /*Post*/
         $user = $_POST["input_email"];
-        $_SESSION["email"] = $user;
+        $_SESSION["user"] = $user;
+
         $pass = $_POST["input_pass"];
+
         $_SESSION["style"] = -1;
         if($user == $usu1) {
             $_SESSION["style"] = 1;
         }
+
         if(isset($_POST["remember"])){
             $remember = $_POST["remember"];
         }
+
         if (isset($remember) && $remember == "on") {
             $c_email = $user;
             $c_pass = $pass;
@@ -57,7 +59,7 @@
         }
     }
 
-    $_SESSION["flag_home"] = 1;
+    //$_SESSION["flag_home"] = 1;
 
 
     $flag = true;

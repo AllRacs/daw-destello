@@ -1,16 +1,16 @@
 <?php
     include("sesionstart.php");
 
-    if(isset($_COOKIE["c_email"]) && isset($_SESSION["flag_home"]) && $_SESSION["flag_home"] != 0){       //first acces when remembered
+    /*if(isset($_COOKIE["c_email"]) && isset($_SESSION["flag_home"]) && $_SESSION["flag_home"] != 0){       //first acces when remembered
         $_SESSION["flag_home"] = 0;
-    }
+    }*/
     if(isset($_COOKIE["last_con"])){                                    //check if there is a last conection
         $_SESSION["last_con"] = $_COOKIE["last_con"];
     }
 
     include("include/cabecera.inc");
 
-    if(isset($_SESSION["email"])){                                      //choose header if loged in or not
+    if(isset($_SESSION["user"])){                                      //choose header if loged in or not
         include("include/header_logged.inc");
     } else {
         include("include/header.inc");
@@ -26,8 +26,8 @@
 
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
-        } elseif (isset($_SESSION["email"]) && $_SESSION["flag_home"] == 0 && isset($_SESSION["last_con"])) {
-            echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["email"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
+        } elseif (isset($_SESSION["user"]) && $_SESSION["flag_home"] == 0 && isset($_SESSION["last_con"])) {
+            echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["user"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
             $_SESSION["flag_home"]++;
         }
 
