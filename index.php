@@ -26,7 +26,7 @@
 
         if(isset($_GET["err_ini"])){
             echo '<p style="color:red">Error: inicio sesion incorrecto</p>';
-        } elseif (isset($_SESSION["user"]) && $_SESSION["flag_home"] == 0 && isset($_SESSION["last_con"])) {
+        } elseif (isset($_SESSION["user"]) && isset($_SESSION["flag_home"]) && $_SESSION["flag_home"] == 0 && isset($_SESSION["last_con"])) {
             echo '<p style="color:black">Bienvenido de nuevo '.$_SESSION["user"].', tú última conexion es '.$_SESSION["last_con"].'</p>';
             $_SESSION["flag_home"]++;
         }

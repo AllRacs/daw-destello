@@ -5,7 +5,7 @@ $mysqli = @new mysqli(
         'root',    // El usuario
         '',          // La contraseña
         'pibd'); // La base de datos
-
+/*
 $usu1 = "usu1@aaa";
 $usu2 = "usu2@aaa";
 $usu3 = "usu3@aaa";
@@ -16,7 +16,7 @@ $pass2 = "aa";
 $pass3 = "aaa";
 $pass4 = "aaaa";
 $passw = array($pass1, $pass2, $pass3, $pass4);
-
+*/
 $flag_fin = false;
 if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
     /*for ($i=0; $i < 4; $i++) {
