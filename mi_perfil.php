@@ -31,9 +31,10 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 echo <<<END
                     <label><button onclick="location.href='mi_perfil.php'" type="button">Mis Datos</button></label>
                     <label><button onclick="location.href='configuracion.php'" type="button">Mis Datos</button></label>
-                    <label><button onclick="location.href=#" type="button">Mis Álbumes</button></label>
+                    <label><button onclick="location.href=mis_albumes.php" type="button">Mis Álbumes</button></label>
                     <label><button onclick="location.href='nuevo_album.php'" type="button">Crear Album</button></label>
                     <label><button onclick="location.href='album_form_solicitud.php'" type="button">Solicitar Impresión de Album</button></label>
+                    <label><button onclick="location.href='anyadir_foto_album.php'" type="button">Añadir Foto a Album</button></label>
                     <label><button onclick="location.href=baja_usuario.php" type="button">Darme de Baja</button></label>
 END;
             ?>
@@ -53,7 +54,5 @@ END;
  }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
      echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
  }
-
-
      require_once("include/fin.inc");
  ?>

@@ -16,6 +16,8 @@ include("sesionstart.php");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
+
+
   $sentencia = 'SELECT NomPais FROM Paises';
   if(!($pais = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -88,17 +90,23 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                     ';
                   }
                   ?>
-                </label>
+                </select>
+            </label>
             <br><br>
             <button type="submit" id="Upload_button">Upload</button>
             <!--End Form-->
         </form>
     </section>
 </main>
-
 <?php
+// Libera la memoria ocupada por el resultado
+$pais->close();
+$album->close();
+// Cierra la conexión
+$mysqli->close();
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }
+
     require_once("include/fin.inc");
 ?>
