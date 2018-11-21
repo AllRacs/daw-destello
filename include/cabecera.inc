@@ -25,4 +25,4 @@ GG;
         <link rel="stylesheet" href="css/main_indexANDdetalle_foto.css">
         <link rel="stylesheet" href="css/fontello.css">
     </head>
-    <?php print ($style["Fichero"]); ?>
+    <?php //print ($style["Fichero"]); ?>
