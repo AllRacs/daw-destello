@@ -29,7 +29,8 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 $pass = $_GET["pass"];
             }
                 echo <<<END
-                    <label><button onclick="location.href='mi_perfil.php?datos&user=$user&pass=$pass'" type="button">Mis Datos</button></label>
+                    <label><button onclick="location.href='mi_perfil.php'" type="button">Mis Datos</button></label>
+                    <label><button onclick="location.href='configuracion.php'" type="button">Mis Datos</button></label>
                     <label><button onclick="location.href=#" type="button">Mis Álbumes</button></label>
                     <label><button onclick="location.href='nuevo_album.php'" type="button">Crear Album</button></label>
                     <label><button onclick="location.href='album_form_solicitud.php'" type="button">Solicitar Impresión de Album</button></label>
