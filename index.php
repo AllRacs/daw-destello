@@ -37,7 +37,8 @@
         <?php
 
         //consusta a bd
-        $sentencia = 'SELECT * FROM fotos f JOIN paises p where f.Pais = p.IdPais ORDER BY FRegistro DESC';
+        $sentencia = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
+        WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais ORDER BY f.FRegistro DESC';
         if(!($resultado = $mysqli->query($sentencia))) {
           echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
           echo '</p>';
@@ -45,7 +46,7 @@
         }
         //select > option para cada css
 
-
+        $cont = 0;
         while($fila = $resultado->fetch_object()) {
             echo <<<ddd
             <div class="p_box">
@@ -60,15 +61,18 @@
             </figure>
             <span class="icon-heart-empty"></span>
             <span class="icon-comment-empty"></span>
-            <label>¿FOTO<->USER?</label>
+            <label>$fila->NomUsuario</label>
             <time datetime="2018-10-01">$fila->FRegistro</time>
             </div>
 ddd;
+            $cont++;
+            if($cont == 5) {
+                break;
+            }
         }
         ?>
 
-
-        <div class="p_box">
+        <!-- <div class="p_box">
             <label class="title">Búho</label>
             <span> - </span>
             <label class="ubicacion">Bosque</label>
@@ -145,7 +149,7 @@ ddd;
             <span class="icon-comment-empty"></span>
             <label>Harry Potter</label>
             <time datetime="2018-10-01">01/10/2018</time>
-        </div>
+        </div> -->
     </div>
 </main>
 <?php
