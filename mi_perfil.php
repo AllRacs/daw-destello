@@ -51,11 +51,17 @@ END;
 
                 $fila = $resultado->fetch_object();
                 echo '<p>Nombre: '.$fila->NomUsuario.'</p>';
-                //Render image
-                /*DATA IMAGE MIRAR PH1 DE 16-17*/
-                $foto = imagejpeg($fila->Foto);
+                echo '<img src="" alt="[img not found]">';
                 echo '<p>Email: '.$fila->Email.'</p>';
                 echo '<p>Nacimiento: '.$fila->FNacimiento.'</p>';
+                if ($fila->Sexo == 1) {
+                    $sexo = 'Masculino';
+                } elseif ($fila->Sexo == 2) {
+                    $sexo = 'Femenino';
+                } elseif ($fila->Sexo == 3) {
+                    $sexo = 'Otro';
+                }
+                echo '<p>Sexo: '.$sexo.'</p>';
                 echo '<p>Ciudad: '.$fila->Ciudad.'</p>';
 
                 $sentencia = 'SELECT NomPais FROM usuarios u, paises p where p.IdPais = u.Pais and u.Email like "'.$_SESSION["user"].'"';

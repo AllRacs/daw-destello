@@ -53,13 +53,8 @@ if(isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"])){
                 $_SESSION["flag_home"] = 0;
             if(!isset($_SESSION["last_con"]))
                 $_SESSION["last_con"] = $_COOKIE["last_con"];
-            /*print("COOKIE ACEPTADA<br>");
-            print($_SESSION["flag_home"].'<br>');
-            print($_SESSION["user"].'<br>');
-            print($_SESSION["last_con"].'<br>');*/
             break;
         }
-
     }
 }
 
@@ -67,7 +62,6 @@ if(!$flag_fin && isset($_COOKIE["c_email"]) && isset($_COOKIE["c_pass"]) && isse
     setcookie("c_email", $_COOKIE["c_email"], time() - (86400 * 90), "/"); // 86400 = 1 day
     setcookie("c_pass", $_COOKIE["c_pass"], time() - (86400 * 90), "/"); // 86400 = 1 day
     setcookie("last_con", $_COOKIE["last_con"], time() - (86400 * 90), "/"); // 86400 = 1 day
-    setcookie("style", $_COOKIE["style"], time() - (86400 * 90), "/"); // 86400 = 1 day
     //setcookie("flag_home", $_SESSION["flag_home"], time() - (86400 * 90), "/"); // 86400 = 1 day
 
     session_unset();
