@@ -34,6 +34,40 @@
     ?>
     <h1>Fotos, fotos y mas fotos</h1>
     <div class="container_posting">
+        <?php
+
+        //consusta a bd
+        $sentencia = 'SELECT * FROM fotos f JOIN paises p where f.Pais = p.IdPais ORDER BY FRegistro DESC';
+        if(!($resultado = $mysqli->query($sentencia))) {
+          echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+          echo '</p>';
+          exit;
+        }
+        //select > option para cada css
+
+
+        while($fila = $resultado->fetch_object()) {
+            echo <<<ddd
+            <div class="p_box">
+            <label class="title">$fila->Titulo</label>
+            <span> - </span>
+            <label class="ubicacion">$fila->NomPais</label>
+            <br>
+            <figure>
+                <a href="detalle_foto.php?titulo=Buho&img=img/buho.jpg&alt=Buho&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
+                    <img src="img/buho.jpg" alt="[foto_not_found]">
+                </a>
+            </figure>
+            <span class="icon-heart-empty"></span>
+            <span class="icon-comment-empty"></span>
+            <label>¿FOTO<->USER?</label>
+            <time datetime="2018-10-01">$fila->FRegistro</time>
+            </div>
+ddd;
+        }
+        ?>
+
+
         <div class="p_box">
             <label class="title">Búho</label>
             <span> - </span>
