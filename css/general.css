@@ -74,6 +74,10 @@ body > header {
 
 }
 
+#user_status {
+    margin-top: 0.8em;
+}
+
 #user_status > a {
     border: 1px solid #5b5b5b;
     height: 1.3em;
@@ -92,6 +96,10 @@ body > header {
     font-size: 1em;
 }
 
+#user_status > label {
+    padding: 0.4em;
+}
+
 #user_status > label, #user_status > a {
     background-color: #fff;
 }
@@ -101,6 +109,15 @@ body > header {
     cursor: pointer;
 }
 
+
+/*Contenido de perfil*/
+#container_posting_perfil {
+    padding-left: 1em;
+}
+
+h3 {
+    text-align: center;
+}
 
 /* body > nav: tab for login */
 body > nav {
@@ -171,8 +188,13 @@ body > footer {
         display: flex;
         flex-direction: column;
         padding-bottom: 2em;
+        padding-left: 0.2em;
         align-items: center;
         width: 32em;
+    }
+
+    #user_status {
+        margin-top: 0.5em;
     }
 
     body > nav {
