@@ -27,7 +27,7 @@ include("sesionstart.php");
                 if(!empty($value)){
                         echo '<li>'.$key.': '.$value.'</li>';
 
-                        $sentencia = 'SELECT titulo, Descripcion, Fecha, Pais, Fichero, Alternativo, Album, paises.NomPais
+                    /*    $sentencia = 'SELECT titulo, Descripcion, Fecha, Pais, Fichero, Alternativo, Album, paises.NomPais
                         FROM Fotos, Paises
                         WHERE paises.NomPais LIKE ("'.$_GET["Country"].'") AND titulo LIKE ("'.$_GET["Title"].'")
                         OR titulo LIKE ("'.$_GET["Title"].'")
@@ -39,7 +39,7 @@ include("sesionstart.php");
                           exit;
                         }else{
                           //Pruebas
-                        }
+                      }*/
                 }
 
 
