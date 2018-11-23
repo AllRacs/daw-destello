@@ -13,10 +13,6 @@ include("sesionstart.php");
 
 <style>
     <?php include 'CSS/main_album_form_solicitud.css';?>
-    img{
-      width: 300px;
-      height: 300px;
-    }
 </style>
 <?php
 
@@ -33,24 +29,26 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     //Pruebas
   }
 
-  echo '<table><tr>';
+  echo '<main class="main_album"><table><tr>';
   echo '<th>Foto</th><th>Nombre</th><th>Descripcion</th><th>Fecha</th><th>Pais</th>';
   echo '</tr>';
   // Recorre el resultado y lo muestra en forma de tabla HTML
   while($fila = $misalbumes->fetch_assoc()) {
     echo '<tr>';
-    echo '<td><figure >
-          <a href="detalle_foto.php?titulo=' . $fila['Titulo'] . '&img=img/' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
-          <img src="img/' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
-          </a>
-          </td></figure>';
-    echo '<td>' . $fila['Titulo'] . '</td>';
-    echo '<td>' . $fila['Descripcion'] . '</td>';
-    echo '<td>' . $fila['Fecha'] . '</td>';
-    echo '<td>' . $fila['NomPais'] . '</td>';
+    echo '<td>
+              <figure>
+                  <a href="detalle_foto.php?titulo='.$fila['Titulo'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$_SESSION['user'].'">
+                      <img src="'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'">
+                  </a>
+              </figure>
+          </td>';
+    echo '<td>'.$fila['Titulo'].'</td>';
+    echo '<td>'.$fila['Descripcion'].'</td>';
+    echo '<td>'.$fila['Fecha'].'</td>';
+    echo '<td>'.$fila['NomPais'].'</td>';
     echo '</tr>';
   }
-  echo '</table>';
+  echo '</table></main>';
 
 ?>
 

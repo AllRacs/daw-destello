@@ -61,6 +61,11 @@ main > form > button {
     padding: 0.6em;
 }
 
+/*album.php*/
+.main_album  img {
+    width: 6em;
+}
+
 @media screen and (max-width: 780px) {
     h2 + label {
         width: 26.6em!important;
