@@ -18,7 +18,7 @@ include("sesionstart.php");
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   $titulo = htmlspecialchars($_GET['titulo']);
-  $sentencia = 'SELECT f.Titulo as titulofoto, a.Descripcion, u.NomUsuario, f.Fecha, a.Titulo as tituloalbum, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
+  $sentencia = 'SELECT f.Titulo as titulofoto, a.Descripcion, u.NomUsuario, f.IdFoto, f.Fecha, a.Titulo as tituloalbum, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
   FROM fotos f, albumes a, paises p, usuarios u
   WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais AND (a.Titulo  LIKE "'.$titulo.'") ORDER BY f.fecha ASC';
   if(!($misalbumes = $mysqli->query($sentencia))) {
@@ -45,11 +45,11 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         }
         echo '<tr>';
         echo '<td>
-                  <figure>
-                      <a href="detalle_foto.php?titulo='.$fila['titulofoto'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$fila['NomUsuario'].'">
-                          <img src="'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'">
-                      </a>
-                  </figure>
+        <figure>
+            <a href="detalle_foto.php?id='.$fila["IdFoto"].'">
+                <img src="'.$fila["Fichero"].'" alt="[foto_not_found]">
+            </a>
+        </figure>
               </td>';
         echo '<td>'.$fila['tituloalbum'].'</td>';
         echo '<td>'.$fila['Fecha'].'</td>';
