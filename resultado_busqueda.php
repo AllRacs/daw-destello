@@ -26,7 +26,22 @@ include("sesionstart.php");
             foreach ($_GET as $key => $value) {
                 if(!empty($value)){
                         echo '<li>'.$key.': '.$value.'</li>';
+
+                        $sentencia = 'SELECT titulo, Descripcion, Fecha, Pais, Fichero, Alternativo, Album, paises.NomPais
+                        FROM Fotos, Paises
+                        WHERE paises.NomPais LIKE ("'.$_GET["Country"].'") AND titulo LIKE ("'.$_GET["Title"].'")
+                        OR titulo LIKE ("'.$_GET["Title"].'")
+                        OR paises.NomPais LIKE ("'.$_GET["Country"].'")
+                        ';
+                        if(!($buscar = $mysqli->query($sentencia))) {
+                          echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+                          echo '</p>';
+                          exit;
+                        }else{
+                          //Pruebas
+                        }
                 }
+
 
               /*foreach ( $_GET["busqueda_avanzada"] as $busqueda_avanzada ) {
              if(!empty($busqueda_avanzada)){
@@ -40,88 +55,33 @@ include("sesionstart.php");
             }
 
         }
+
+
+
+        // Recorre el resultado y lo muestra en forma de tabla HTML
+        while($fila = $buscar->fetch_assoc()) {
+
+          echo '<div class="container_posting">
+                <div class="p_box">
+                    <label class="title">' . $fila['titulo'] . '</label>
+                    <span> - </span>
+                    <label class="ubicacion">Unknow</label>
+                    <br>
+                <figure >
+                <a href="detalle_foto.php?titulo=' . $fila['titulo'] . '&img=img/' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
+                <img src="img/' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
+                </a>
+                </figure>
+                <span class="icon-heart-empty"></span>
+                <span class="icon-comment-empty"></span>
+                <label>Harry Potter</label>
+                <time datetime="2018-10-01">01/10/2018</time>
+            </div>
+            </div>
+               ';
+        }
         ?>
-        <div class="container_posting">
-            <div class="p_box">
-                <label class="title">Búho</label>
-                <span> - </span>
-                <label class="ubicacion">Bosque</label>
-                <br>
-                <figure>
-                    <a href="detalle_foto.php?titulo=Buho&img=img/buho.jpg&alt=Buho&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-                        <img src="img/buho.jpg" alt="[foto_not_found]">
-                    </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
 
-            <div class="p_box">
-                <label class="title">cocodrilo</label>
-                <span> - </span>
-                <label class="ubicacion">Bosque</label>
-                <br>
-                <figure>
-                    <a href="detalle_foto.php?titulo=Cocodrilo&img=img/cocodrilo.jpg&alt=Cocodrilo&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-                        <img src="img/cocodrilo.jpg" alt="[foto_not_found]">
-                    </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
-
-            <div class="p_box">
-                <label class="title">elefante</label>
-                <span> - </span>
-                <label class="ubicacion">Bosque</label>
-                <br>
-                <figure>
-                    <a href="detalle_foto.php?titulo=elefante&img=img/elefante.jpg&alt=elefante&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-                        <img src="img/elefante.jpg" alt="[foto_not_found]">
-                    </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
-
-            <div class="p_box">
-                <label class="title">leon</label>
-                <span> - </span>
-                <label class="ubicacion">Bosque</label>
-                <br>
-                <figure>
-                    <a href="detalle_foto.php?titulo=leon&img=img/leon.jpg&alt=leon&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-                        <img src="img/leon.jpg" alt="[foto_not_found]">
-                    </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
-
-            <div class="p_box">
-                <label class="title">pantera</label>
-                <span> - </span>
-                <label class="ubicacion">Bosque</label>
-                <br>
-                <figure>
-                    <a href="detalle_foto.php?titulo=pantera&img=img/pantera.jpg&alt=pantera&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
-                        <img src="img/pantera.jpg" alt="[foto_not_found]">
-                    </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
-        </div>
 </main>
 <?php
     require_once("include/fin.inc");

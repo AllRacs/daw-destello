@@ -9,6 +9,17 @@ include("sesionstart.php");
         include("include/header.inc");
     }
     include("include/nav.inc");
+
+    $sentencia = 'SELECT NomPais FROM Paises';
+    if(!($pais = $mysqli->query($sentencia))) {
+      echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+      echo '</p>';
+      exit;
+    }else{
+      /*echo $sentencia;
+      $paises = $resultado->fetch_assoc();
+      echo $paises["NomPais"];*/
+    }
 ?>
 <style>
     <?php include 'CSS/main_registro.css';?>
@@ -60,9 +71,16 @@ include("sesionstart.php");
             <input id="input_city" type="text" name="input_city" value="" placeholder="City">
             <br>
             <label for="input_country">
-                <span class="icon-home-outline" aria-hidden="true" style="color:grey"></span>
+              <span>Country:</span>
+              <select name="Country" id="input_country" required>
+                <?php while($fila = $pais->fetch_assoc()){
+                  echo'
+                  <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
+                  ';
+                }
+                ?>
+              </select>
             </label>
-            <input id="input_country" type="text" name="input_country" value="" placeholder="Country">
             <br>
             <!--Register_End-->
             <span>
@@ -73,5 +91,9 @@ include("sesionstart.php");
 
 </main>
 <?php
+$pais->close();
+
+// Cierra la conexión
+$mysqli->close();
     require_once("include/fin.inc");
 ?>

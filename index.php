@@ -55,7 +55,7 @@
             <label class="ubicacion">$fila->NomPais</label>
             <br>
             <figure>
-                <a href="detalle_foto.php?titulo=Buho&img=img/buho.jpg&alt=Buho&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
+                <a href="detalle_foto.php?titulo=&img=img/buho.jpg&alt=Buho&fecha=01/10/2018&pais=Bosque&usuario=Harry Potter">
                     <img src="img/buho.jpg" alt="[foto_not_found]">
                 </a>
             </figure>

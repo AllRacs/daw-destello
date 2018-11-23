@@ -9,6 +9,17 @@ include("sesionstart.php");
         include("include/header.inc");
     }
     include("include/nav.inc");
+
+    $sentencia = 'SELECT NomPais FROM Paises';
+    if(!($pais = $mysqli->query($sentencia))) {
+      echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+      echo '</p>';
+      exit;
+    }else{
+      /*echo $sentencia;
+      $paises = $resultado->fetch_assoc();
+      echo $paises["NomPais"];*/
+    }
 ?>
 <style>
     <?php include 'CSS/main_formulario_busqueda.css';?>
@@ -30,12 +41,19 @@ include("sesionstart.php");
             <br>
             <label>
                 <span>Album:</span>
-                <input type="text" name="album" id="input_album" value="" placeholder="Album">
+                <input type="text" name="Album" id="input_album" value="" placeholder="Album">
             </label>
             <br>
             <label>
-                <span>Country:</span>
-                <input type="text" name="Country" id="input_country" value="" placeholder="Country">
+              <span>Country:</span>
+              <select name="Country" id="input_country" required>
+                <?php while($fila = $pais->fetch_assoc()){
+                  echo'
+                  <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
+                  ';
+                }
+                ?>
+              </select>
             </label>
             <br>
             <label>
@@ -49,5 +67,10 @@ include("sesionstart.php");
     </section>
 </main>
 <?php
+$pais->close();
+
+// Cierra la conexión
+$mysqli->close();
+
     require_once("include/fin.inc");
 ?>
