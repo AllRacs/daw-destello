@@ -19,7 +19,7 @@
             setcookie("style", $_SESSION["style"], time() + (86400 * 90), "/"); // 86400 = 1 day
         }
 
-        $sentencia = 'SELECT * FROM usuarios u where u.Email like "'.$_POST["input_email"].'"';
+        $sentencia = 'SELECT * FROM usuarios u where u.Email = "'.$_POST["input_email"].'"';
         if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';
