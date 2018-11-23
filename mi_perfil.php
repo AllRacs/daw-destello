@@ -51,7 +51,7 @@ END;
 
                 $fila = $resultado->fetch_object();
                 echo '<p>Nombre: '.$fila->NomUsuario.'</p>';
-                echo '<img src="" alt="[img not found]">';
+                echo '<img src="'.$fila->Foto.'" alt="notfound">';
                 echo '<p>Email: '.$fila->Email.'</p>';
                 echo '<p>Nacimiento: '.$fila->FNacimiento.'</p>';
                 if ($fila->Sexo == 1) {

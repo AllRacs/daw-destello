@@ -74,9 +74,7 @@ include("sesionstart.php");
               <span>Country:</span>
               <select name="Country" id="input_country" required>
                 <?php while($fila = $pais->fetch_assoc()){
-                  echo'
-                  <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
-                  ';
+                  echo'<option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>';
                 }
                 ?>
               </select>
