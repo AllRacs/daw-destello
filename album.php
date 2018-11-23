@@ -18,7 +18,7 @@ include("sesionstart.php");
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   $titulo = htmlspecialchars($_GET['titulo']);
-  $sentencia = 'SELECT f.Titulo, a.Descripcion, u.NomUsuario, f.Fecha, a.Titulo, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
+  $sentencia = 'SELECT f.Titulo as titulofoto, a.Descripcion, u.NomUsuario, f.Fecha, a.Titulo as tituloalbum, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
   FROM fotos f, albumes a, paises p, usuarios u
   WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais AND (a.Titulo  LIKE "'.$titulo.'") ORDER BY f.fecha ASC';
   if(!($misalbumes = $mysqli->query($sentencia))) {
@@ -28,7 +28,9 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   }else{
     //Pruebas
   }
-
+  $fecha = 'SELECT max(FRegistro) as fechamin, min(FRegistro) as fechamax FROM fotos, albumes WHERE fotos.album = albumes.IdAlbum';
+  $fechas = $mysqli->query($fecha);
+  $fila1 = $fechas->fetch_assoc();
   echo '<main class="main_album"><table><tr>';
   echo '<p>Titulo: '.$titulo.'</p>';
   echo '<th>Foto</th><th>Nombre</th><th>Fecha</th><th>Pais</th>';
@@ -36,18 +38,20 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   // Recorre el resultado y lo muestra en forma de tabla HTML
   $cont = 0;
   while($fila = $misalbumes->fetch_assoc()) {
-        if($cont < 1)
+        if($cont < 1){
             echo '<p>Descripcion: '.$fila["Descripcion"].'</p>';
+            echo '<p>El Intervalo de fechas va desde: '.$fila1['fechamax'].' hasta '.$fila1['fechamin'].'</p>';
         $cont++;
+        }
         echo '<tr>';
         echo '<td>
                   <figure>
-                      <a href="detalle_foto.php?titulo='.$fila['Titulo'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$fila['NomUsuario'].'">
+                      <a href="detalle_foto.php?titulo='.$fila['titulofoto'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$fila['NomUsuario'].'">
                           <img src="'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'">
                       </a>
                   </figure>
               </td>';
-        echo '<td>'.$fila['Titulo'].'</td>';
+        echo '<td>'.$fila['tituloalbum'].'</td>';
         echo '<td>'.$fila['Fecha'].'</td>';
         echo '<td>'.$fila['NomPais'].'</td>';
         echo '</tr>';
