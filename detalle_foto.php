@@ -20,7 +20,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   $titulo = htmlspecialchars($_GET['titulo']);
   $sentencia = 'SELECT fotos.Titulo, fotos.Descripcion, fotos.Fecha, paises.NomPais, fotos.Fichero, fotos.Alternativo, albumes.IdAlbum
   FROM Fotos, Albumes, Paises
-  WHERE fotos.album = albumes.IdAlbum AND fotos.pais = paises.IdPais AND (albumes.Titulo  LIKE "'.$titulo.'") ORDER BY fotos.fecha ASC';
+  WHERE fotos.album = albumes.IdAlbum AND fotos.pais = paises.IdPais AND (fotos.Titulo  LIKE "'.$titulo.'") ORDER BY fotos.fecha ASC';
   if(!($misalbumes = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';
@@ -30,20 +30,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   }
 
   // Recorre el resultado y lo muestra en forma de tabla HTML
-  while($fila = $misalbumes->fetch_assoc()) {
-    echo '<tr>';
-    echo '<td><figure >
-          <a href="detalle_foto.php?titulo=' . $fila['Titulo'] . '&img=img/' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
-          <img src="img/' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
-          </a>
-          </td></figure>';
-    echo '<td>' . $fila['Titulo'] . '</td>';
-    echo '<td>' . $fila['Descripcion'] . '</td>';
-    echo '<td>' . $fila['Fecha'] . '</td>';
-    echo '<td>' . $fila['NomPais'] . '</td>';
-    echo '</tr>';
-  }
-  echo '</table>';
+  $fila = $misalbumes->fetch_assoc();
 
 ?>
 

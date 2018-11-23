@@ -56,10 +56,8 @@ include("sesionstart.php");
 
         }
 
-
-
         // Recorre el resultado y lo muestra en forma de tabla HTML
-        while($fila = $buscar->fetch_assoc()) {
+        while(isset($buscar) && $fila = $buscar->fetch_assoc()) {
 
           echo '<div class="container_posting">
                 <div class="p_box">
@@ -68,8 +66,8 @@ include("sesionstart.php");
                     <label class="ubicacion">Unknow</label>
                     <br>
                 <figure >
-                <a href="detalle_foto.php?titulo=' . $fila['titulo'] . '&img=img/' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
-                <img src="img/' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
+                <a href="detalle_foto.php?titulo=' . $fila['titulo'] . '&img=' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
+                <img src="' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
                 </a>
                 </figure>
                 <span class="icon-heart-empty"></span>
@@ -77,8 +75,7 @@ include("sesionstart.php");
                 <label>Harry Potter</label>
                 <time datetime="2018-10-01">01/10/2018</time>
             </div>
-            </div>
-               ';
+            </div>';
         }
         ?>
 

@@ -18,9 +18,9 @@ include("sesionstart.php");
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   $titulo = htmlspecialchars($_GET['titulo']);
-  $sentencia = 'SELECT fotos.Titulo, fotos.Descripcion, fotos.Fecha, paises.NomPais, fotos.Fichero, fotos.Alternativo, albumes.IdAlbum
-  FROM Fotos, Albumes, Paises
-  WHERE fotos.album = albumes.IdAlbum AND fotos.pais = paises.IdPais AND (albumes.Titulo  LIKE "'.$titulo.'") ORDER BY fotos.fecha ASC';
+  $sentencia = 'SELECT f.Titulo, a.Descripcion, u.NomUsuario, f.Fecha, a.Titulo, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
+  FROM fotos f, albumes a, paises p, usuarios u
+  WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais AND (a.Titulo  LIKE "'.$titulo.'") ORDER BY f.fecha ASC';
   if(!($misalbumes = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';
@@ -30,23 +30,27 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
   }
 
   echo '<main class="main_album"><table><tr>';
-  echo '<th>Foto</th><th>Nombre</th><th>Descripcion</th><th>Fecha</th><th>Pais</th>';
+  echo '<p>Titulo: '.$titulo.'</p>';
+  echo '<th>Foto</th><th>Nombre</th><th>Fecha</th><th>Pais</th>';
   echo '</tr>';
   // Recorre el resultado y lo muestra en forma de tabla HTML
+  $cont = 0;
   while($fila = $misalbumes->fetch_assoc()) {
-    echo '<tr>';
-    echo '<td>
-              <figure>
-                  <a href="detalle_foto.php?titulo='.$fila['Titulo'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$_SESSION['user'].'">
-                      <img src="'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'">
-                  </a>
-              </figure>
-          </td>';
-    echo '<td>'.$fila['Titulo'].'</td>';
-    echo '<td>'.$fila['Descripcion'].'</td>';
-    echo '<td>'.$fila['Fecha'].'</td>';
-    echo '<td>'.$fila['NomPais'].'</td>';
-    echo '</tr>';
+        if($cont < 1)
+            echo '<p>Descripcion: '.$fila["Descripcion"].'</p>';
+        $cont++;
+        echo '<tr>';
+        echo '<td>
+                  <figure>
+                      <a href="detalle_foto.php?titulo='.$fila['Titulo'].'&img='.$fila['Fichero'].'&alt='.$fila['Alternativo'].'&fecha='.$fila['Fecha'].'&pais='.$fila['NomPais'].'&usuario='.$fila['NomUsuario'].'">
+                          <img src="'.$fila['Fichero'].'" alt="'.$fila['Alternativo'].'">
+                      </a>
+                  </figure>
+              </td>';
+        echo '<td>'.$fila['Titulo'].'</td>';
+        echo '<td>'.$fila['Fecha'].'</td>';
+        echo '<td>'.$fila['NomPais'].'</td>';
+        echo '</tr>';
   }
   echo '</table></main>';
 
