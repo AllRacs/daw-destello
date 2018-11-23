@@ -153,5 +153,9 @@ ddd;
     </div>
 </main>
 <?php
+// Libera la memoria ocupada por el resultado
+$resultado->close();
+// Cierra la conexión
+$mysqli->close();
     require_once("include/fin.inc");
 ?>

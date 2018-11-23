@@ -65,13 +65,13 @@ END;
                 echo '<p>Ciudad: '.$fila->Ciudad.'</p>';
 
                 $sentencia = 'SELECT NomPais FROM usuarios u, paises p where p.IdPais = u.Pais and u.Email like "'.$_SESSION["user"].'"';
-                if(!($resultado = $mysqli->query($sentencia))) {
+                if(!($resultado2 = $mysqli->query($sentencia))) {
                     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
                     echo '</p>';
                     exit;
                 }
 
-                $fila = $resultado->fetch_object();
+                $fila = $resultado2->fetch_object();
                 echo '<p>Pais: '.$fila->NomPais.'</p>';
             } else {
                 echo '<p>Se muestran todas las fotos del user...</p>';
@@ -82,6 +82,11 @@ END;
  </main>
  <?php
  }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
+     // Libera la memoria ocupada por el resultado
+     $resultado->close();
+     $resultado2->close();
+     // Cierra la conexión
+     $mysqli->close();
      echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
  }
      require_once("include/fin.inc");

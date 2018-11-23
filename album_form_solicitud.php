@@ -17,6 +17,17 @@ include("sesionstart.php");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
+
+    $sentencia = 'SELECT Titulo FROM Albumes, Usuarios WHERE usuarios.IdUsuario = albumes.usuario AND usuarios.Email LIKE "'.$_SESSION["user"].'"';
+    if(!($album = $mysqli->query($sentencia))) {
+      echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+      echo '</p>';
+      exit;
+    }else{
+      /*echo $sentencia;
+      $paises = $resultado->fetch_assoc();
+      echo $paises["NomPais"];*/
+    }
 ?>
 <main class="main_form_solicitud">
     <h2>Solicitud impresi&oacute;n &aacute;lbum</h2>
@@ -88,10 +99,14 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         <output name="result" id="output_res">150</output>
         <br>
         <label>Album to print</label>
-        <select name="Album" id="album_selector" required>
-            <option value="album1">Album1</option>
-            <option value="album2">Album2</option>
-            <option value="album3">Album3</option>
+        <span>Album:</span>
+        <select name="Album" id="input_album" required>
+          <?php while($fila = $album->fetch_assoc()){
+            echo'
+            <option value="'. $fila['Titulo'] .'">'. $fila['Titulo'] .'</option>
+            ';
+          }
+          ?>
         </select>
         <br>
         <label>Reception date</label>
@@ -106,6 +121,10 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     </form>
 </main>
 <?php
+// Libera la memoria ocupada por el resultado
+$album->close();
+// Cierra la conexión
+$mysqli->close();
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }

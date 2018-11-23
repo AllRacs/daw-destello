@@ -63,10 +63,12 @@ END;
     </section>
  </main>
  <?php
+ // Libera la memoria ocupada por el resultado
+ $sentencia->close();
+ // Cierra la conexión
+ $mysqli->close();
  }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
      echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
  }
-
-
      require_once("include/fin.inc");
  ?>

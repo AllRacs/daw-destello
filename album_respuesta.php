@@ -67,7 +67,5 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }
-
-
     require_once("include/fin.inc");
 ?>

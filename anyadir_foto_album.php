@@ -28,7 +28,6 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     $paises = $resultado->fetch_assoc();
     echo $paises["NomPais"];*/
   }
-/*Si has iniciado sesion puedes ver esto*/
     $sentencia = 'SELECT Titulo FROM Albumes, Usuarios WHERE usuarios.IdUsuario = albumes.usuario AND usuarios.Email LIKE "'.$_SESSION["user"].'"';
     if(!($album = $mysqli->query($sentencia))) {
       echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;

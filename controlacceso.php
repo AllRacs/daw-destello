@@ -55,4 +55,8 @@
     $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
     $extra = 'index.php';
     header("Location: $host$uri/$extra");*/
+    // Libera la memoria ocupada por el resultado
+    $resultado->close();
+    // Cierra la conexión
+    $mysqli->close();
  ?>

@@ -81,5 +81,10 @@ include("sesionstart.php");
 
 </main>
 <?php
+// Libera la memoria ocupada por el resultado
+
+$buscar->close();
+// Cierra la conexión
+$mysqli->close();
     require_once("include/fin.inc");
 ?>
