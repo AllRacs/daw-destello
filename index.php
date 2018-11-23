@@ -37,7 +37,7 @@
         <?php
 
         //consusta a bd
-        $sentencia = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
+        $sentencia = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
         WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais ORDER BY f.FRegistro DESC';
         if(!($resultado = $mysqli->query($sentencia))) {
           echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -55,7 +55,7 @@
             <label class="ubicacion">$fila->NomPais</label>
             <br>
             <figure>
-                <a href="detalle_foto.php?titulo=$fila->Titulo&img=$fila->Fichero&alt=notfound&fecha=$fila->FRegistro&pais=$fila->NomPais&usuario=$fila->NomUsuario">
+                <a href="detalle_foto.php?id=$fila->IdFoto">
                     <img src="$fila->Fichero" alt="[foto_not_found]">
                 </a>
             </figure>

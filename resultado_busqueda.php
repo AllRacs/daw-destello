@@ -60,21 +60,21 @@ include("sesionstart.php");
         while(isset($buscar) && $fila = $buscar->fetch_assoc()) {
 
           echo '<div class="container_posting">
-                <div class="p_box">
-                    <label class="title">' . $fila['titulo'] . '</label>
-                    <span> - </span>
-                    <label class="ubicacion">Unknow</label>
-                    <br>
-                <figure >
-                <a href="detalle_foto.php?titulo=' . $fila['titulo'] . '&img=' . $fila['Fichero'] . '&alt=' . $fila['Alternativo'] . '&fecha=' . $fila['Fecha'] . '&pais=' . $fila['NomPais'] . '&usuario=' . $_SESSION['user'] . '">
-                <img src="' . $fila['Fichero'] . '" alt="' . $fila['Alternativo'] . '">
-                </a>
-                </figure>
-                <span class="icon-heart-empty"></span>
-                <span class="icon-comment-empty"></span>
-                <label>Harry Potter</label>
-                <time datetime="2018-10-01">01/10/2018</time>
-            </div>
+          <div class="p_box">
+          <label class="title">$fila->Titulo</label>
+          <span> - </span>
+          <label class="ubicacion">$fila->NomPais</label>
+          <br>
+          <figure>
+              <a href="detalle_foto.php?id=$fila->IdFoto">
+                  <img src="$fila->Fichero" alt="[foto_not_found]">
+              </a>
+          </figure>
+          <span class="icon-heart-empty"></span>
+          <span class="icon-comment-empty"></span>
+          <label>$fila->NomUsuario</label>
+          <time datetime="2018-10-01">$fila->FRegistro</time>
+          </div>
             </div>';
         }
         ?>
@@ -82,8 +82,6 @@ include("sesionstart.php");
 </main>
 <?php
 // Libera la memoria ocupada por el resultado
-
-$buscar->close();
 // Cierra la conexión
 $mysqli->close();
     require_once("include/fin.inc");
