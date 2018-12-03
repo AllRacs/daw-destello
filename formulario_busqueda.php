@@ -2,27 +2,27 @@
 include("sesionstart.php");
 ?>
 <?php
-    include("include/cabecera.inc");
-    if(isset($_SESSION["user"])){
-        include("include/header_logged.inc");
-    } else {
-        include("include/header.inc");
-    }
-    include("include/nav.inc");
+include("include/cabecera.inc");
+if(isset($_SESSION["user"])){
+    include("include/header_logged.inc");
+} else {
+    include("include/header.inc");
+}
+include("include/nav.inc");
 
-    $sentencia = 'SELECT NomPais FROM Paises';
-    if(!($pais = $mysqli->query($sentencia))) {
-      echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
-      echo '</p>';
-      exit;
-    }else{
-      /*echo $sentencia;
-      $paises = $resultado->fetch_assoc();
-      echo $paises["NomPais"];*/
-    }
+$sentencia = 'SELECT NomPais FROM Paises';
+if(!($pais = $mysqli->query($sentencia))) {
+    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+    echo '</p>';
+    exit;
+}else{
+    /*echo $sentencia;
+    $paises = $resultado->fetch_assoc();
+    echo $paises["NomPais"];*/
+}
 ?>
 <style>
-    <?php include 'CSS/main_formulario_busqueda.css';?>
+<?php include 'CSS/main_formulario_busqueda.css';?>
 </style>
 <main>
     <h1>Advance Search</h1>
@@ -45,33 +45,33 @@ include("sesionstart.php");
             </label>
             <br>
             <label>
-              <span>Country:</span>
-              <select name="Country" id="input_country" required>
-                  <option value=" "> </opcion>
-                <?php while($fila = $pais->fetch_assoc()){
-                  echo'
-                  <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
-                  ';
-                }
-                ?>
-              </select>
-            </label>
-            <br>
-            <label>
-                <span>Date:</span>
-                <input type="date" name="date" id="input_date" value="">
-            </label>
-            <br><br>
-            <button type="submit" id="Advance Search Button">Search</button>
-            <!--End Form-->
-        </form>
-    </section>
-</main>
-<?php
-$pais->close();
+                <span>Country:</span>
+                <select name="Country" id="input_country" required>
+                    <option value="País">País</opcion>
+                        <?php while($fila = $pais->fetch_assoc()){
+                            echo'
+                            <option value="'.$fila['NomPais'].'">'.$fila['NomPais'].'</option>
+                            ';
+                        }
+                        ?>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    <span>Date:</span>
+                    <input type="date" name="date" id="input_date" value="">
+                </label>
+                <br><br>
+                <button type="submit" id="Advance Search Button">Search</button>
+                <!--End Form-->
+            </form>
+        </section>
+    </main>
+    <?php
+    $pais->close();
 
-// Cierra la conexión
-$mysqli->close();
+    // Cierra la conexión
+    $mysqli->close();
 
     require_once("include/fin.inc");
-?>
+    ?>

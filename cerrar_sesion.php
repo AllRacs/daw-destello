@@ -11,4 +11,4 @@ setcookie("last_con", $_SESSION["last_con"], time() - (86400 * 90), "/"); // 864
 session_unset();
 session_destroy();
 header("Location: index.php");
- ?>
+?>

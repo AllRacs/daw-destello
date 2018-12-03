@@ -2,22 +2,22 @@
 include("sesionstart.php");
 ?>
 <?php
-    include("include/cabecera.inc");
-    if(isset($_SESSION["user"])){
-        include("include/header_logged.inc");
-    } else {
-        include("include/header.inc");
-    }
-    include("include/nav.inc");
+include("include/cabecera.inc");
+if(isset($_SESSION["user"])){
+    include("include/header_logged.inc");
+} else {
+    include("include/header.inc");
+}
+include("include/nav.inc");
 ?>
 <style>
-    <?php include 'CSS/main_registro.css';?>
+<?php include 'CSS/main_registro.css';?>
 </style>
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
-?>
-<main>
+    ?>
+    <main>
         <h1>New album</h1>
 
         <form id="form_registro" action="mi_perfil.php">
@@ -38,12 +38,12 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
             </span>
         </form>
 
-</main>
-<?php
+    </main>
+    <?php
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }
 
 
-    require_once("include/fin.inc");
+require_once("include/fin.inc");
 ?>
