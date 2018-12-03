@@ -10,7 +10,7 @@ if(isset($_SESSION["user"])){
 }
 include("include/nav.inc");
 
-$sentencia = 'SELECT NomPais FROM Paises';
+$sentencia = 'SELECT NomPais FROM Paises ORDER BY NomPais ASC';
 if(!($pais = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';
