@@ -74,18 +74,16 @@ include("include/nav.inc");
 
         $sentencia .=' ORDER BY f.FRegistro DESC';
 
-        if(!($buscar = $mysqli->query($sentencia))) {
+        if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';
             exit;
         }
     }
-
+    echo '<div class="container_posting">';
     // Recorre el resultado y lo muestra en forma de tabla HTML
-    while(isset($buscar) && $fila = $buscar->fetch_assoc()) {
-        echo $fila->Titulo;
-        echo <<<ggg
-        <div class="container_posting">
+    while($fila = $resultado->fetch_object()) {
+        echo <<<ddd
         <div class="p_box">
         <label class="title">$fila->Titulo</label>
         <span> - </span>
@@ -101,9 +99,9 @@ include("include/nav.inc");
         <label>$fila->NomUsuario</label>
         <time datetime="2018-10-01">$fila->FRegistro</time>
         </div>
-        </div>
-ggg;
+ddd;
     }
+    echo '</div>';
     ?>
 
 </main>
