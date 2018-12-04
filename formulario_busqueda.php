@@ -47,7 +47,7 @@ if(!($pais = $mysqli->query($sentencia))) {
             <label>
                 <span>Country:</span>
                 <select name="Country" id="input_country" required>
-                    <option value="País">País</opcion>
+                    <option value="Pais">País</opcion>
                         <?php while($fila = $pais->fetch_assoc()){
                             echo'
                             <option value="'.$fila['NomPais'].'">'.$fila['NomPais'].'</option>

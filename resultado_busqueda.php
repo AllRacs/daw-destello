@@ -70,6 +70,27 @@ include("include/nav.inc");
             //concatenacion de condicionales
             echo '<p style="padding-left:6em">'.$_GET["busqueda_top"].'</p>';
             $sentencia .=' AND f.Titulo LIKE "'.$_GET["busqueda_top"].'" ';
+        } else if(isset($_GET["Title"]) && isset($_GET["Author"]) && isset($_GET["Album"]) && isset($_GET["Country"]) && isset($_GET["date"])) {
+            if(!empty($_GET["Title"])){
+                echo '<p style="padding-left:6em">Título: '.$_GET["Title"].'</p>';
+                $sentencia .=' AND f.Titulo LIKE "'.$_GET["Title"].'" ';
+            }
+            if(!empty($_GET["Author"])){
+                echo '<p style="padding-left:6em">Autor: '.$_GET["Author"].'</p>';
+                $sentencia .=' AND u.NomUsuario LIKE "'.$_GET["Author"].'" ';
+            }
+            if(!empty($_GET["Album"])){
+                echo '<p style="padding-left:6em">Album: '.$_GET["Album"].'</p>';
+                $sentencia .=' AND a.Titulo LIKE "'.$_GET["Album"].'" ';
+            }
+            if(!empty($_GET["Country"]) && $_GET["Country"] != "Pais"){
+                echo '<p style="padding-left:6em">País: '.$_GET["Country"].'</p>';
+                $sentencia .=' AND p.NomPais LIKE "'.$_GET["Country"].'" ';
+            }
+            if(!empty($_GET["date"])){
+                echo '<p style="padding-left:6em">Fecha: '.$_GET["date"].'</p>';
+                $sentencia .=' AND f.FRegistro LIKE "%'.$_GET["date"].'%" ';
+            }
         }
 
         $sentencia .=' ORDER BY f.FRegistro DESC';
@@ -82,6 +103,7 @@ include("include/nav.inc");
     }
     echo '<div class="container_posting">';
     // Recorre el resultado y lo muestra en forma de tabla HTML
+    $contfotos = 0;
     while($fila = $resultado->fetch_object()) {
         echo <<<ddd
         <div class="p_box">
@@ -100,6 +122,10 @@ include("include/nav.inc");
         <time datetime="2018-10-01">$fila->FRegistro</time>
         </div>
 ddd;
+        $contfotos++;
+    }
+    if($contfotos == 0){
+        echo '<p>No se ha encontrado ninguna coincidencia :(</p>';
     }
     echo '</div>';
     ?>

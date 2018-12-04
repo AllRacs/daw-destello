@@ -11,7 +11,7 @@ body > main > section > form {
     width: 14em;
 }
 
-body > main > section > form > label > input {
+body > main > section > form > label > input, body > main > section > form > label > select {
     width: 10em;
     float: right;
     margin-bottom: 1em;
