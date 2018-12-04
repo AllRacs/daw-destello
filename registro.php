@@ -39,25 +39,25 @@ if(!($pais = $mysqli->query($sentencia))) {
             <span class="hiddeofscreen">Usuario:</span>
             <span class="icon-user-circle-o" aria-hidden="true"></span>
         </label><!-- User/email REGISTER -->
-        <input id="input_name" type="text" name="input_name" value="" placeholder="User Name" required>
+        <input id="input_name" type="text" name="input_name" value="" placeholder="User Name" minlength="3" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres">
         <br>
         <label for="input_pass">
             <span class="hiddeofscreen">Password:</span>
             <span class="icon-key" aria-hidden="true"></span><!-- Password REGISTER -->
         </label>
-        <input id="input_pass" type="password" name="input_pass" value="" placeholder="Password" required>
+        <input id="input_pass" type="password" name="input_pass" value="" placeholder="Password" minlength="6" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 6 y 15 caracteres. Obligatorio una mayuscula, una minuscula y un numero" required>
         <br>
         <label for="input_pass_confirm">
             <span class="hiddeofscreen">Repeat password:</span>
             <span class="icon-key" aria-hidden="true"></span><!-- Password Confirm REGISTER -->
         </label>
-        <input id="input_pass_confirm"type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" required>
+        <input id="input_pass_confirm" type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" minlength="6" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres. Obligatorio una mayuscula, una minuscula y un numero" required>
         <br>
         <label for="input_email">
             <span class="hiddeofscreen">Email:</span>
             <span class="icon-at" aria-hidden="true"></span><!-- E-mail REGISTER -->
         </label>
-        <input id="input_email" type="email" name="input_email" value="" placeholder="E-mail" required>
+        <input id="input_email" type="email" name="input_email" value="" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title><!-- Comprobamos que el dom principal sea menor >2 y <4 con {2,4} -->
         <br>
         <label for="input_calendar">
             <span class="hiddeofscreen">Birthday:</span>
@@ -73,6 +73,7 @@ if(!($pais = $mysqli->query($sentencia))) {
         <label for="input_country">
             <span>Country:</span>
             <select name="Country" id="input_country" required>
+                    <option value="">Elige uno</option>
                 <?php while($fila = $pais->fetch_assoc()){
                     echo'<option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>';
                 }
