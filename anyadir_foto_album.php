@@ -16,7 +16,7 @@ include("include/nav.inc");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
-    
+
 
     $sentencia = 'SELECT NomPais FROM Paises';
     if(!($pais = $mysqli->query($sentencia))) {
@@ -41,28 +41,29 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     ?>
 
     <main>
-        <h1>Add Photo to Album</h1>
+        <h1>Añadir foto a álbum</h1>
         <section>
-            <form id="form_photo" action="resultado_busqueda.php" method="GET">
+            <form id="form_photo" action="anyadir_foto_album_respuesta.php" method="GET">
                 <!--Advance Search Form-->
                 <label>
-                    <span>Title:</span>
+                    <span>Título:</span>
                     <input type="text" name="Title" id="input_title" value="" placeholder="Title" required>
                 </label>
                 <br>
                 <label>
-                    <span>Description:</span>
+                    <span>Desc:</span>
                     <input type="text" name="Description" id="input_description" value="" placeholder="Description">
                 </label>
                 <br>
                 <label>
-                    <span>Date:</span>
+                    <span>Fecha:</span>
                     <input type="date" name="Date" id="input_date" value="" required>
                 </label>
                 <br>
                 <label>
-                    <span>Country:</span>
+                    <span>País:</span>
                     <select name="Country" id="input_country" required>
+                        <option value="none">-- Pais --</option>
                         <?php while($fila = $pais->fetch_assoc()){
                             echo'
                             <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
@@ -73,16 +74,17 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 </label>
                 <br>
                 <label>
-                    <span>Photo:</span>
-                    <input id="photo" type="file" name="photo" value="Upload photo">
+                    <span>Foto:</span>
+                    <input id="photo" type="file" name="photo" value="Upload photo" required>
                 </label>
                 <label>
-                    <span>Alternative text:</span>
+                    <span>Alter:</span>
                     <input type="text" name="Alternative" id="input_alternative" value="" placeholder="Alternative Text">
                 </label>
                 <label>
-                    <span>Album:</span>
+                    <span>Álbum:</span>
                     <select name="Album" id="input_album" required>
+                        <option value="none">-- Album --</option>
                         <?php while($fila = $album->fetch_assoc()){
                             echo'
                             <option value="'. $fila['Titulo'] .'">'. $fila['Titulo'] .'</option>
@@ -92,7 +94,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                     </select>
                 </label>
                 <br><br>
-                <button type="submit" id="Upload_button">Upload</button>
+                <button type="submit" id="Upload_button">Subir</button>
                 <!--End Form-->
             </form>
         </section>

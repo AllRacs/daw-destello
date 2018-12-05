@@ -32,3 +32,14 @@ body > main > section > form > button:hover {
     color:black;
     box-shadow: 2px 2px grey;
 }
+
+/*estilo de anyadir_foto_album_respuesta*/
+#volver_al_perfil {
+    border: 1px solid #5b5b5b;
+    height: 1.3em;
+    padding: 0.36em 1em;
+    border-radius: 0px;
+    margin-left: 16em;
+    text-decoration: none;
+    color: #000;
+}
