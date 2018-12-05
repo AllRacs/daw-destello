@@ -52,7 +52,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 <br>
                 <label>
                     <span>Desc:</span>
-                    <input type="text" name="Description" id="input_description" value="" placeholder="Description">
+                    <input type="text" name="Description" id="input_description" value="" placeholder="Description" required>
                 </label>
                 <br>
                 <label>
@@ -63,11 +63,8 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 <label>
                     <span>País:</span>
                     <select name="Country" id="input_country" required>
-                        <option value="none">-- Pais --</option>
                         <?php while($fila = $pais->fetch_assoc()){
-                            echo'
-                            <option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>
-                            ';
+                            echo'<option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>';
                         }
                         ?>
                     </select>
@@ -79,16 +76,13 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 </label>
                 <label>
                     <span>Alter:</span>
-                    <input type="text" name="Alternative" id="input_alternative" value="" placeholder="Alternative Text">
+                    <input type="text" name="Alternative" id="input_alternative" value="" placeholder="Alternative Text" required>
                 </label>
                 <label>
                     <span>Álbum:</span>
                     <select name="Album" id="input_album" required>
-                        <option value="none">-- Album --</option>
                         <?php while($fila = $album->fetch_assoc()){
-                            echo'
-                            <option value="'. $fila['IdAlbum'] .'">'. $fila['Titulo'] .'</option>
-                            ';
+                            echo'<option value="'. $fila['IdAlbum'] .'">'. $fila['Titulo'] .'</option>';
                         }
                         ?>
                     </select>

@@ -21,7 +21,6 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     // echo 'Página respuesta álbum, realizar la inserción en la DB aquí';
     //Title=&Description=&Date=&Country=&photo=&Alternative=&Album=
     if(isset($_GET["Title"]) && isset($_GET["Description"]) && isset($_GET["Date"]) && isset($_GET["Country"]) && isset($_GET["photo"]) && isset($_GET["Alternative"]) && isset($_GET["Album"])){
-        echo '<p>Haciendo inserción</p>';
         if (!empty($_GET["Title"])) {
             $titulo = $_GET["Title"];
         } else {
@@ -62,7 +61,6 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         //VALUES (NULL, Medusa2, Foto de medusa en el mar, 2018-11-13, 2, 1, img/medusa.jpg, medusita, 2018-12-04 00:00:00)
         $sentencia = "INSERT INTO fotos (IdFoto, Titulo, Descripcion, Fecha, Pais, Album, Fichero, Alternativo, FRegistro)
         VALUES (NULL, '$titulo', '$desc', '$date', '$country', '$album', 'img/$photo', '$alter', '$registro')";
-        echo $sentencia;
         if(!($mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';

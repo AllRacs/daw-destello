@@ -51,7 +51,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         </a>
         </figure>
         </td>';
-        echo '<td>'.$fila['tituloalbum'].'</td>';
+        echo '<td>'.$fila['titulofoto'].'</td>';
         echo '<td>'.$fila['Fecha'].'</td>';
         echo '<td>'.$fila['NomPais'].'</td>';
         echo '</tr>';
