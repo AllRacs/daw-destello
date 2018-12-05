@@ -57,22 +57,25 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         } else {
             $album = 'NULL';
         }
-        $registro = date("Y/m/d h:i");
+        $registro = date("Y/m/d h:i:s");
         //INSERT INTO fotos (IdFoto, Titulo, Descripcion, Fecha, Pais, Album, Fichero, Alternativo, FRegistro)
         //VALUES (NULL, Medusa2, Foto de medusa en el mar, 2018-11-13, 2, 1, img/medusa.jpg, medusita, 2018-12-04 00:00:00)
         $sentencia = "INSERT INTO fotos (IdFoto, Titulo, Descripcion, Fecha, Pais, Album, Fichero, Alternativo, FRegistro)
-        VALUES (NULL, '$titulo', '$desc', '$date', '$country', '$album', img/'$photo', $alter, $registro)";
-        echo "$date hola";
+        VALUES (NULL, '$titulo', '$desc', '$date', '$country', '$album', 'img/$photo', '$alter', '$registro')";
         echo $sentencia;
-        // Ejecuta la sentencia SQL
-        if(!mysqli_query($mysqli, $sentencia)){
-            die("Error: no se pudo realizar la inserción");
-        } else {
-            echo "se ha hecho la insercion";
+        if(!($mysqli->query($sentencia))) {
+            echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+            echo '</p>';
+            exit;
         }
+        // if ($mysqli->query($sentencia) === TRUE) {
+        //     echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $sentencia . "<br>" . $mysqli->error;
+        // }
 
         // Cierra la conexión con la base de datos
-        mysqli_close($mysqli);
+        $mysqli->close();
     }
     echo '<p style="padding-left:8em;padding-top:1em">La foto se ha añadido correctamente.</p>';
     echo '<a id="volver_al_perfil" href="mi_perfil.php">Volver al perfil</a>';

@@ -18,7 +18,7 @@ include("include/nav.inc");
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 
 
-    $sentencia = 'SELECT NomPais FROM Paises';
+    $sentencia = 'SELECT * FROM Paises';
     if(!($pais = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';
@@ -28,7 +28,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         $paises = $resultado->fetch_assoc();
         echo $paises["NomPais"];*/
     }
-    $sentencia = 'SELECT Titulo FROM Albumes, Usuarios WHERE usuarios.IdUsuario = albumes.usuario AND usuarios.Email LIKE "'.$_SESSION["user"].'"';
+    $sentencia = 'SELECT * FROM Albumes a, Usuarios u WHERE u.IdUsuario = a.usuario AND u.Email LIKE "'.$_SESSION["user"].'"';
     if(!($album = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';
@@ -66,7 +66,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                         <option value="none">-- Pais --</option>
                         <?php while($fila = $pais->fetch_assoc()){
                             echo'
-                            <option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>
+                            <option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>
                             ';
                         }
                         ?>
@@ -87,7 +87,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                         <option value="none">-- Album --</option>
                         <?php while($fila = $album->fetch_assoc()){
                             echo'
-                            <option value="'. $fila['Titulo'] .'">'. $fila['Titulo'] .'</option>
+                            <option value="'. $fila['IdAlbum'] .'">'. $fila['Titulo'] .'</option>
                             ';
                         }
                         ?>
