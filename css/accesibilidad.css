@@ -9,7 +9,7 @@
    box-shadow: 2px 2px grey;
 }
 
-#busqueda + a:hover,#busqueda + a:focus {
+#busqueda + a:hover,#busqueda + a:focus, #volver_al_perfil:hover, #volver_al_perfil:focus {
     background-color: black;
     color: white;
 }

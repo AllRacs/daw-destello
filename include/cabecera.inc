@@ -19,6 +19,7 @@ GG;
             $res = $mysqli->query($sentencia);
             $style = $res->fetch_assoc();
             $_SESSION["estiloid"] = $style["Estilo"];
+            $_SESSION["estilonombre"] = $style["Fichero"];
             echo '<link rel="stylesheet" title="estilo accesible" href="css/'.$style["Fichero"].'">';
         }
         ?>
