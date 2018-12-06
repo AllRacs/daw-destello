@@ -41,18 +41,31 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 END;
                 ?>
             </div>
-            <?php if(filtrado()==true){
+
+            <?php
+            $clave= $_POST['input_current_pass'];
+
+            function password(){
+              $clave= $_POST['input_current_pass'];
+              $pass = false;
+              if($clave === $_SESSION['pass']){
+                $pass = true;
+              }
+              return $pass;
+            }
+
+
+            if(filtrado()==true && password()==true){
             echo'<div id="container_posting_perfil">
                 <p>Cambios en los datos guardados.</p>
             </div>';
             $name= $_POST['input_name'];
-            $clave= $_POST['input_pass_modify'];
+
             $email= $_POST['input_email'];
             $fnac= $_POST['input_calendar'];
             $ciudad= $_POST['input_city'];
             $pais= $_POST['input_country'];
             $currentemail = $_SESSION["user"];
-            echo $_SESSION["user"];
             $sentencia = "UPDATE usuarios
             SET NomUsuario = '$name',
             Clave = '$clave',
@@ -70,9 +83,15 @@ END;
             }
 
           }else{
+            if(password()==false){
+              echo'<div id="container_posting_perfil">
+                  <p>Vaya! Tu contraseña no es correcta :(</p>
+              </div>';
+            }else{
             echo'<div id="container_posting_perfil">
                 <p>Algo ha salido mal. Lo siento :(</p>
             </div>';
+            }
           }
             ?>
         </section>

@@ -43,7 +43,7 @@ END;
             <div id="container_posting_perfil">
                 <?php
                 echo '<p>Configuracion, elige el estilo de página que deseas usar:</p>';
-                //consusta a bd
+                //consulta a bd
                 $sentencia = 'SELECT * FROM Estilos';
                 if(!($resultado = $mysqli->query($sentencia))) {
                     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -129,6 +129,11 @@ ggg;
                 }
                 echo '</select>
                 </label>
+                <br>
+                <label for="input_current_pass">
+                <span class="icon-key" aria-hidden="true"></span>
+                </label>
+                <input id="input_current_pass" type="text" name="input_current_pass" placeholder="Password actual" required>
                 <br>
                 <!--Register_End-->
                 <span>
