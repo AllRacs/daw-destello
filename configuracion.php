@@ -66,7 +66,7 @@ END;
 
 
                 echo '<p>Detalles de usuario:</p>';
-                $sentencia2 = 'SELECT NomPais FROM Paises';
+                $sentencia2 = 'SELECT NomPais, IdPais FROM Paises';
                 if(!($pais = $mysqli->query($sentencia2))) {
                     echo "<p>Error al ejecutar la sentencia <b>$sentencia2</b>: " . $mysqli->error;
                     echo '</p>';
@@ -97,7 +97,7 @@ END;
                 </label><!-- User/email REGISTER -->
                 <input id="input_name" type="text" name="input_name" value="$usu->NomUsuario" placeholder="User Name" minlength="3" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres">
                 <br>
-                <label for="input_pass">
+                <label for="input_pass_modify">
                 <span class="hiddeofscreen">Password:</span>
                 <span class="icon-key" aria-hidden="true"></span><!-- Password REGISTER -->
                 </label>
@@ -122,10 +122,10 @@ END;
                 <br>
                 <label for="input_country">
                 <span>Country:</span>
-                <select name="Country" id="input_country" required>
+                <select name="input_country" id="input_country" required>
 ggg;
                 while($fila = $pais->fetch_assoc()){
-                    echo'<option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>';
+                    echo'<option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>';
                 }
                 echo '</select>
                 </label>

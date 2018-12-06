@@ -45,6 +45,30 @@ END;
             echo'<div id="container_posting_perfil">
                 <p>Cambios en los datos guardados.</p>
             </div>';
+            $name= $_POST['input_name'];
+            $clave= $_POST['input_pass_modify'];
+            $email= $_POST['input_email'];
+            $fnac= $_POST['input_calendar'];
+            $ciudad= $_POST['input_city'];
+            $pais= $_POST['input_country'];
+            $currentemail = $_SESSION["user"];
+            echo $_SESSION["user"];
+            $sentencia = "UPDATE usuarios
+            SET NomUsuario = '$name',
+            Clave = '$clave',
+            Email= '$email',
+            FNacimiento= '$fnac',
+            Ciudad= '$ciudad',
+            Pais= '$pais'
+            WHERE
+            usuarios.email = '$currentemail'";
+
+            if(!($mysqli->query($sentencia))) {
+                echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+                echo '</p>';
+                exit;
+            }
+
           }else{
             echo'<div id="container_posting_perfil">
                 <p>Algo ha salido mal. Lo siento :(</p>
@@ -54,7 +78,7 @@ END;
         </section>
     </main>
     <?php
-
+$mysqli->close();
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }
