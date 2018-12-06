@@ -42,23 +42,28 @@ END;
             </div>
             <div id="container_posting_perfil">
                 <?php
-                if(isset($_SESSION["user"])){
-                    // echo '<p>User: '.$_SESSION["user"].'</p>';
-                    echo '<p>Configuracion, elige el estilo de página que deseas usar:</p>';
-                    //consusta a bd
-                    $sentencia = 'SELECT * FROM Estilos';
-                    if(!($resultado = $mysqli->query($sentencia))) {
-                        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
-                        echo '</p>';
-                        exit;
-                    }
-                    //select > option para cada css
-                    echo "<select>";
-                    while($fila = $resultado->fetch_object()) {
-                        echo "<option>$fila->Fichero</option>";
-                    }
-                    echo "</select>";
+                echo '<p>Configuracion, elige el estilo de página que deseas usar:</p>';
+                //consusta a bd
+                $sentencia = 'SELECT * FROM Estilos';
+                if(!($resultado = $mysqli->query($sentencia))) {
+                    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+                    echo '</p>';
+                    exit;
                 }
+                echo '<form id="form_estilo" action="guardar_estilo.php" method="GET">';
+                //select > option para cada css
+                echo '<select name="estilo" id="select_estilo" required>';
+                while($fila = $resultado->fetch_object()) {
+                    echo '<option ';
+                    if($_SESSION["estiloid"] == $fila->IdEstilo) {
+                         echo 'selected';
+                    }
+                    echo ' value="'.$fila->IdEstilo.'" >'.$fila->Fichero.'</option>';
+                }
+                echo "</select><br>";
+                echo '<button type="submit" name="input_submit" value="Guardar">Guardar estilo</button>';
+                echo '</form>';
+
 
                 echo '<p>Detalles de usuario:</p>';
                 $sentencia2 = 'SELECT NomPais FROM Paises';
@@ -118,7 +123,6 @@ END;
                 <label for="input_country">
                 <span>Country:</span>
                 <select name="Country" id="input_country" required>
-
 ggg;
                 while($fila = $pais->fetch_assoc()){
                     echo'<option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>';

@@ -13,11 +13,12 @@ GG;
         }*/
         if(isset($_SESSION["user"])){
             // SELECT Fichero FROM usuarios, estilos WHERE usuarios.Estilo = estilos.IdEstilo AND Email LIKE '$_SESSION["user"]'
-            $sentencia = 'SELECT Fichero FROM usuarios, estilos WHERE usuarios.Estilo = estilos.IdEstilo AND Email LIKE"'.$_SESSION["user"].'"';
+            $sentencia = 'SELECT Fichero, Estilo  FROM usuarios, estilos WHERE usuarios.Estilo = estilos.IdEstilo AND Email LIKE"'.$_SESSION["user"].'"';
             // $sentencia = 'SELECT NomUsuario FROM usuarios WHERE Email = "'.$_SESSION["user"].'"';
 
             $res = $mysqli->query($sentencia);
             $style = $res->fetch_assoc();
+            $_SESSION["estiloid"] = $style["Estilo"];
             echo '<link rel="stylesheet" title="estilo accesible" href="css/'.$style["Fichero"].'">';
         }
         ?>

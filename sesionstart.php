@@ -26,9 +26,9 @@ $mysqli = @new mysqli(
         while($fila = $resultado->fetch_assoc()) {
             if($fila['Email'] == $_COOKIE["c_email"]){
                 $flag_fin = true;
-                if(!isset($_SESSION["c_email"]))
+                if(!isset($_SESSION["user"]))
                 $_SESSION["user"] = $_COOKIE["c_email"];
-                if(!isset($_SESSION["c_pass"]))
+                if(!isset($_SESSION["pass"]))
                 $_SESSION["pass"] = $_COOKIE["c_pass"];
                 if(!isset($_SESSION["flag_home"]))
                 $_SESSION["flag_home"] = 0;

@@ -64,7 +64,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                     <span>País:</span>
                     <select name="Country" id="input_country" required>
                         <?php while($fila = $pais->fetch_assoc()){
-                            echo'<option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>';
+                            echo '<option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>';
                         }
                         ?>
                     </select>
@@ -82,7 +82,11 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                     <span>Álbum:</span>
                     <select name="Album" id="input_album" required>
                         <?php while($fila = $album->fetch_assoc()){
-                            echo'<option value="'. $fila['IdAlbum'] .'">'. $fila['Titulo'] .'</option>';
+                            echo '<option ';
+                            if(isset($_GET["album"]) && $_GET["album"] == $fila['Titulo']){
+                                echo 'selected';
+                            }
+                            echo ' value="'. $fila['IdAlbum'] .'">'. $fila['Titulo'] .'</option>';
                         }
                         ?>
                     </select>

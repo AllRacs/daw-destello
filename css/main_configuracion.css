@@ -5,6 +5,21 @@
     margin-right:auto;
 }*/
 
+#form_estilo > select {
+    margin-left: 1em;
+}
+
+#form_estilo > button {
+    margin: 1em;
+    padding: 0.75em 0em;
+    border-radius: 1px;
+    border: 1px solid #666;
+    background-color: #fefefe;
+    width: 8em;
+    box-shadow: 0.5px 0.5px grey;
+}
+
+
 #form_registro {
     display: flex;
     flex-direction: column;
