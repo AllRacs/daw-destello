@@ -20,9 +20,9 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     <main>
         <h1>New album</h1>
 
-        <form id="form_registro" action="mi_perfil.php">
+        <form id="form_registro" action="anyadir_foto_album.php" method="GET">
             <!--Register_Form-->
-            <label for="input_name">
+            <label for="input_name_new">
                 <span>Title:</span>
             </label><!-- User/email REGISTER -->
             <input id="input_title" type="text" name="input_title" value="" placeholder="Title" required>

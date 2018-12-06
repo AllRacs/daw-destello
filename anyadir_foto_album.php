@@ -16,7 +16,27 @@ include("include/nav.inc");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
+    if(isset($_GET['input_title']) && isset($_GET['input_desc'])){
+      echo 'Tu album ha sido creado y añadido a tus albumes, puedes agregar tu primera foto';
 
+      $title=$_GET['input_title'];
+      $desc=$_GET['input_desc'];
+      $id=0;
+
+      $sentencia = "INSERT INTO albumes (IdAlbum, Titulo, Descripcion, Usuario)
+                    VALUES (NULL, '$title', '$desc', '$id')";
+      echo '<br>' ;
+      echo $sentencia;
+      if(!($newalb = $mysqli->query($sentencia))) {
+          echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+          echo '</p>';
+          exit;
+      }else{
+          //Pruebas
+      }
+
+
+    }
 
     $sentencia = 'SELECT * FROM Paises';
     if(!($pais = $mysqli->query($sentencia))) {
@@ -28,7 +48,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         $paises = $resultado->fetch_assoc();
         echo $paises["NomPais"];*/
     }
-    $sentencia = 'SELECT * FROM Albumes a, Usuarios u WHERE u.IdUsuario = a.usuario AND u.Email LIKE "'.$_SESSION["user"].'"';
+    $sentencia = 'SELECT * FROM Albumes a, Usuarios u WHERE u.IdUsuario = a.usuario AND u.Email = "'.$_SESSION["user"].'"';
     if(!($album = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';

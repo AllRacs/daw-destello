@@ -57,8 +57,8 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         echo '</tr>';
     }
     echo '</table><a id="anyadir_foto_album" href="anyadir_foto_album.php?album='.$titulo.'">Añadir foto al álbum</a></main>';
-
     ?>
+
 
 
 
