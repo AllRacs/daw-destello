@@ -10,7 +10,7 @@ if(isset($_SESSION["user"])){
 }
 include("include/nav.inc");
 
-$sentencia = 'SELECT NomPais FROM Paises';
+$sentencia = 'SELECT NomPais, IdPais FROM Paises';
 if(!($pais = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
     echo '</p>';
@@ -65,6 +65,13 @@ if(!($pais = $mysqli->query($sentencia))) {
         </label>
         <input id="input_calendar" type="date" name="input_calendar" value="" placeholder="Birthday">
         <br>
+        <label for="input_sex">
+            <span class="hiddeofscreen">Sexo:</span>
+            <span class="" aria-hidden="true"></span><!-- E-mail REGISTER -->
+        </label>
+        <input id="input_sex" type="radio" name="input_sex" value="0">Hombre</input>
+        <input id="input_sex" type="radio" name="input_sex" value="1">Mujer</input>
+        <br>
         <label for="input_city">
             <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->
         </label>
@@ -72,10 +79,10 @@ if(!($pais = $mysqli->query($sentencia))) {
         <br>
         <label for="input_country">
             <span>Country:</span>
-            <select name="Country" id="input_country" required>
+            <select name="input_country" id="input_country" required>
                     <option value="">Elige uno</option>
                 <?php while($fila = $pais->fetch_assoc()){
-                    echo'<option value="'. $fila['NomPais'] .'">'. $fila['NomPais'] .'</option>';
+                    echo'<option value="'. $fila['IdPais'] .'">'. $fila['NomPais'] .'</option>';
                 }
                 ?>
             </select>
@@ -91,6 +98,7 @@ if(!($pais = $mysqli->query($sentencia))) {
 </main>
 <?php
 $pais->close();
+
 
 // Cierra la conexión
 $mysqli->close();
