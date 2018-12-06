@@ -16,15 +16,16 @@ include("include/nav.inc");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
-    if(isset($_GET['input_title']) && isset($_GET['input_desc'])){
+    if(isset($_GET['album']) && isset($_GET['input_desc'])){
       echo 'Tu album ha sido creado y añadido a tus albumes, puedes agregar tu primera foto';
 
-      $title=$_GET['input_title'];
+      $title=$_GET['album'];
       $desc=$_GET['input_desc'];
-      $id=0;
+      echo $_SESSION['id'];
+      $id=$_SESSION['id'];
 
       $sentencia = "INSERT INTO albumes (IdAlbum, Titulo, Descripcion, Usuario)
-                    VALUES (NULL, '$title', '$desc', '$id')";
+                    VALUES (NULL, '$title', '$desc', $id)";
       echo '<br>' ;
       echo $sentencia;
       if(!($newalb = $mysqli->query($sentencia))) {
@@ -67,7 +68,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 <!--Advance Search Form-->
                 <label>
                     <span>Título:</span>
-                    <input type="text" name="Title" id="input_title" value="" placeholder="Title" required>
+                    <input type="text" name="Titulo" id="input_title" value="" placeholder="Title" required>
                 </label>
                 <br>
                 <label>

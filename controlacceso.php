@@ -33,6 +33,7 @@ if(isset($_POST["input_email"]) && isset($_POST["input_pass"])){   /*Post*/
         $_SESSION["user"] = $user;
         $_SESSION["pass"] = $pass;
         $_SESSION["flag_home"] = 0;
+        $_SESSION["id"] = $fila['IdUsuario'];
     }
 
     if($_SESSION["user"] == $user && $_SESSION["pass"] == $pass) {

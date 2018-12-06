@@ -15,8 +15,9 @@ $mysqli = @new mysqli(
             exit;
         }
 
+        $email = $_COOKIE["c_email"];
         // Ejecuta una sentencia SQL
-        $sentencia = 'SELECT * FROM Usuarios';
+        $sentencia = 'SELECT * FROM Usuarios WHERE Usuarios.email = "'.$email.'"';
         if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';
@@ -28,6 +29,7 @@ $mysqli = @new mysqli(
                 $flag_fin = true;
                 if(!isset($_SESSION["user"]))
                 $_SESSION["user"] = $_COOKIE["c_email"];
+                $_SESSION["id"] = $fila['IdUsuario'];
                 if(!isset($_SESSION["pass"]))
                 $_SESSION["pass"] = $_COOKIE["c_pass"];
                 if(!isset($_SESSION["flag_home"]))

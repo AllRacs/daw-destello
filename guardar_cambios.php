@@ -60,16 +60,17 @@ END;
                 <p>Cambios en los datos guardados.</p>
             </div>';
             $name= $_POST['input_name'];
-
             $email= $_POST['input_email'];
+            $password = $_POST['input_pass_modify'];
             $fnac= $_POST['input_calendar'];
             $ciudad= $_POST['input_city'];
             $pais= $_POST['input_country'];
             $currentemail = $_SESSION["user"];
-            $sentencia = "UPDATE usuarios
-            SET NomUsuario = '$name',
+            $sentencia = "UPDATE usuarios SET
+            NomUsuario = '$name',
             Clave = '$clave',
             Email= '$email',
+            Clave= '$password',
             FNacimiento= '$fnac',
             Ciudad= '$ciudad',
             Pais= '$pais'
@@ -81,6 +82,8 @@ END;
                 echo '</p>';
                 exit;
             }
+            $_SESSION["user"] = $email;
+            $_SESSION["pass"] = $password;
 
           }else{
             if(password()==false){

@@ -44,6 +44,8 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 $precio = (($col_bn + $res +$ppag) * $paginas) * $numcop;
                 echo 'Precio: ' . $precio;
                 ?>
+
+
                 <!--
                 <li>Autor</li>
                 <li>Titulo</li>

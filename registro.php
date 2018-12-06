@@ -49,15 +49,15 @@ if(!($pais = $mysqli->query($sentencia))) {
         <br>
         <label for="input_pass_confirm">
             <span class="hiddeofscreen">Repeat password:</span>
-            <span class="icon-key" aria-hidden="true"></span><!-- Password Confirm REGISTER -->
+            <span class="icon-key" aria-hidden="true"></span><!-- Password Confirm REGISTER pattern ="/^[A-Za-z0-9]+$"-->
         </label>
-        <input id="input_pass_confirm" type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" minlength="6" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres. Obligatorio una mayuscula, una minuscula y un numero" required>
+        <input id="input_pass_confirm" type="password" name="input_pass_confirm" value="" placeholder="Repeat Password" minlength="6" maxlength="15"  title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres. Obligatorio una mayuscula, una minuscula y un numero" required>
         <br>
         <label for="input_email">
             <span class="hiddeofscreen">Email:</span>
             <span class="icon-at" aria-hidden="true"></span><!-- E-mail REGISTER -->
         </label>
-        <input id="input_email" type="email" name="input_email" value="" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title><!-- Comprobamos que el dom principal sea menor >2 y <4 con {2,4} -->
+        <input id="input_email" type="email" name="input_email" value="" placeholder="E-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title =""><!-- Comprobamos que el dom principal sea menor >2 y <4 con {2,4} -->
         <br>
         <label for="input_calendar">
             <span class="hiddeofscreen">Birthday:</span>

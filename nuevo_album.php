@@ -25,7 +25,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
             <label for="input_name_new">
                 <span>Title:</span>
             </label><!-- User/email REGISTER -->
-            <input id="input_title" type="text" name="input_title" value="" placeholder="Title" required>
+            <input id="album" type="text" name="album" value="" placeholder="Title" required>
             <br>
             <label for="input_desc">
                 <span>Description:</span>
