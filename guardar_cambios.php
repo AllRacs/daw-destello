@@ -1,5 +1,6 @@
 <?php
 include("sesionstart.php");
+include("filtrado.php");
 ?>
 <?php
 include("include/cabecera.inc");
@@ -40,12 +41,20 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 END;
                 ?>
             </div>
-            <div id="container_posting_perfil">
+            <?php if(filtrado()==true){
+            echo'<div id="container_posting_perfil">
                 <p>Cambios en los datos guardados.</p>
-            </div>
+            </div>';
+          }else{
+            echo'<div id="container_posting_perfil">
+                <p>Algo ha salido mal. Lo siento :(</p>
+            </div>';
+          }
+            ?>
         </section>
     </main>
     <?php
+
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }

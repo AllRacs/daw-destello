@@ -95,19 +95,19 @@ END;
                 <span class="hiddeofscreen">Usuario:</span>
                 <span class="icon-user-circle-o" aria-hidden="true"></span>
                 </label><!-- User/email REGISTER -->
-                <input id="input_name" type="text" name="input_name" value="$usu->NomUsuario" placeholder="User Name" required>
+                <input id="input_name" type="text" name="input_name" value="$usu->NomUsuario" placeholder="User Name" minlength="3" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres">
                 <br>
                 <label for="input_pass">
                 <span class="hiddeofscreen">Password:</span>
                 <span class="icon-key" aria-hidden="true"></span><!-- Password REGISTER -->
                 </label>
-                <input id="input_pass" type="text" name="input_pass" value="$usu->Clave" placeholder="Password" required>
+                <input id="input_pass" type="text" name="input_pass_modify" value="$usu->Clave" placeholder="Password" minlength="6" maxlength="15" title="Numeros y Letras Inglesas. Longitud entre 3 y 15 caracteres. Obligatorio una mayuscula, una minuscula y un numero" required>
                 <br>
                 <label for="input_email">
                 <span class="hiddeofscreen">Email:</span>
                 <span class="icon-at" aria-hidden="true"></span><!-- E-mail REGISTER -->
                 </label>
-                <input id="input_email" type="email" name="input_email" value="$usu->Email" placeholder="E-mail" required>
+                <input id="input_email" type="email" name="input_email" value="$usu->Email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title>
                 <br>
                 <label for="input_calendar">
                 <span class="hiddeofscreen">Birthday:</span>
