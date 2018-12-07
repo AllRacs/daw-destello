@@ -2,7 +2,8 @@
 include("sesionstart.php");
 if(isset($_GET["estilo"])){
     //UPDATE `usuarios` SET `Estilo` = '3' WHERE `usuarios`.`IdUsuario` = 1;
-    $sentencia = 'UPDATE usuarios SET Estilo = '.$_GET["estilo"].' WHERE usuarios.Email LIKE "'.$_SESSION["user"].'"';
+    $sentencia = 'UPDATE usuarios SET Estilo = '.mysqli_real_escape_string($mysqli, $_GET["estilo"]).'
+     WHERE usuarios.Email LIKE "'.mysqli_real_escape_string($mysqli, $_SESSION["user"]).'"';
     echo $sentencia;
     if(!($mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;

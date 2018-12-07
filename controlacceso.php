@@ -8,7 +8,7 @@ if(isset($_POST["input_email"]) && isset($_POST["input_pass"])){   /*Post*/
     $pass = $_POST["input_pass"];
 
     if(isset($_POST["remember"])){
-        $remember = $_POST["remember"];
+        $remember = mysqli_real_escape_string($mysqli, $_POST["remember"]);
     }
 
     if (isset($remember) && $remember == "on") {
@@ -19,7 +19,7 @@ if(isset($_POST["input_email"]) && isset($_POST["input_pass"])){   /*Post*/
         setcookie("style", $_SESSION["style"], time() + (86400 * 90), "/"); // 86400 = 1 day
     }
 
-    $sentencia = 'SELECT * FROM usuarios u where u.Email = "'.$_POST["input_email"].'"';
+    $sentencia = 'SELECT * FROM usuarios u where u.Email = "'.mysqli_real_escape_string($mysqli, $_POST["input_email"]).'"';
     if(!($resultado = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';

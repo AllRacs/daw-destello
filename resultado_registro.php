@@ -11,19 +11,19 @@ if(isset($_SESSION["user"])){
 }
 
 
-if(filtrado() == true){//Comprobacion datos
-    $name=$_POST['input_name'];
-    $clave=$_POST['input_pass'];
-    $email=$_POST['input_email'];
+if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli, nombre)
+    $name= mysqli_real_escape_string($mysqli, $_POST['input_name']);
+    $clave= mysqli_real_escape_string($mysqli, $_POST['input_pass']);
+    $email= mysqli_real_escape_string($mysqli, $_POST['input_email']);
     if(isset($_POST['input_sex'])){
-        $sexo=$_POST['input_sex'];
+        $sexo= mysqli_real_escape_string($mysqli, $_POST['input_sex']);
     }else{
         $sexo=0;
     }
 
-    $fnac=$_POST['input_calendar'];
-    $ciudad=$_POST['input_city'];
-    $pais=$_POST['input_country'];
+    $fnac= mysqli_real_escape_string($mysqli, $_POST['input_calendar']);
+    $ciudad= mysqli_real_escape_string($mysqli, $_POST['input_city']);
+    $pais= mysqli_real_escape_string($mysqli, $_POST['input_country']);
     $foto="img/defaul.img";
     $freg=date("Y-m-d");
     $estilo=1;

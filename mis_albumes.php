@@ -18,7 +18,7 @@ include("include/nav.inc");
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 
-    $sentencia = 'SELECT Titulo, Descripcion FROM Albumes, Usuarios WHERE albumes.usuario = usuarios.IdUsuario AND usuarios.email LIKE "'.$_SESSION["user"].'"';
+    $sentencia = 'SELECT Titulo, Descripcion FROM Albumes, Usuarios WHERE albumes.usuario = usuarios.IdUsuario AND usuarios.email = "'.mysqli_real_escape_string($mysqli, $_SESSION["user"]).'"';
     if(!($misalbumes = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';
@@ -37,7 +37,7 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         echo '</tr>';
     }
     echo '</table>';
-    
+
     $misalbumes->close();
     // Cierra la conexión
     $mysqli->close();

@@ -19,15 +19,14 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     if(isset($_GET['album']) && isset($_GET['input_desc'])){
       echo 'Tu album ha sido creado y añadido a tus albumes, puedes agregar tu primera foto';
 
-      $title=$_GET['album'];
-      $desc=$_GET['input_desc'];
+      $title = mysqli_real_escape_string($mysqli, $_GET['album']);
+      $desc = mysqli_real_escape_string($mysqli, $_GET['input_desc']);
       echo $_SESSION['id'];
-      $id=$_SESSION['id'];
+      $id = mysqli_real_escape_string($mysqli, $_SESSION['id']);
 
       $sentencia = "INSERT INTO albumes (IdAlbum, Titulo, Descripcion, Usuario)
                     VALUES (NULL, '$title', '$desc', $id)";
       echo '<br>' ;
-      echo $sentencia;
       if(!($newalb = $mysqli->query($sentencia))) {
           echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
           echo '</p>';

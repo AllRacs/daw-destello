@@ -63,6 +63,11 @@ body > main > form > span > button {
     width: 8em;
 }
 
+#input_sex {
+    margin: 1em 0em;
+    width: 8em;
+}
+
 #have_an_acc {
     cursor: pointer;
     text-decoration: underline;

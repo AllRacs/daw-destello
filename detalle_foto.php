@@ -18,7 +18,7 @@ include("include/nav.inc");
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     if(isset($_GET['id']) && !empty($_GET['id'])&& is_numeric($_GET['id'])){
 
-        $id= $_GET['id'];
+        $id= mysqli_real_escape_string($mysqli, $_GET['id']);
         $sentencia = 'SELECT * FROM fotos, paises WHERE paises.IdPais = fotos.pais AND  IdFoto = '.$id.' ';
         if(!($misalbumes = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;

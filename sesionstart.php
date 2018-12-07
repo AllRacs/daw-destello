@@ -17,7 +17,7 @@ $mysqli = @new mysqli(
 
         $email = $_COOKIE["c_email"];
         // Ejecuta una sentencia SQL
-        $sentencia = 'SELECT * FROM Usuarios WHERE Usuarios.email = "'.$email.'"';
+        $sentencia = 'SELECT * FROM Usuarios WHERE Usuarios.email = "'.mysqli_real_escape_string($mysqli, $email).'"';
         if(!($resultado = $mysqli->query($sentencia))) {
             echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
             echo '</p>';

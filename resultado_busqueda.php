@@ -18,49 +18,6 @@ include("include/nav.inc");
         Resultado de búsqueda:
     </h1>
     <?php
-    /*PONERLO EN FORMA DE ETIQUEDAS, NO EN ENUMERACION*/
-
-    // if(!empty($_GET['busqueda_top'])){
-    //     echo '<p style="padding-left:6em">'.$_GET["busqueda_top"].'</p>';
-    // } else if(!empty($_GET)){
-    //     foreach ($_GET as $key => $value) {
-    //         if(!empty($value)){
-    //             echo '<li>'.$key.': '.$value.'</li>';
-    //
-    //             // $sentencia = 'SELECT titulo, Descripcion, Fecha, Pais, Fichero, Alternativo, Album, paises.NomPais
-    //             // FROM Fotos, Paises
-    //             // WHERE paises.NomPais LIKE ("'.$_GET["Country"].'") AND titulo LIKE ("'.$_GET["Title"].'")
-    //             // OR titulo LIKE ("'.$_GET["Title"].'")
-    //             // OR paises.NomPais LIKE ("'.$_GET["Country"].'")';
-    //             $sentencia = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
-    //             WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais';
-    //
-    //             if(true){
-    //                 //concatenacion de condicionales
-    //             }
-    //
-    //             $sentencia .='ORDER BY f.FRegistro DESC';
-    //
-    //             if(!($buscar = $mysqli->query($sentencia))) {
-    //                 echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
-    //                 echo '</p>';
-    //                 exit;
-    //             }
-    //         }
-    //
-    //
-    //         foreach ( $_GET["busqueda_avanzada"] as $busqueda_avanzada ) {
-    //             if(!empty($busqueda_avanzada)){
-    //                 echo $busqueda_avanzada;
-    //
-    //             }
-    //             if(!($busqueda_avanzada === end($_GET["busqueda_avanzada"]))){
-    //                 echo ", ";
-    //             }
-    //         }
-    //     }
-    //
-    // }
 
     if(!empty($_GET)){
         $sentencia = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
@@ -69,27 +26,27 @@ include("include/nav.inc");
         if(isset($_GET["busqueda_top"]) && !empty($_GET["busqueda_top"])){
             //concatenacion de condicionales
             echo '<p style="padding-left:6em">'.$_GET["busqueda_top"].'</p>';
-            $sentencia .=' AND f.Titulo LIKE "'.$_GET["busqueda_top"].'" ';
+            $sentencia .=' AND f.Titulo LIKE "'.mysqli_real_escape_string($mysqli, $_GET["busqueda_top"]).'" ';
         } else if(isset($_GET["Title"]) && isset($_GET["Author"]) && isset($_GET["Album"]) && isset($_GET["Country"]) && isset($_GET["date"])) {
             if(!empty($_GET["Title"])){
                 echo '<p style="padding-left:6em">Título: '.$_GET["Title"].'</p>';
-                $sentencia .=' AND f.Titulo LIKE "'.$_GET["Title"].'" ';
+                $sentencia .=' AND f.Titulo LIKE "'.mysqli_real_escape_string($mysqli, $_GET["Title"]).'" ';
             }
             if(!empty($_GET["Author"])){
-                echo '<p style="padding-left:6em">Autor: '.$_GET["Author"].'</p>';
+                echo '<p style="padding-left:6em">Autor: '.mysqli_real_escape_string($mysqli, $_GET["Author"]).'</p>';
                 $sentencia .=' AND u.NomUsuario LIKE "'.$_GET["Author"].'" ';
             }
             if(!empty($_GET["Album"])){
-                echo '<p style="padding-left:6em">Album: '.$_GET["Album"].'</p>';
+                echo '<p style="padding-left:6em">Album: '.mysqli_real_escape_string($mysqli, $_GET["Album"]).'</p>';
                 $sentencia .=' AND a.Titulo LIKE "'.$_GET["Album"].'" ';
             }
             if(!empty($_GET["Country"]) && $_GET["Country"] != "Pais"){
                 echo '<p style="padding-left:6em">País: '.$_GET["Country"].'</p>';
-                $sentencia .=' AND p.NomPais LIKE "'.$_GET["Country"].'" ';
+                $sentencia .=' AND p.NomPais LIKE "'.mysqli_real_escape_string($mysqli, $_GET["Country"]).'" ';
             }
             if(!empty($_GET["date"])){
                 echo '<p style="padding-left:6em">Fecha: '.$_GET["date"].'</p>';
-                $sentencia .=' AND f.FRegistro LIKE "%'.$_GET["date"].'%" ';
+                $sentencia .=' AND f.FRegistro LIKE "%'.mysqli_real_escape_string($mysqli, $_GET["date"]).'%" ';
             }
         }
 

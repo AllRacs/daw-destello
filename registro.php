@@ -65,12 +65,14 @@ if(!($pais = $mysqli->query($sentencia))) {
         </label>
         <input id="input_calendar" type="date" name="input_calendar" value="" placeholder="Birthday">
         <br>
-        <label for="input_sex">
-            <span class="hiddeofscreen">Sexo:</span>
-            <span class="" aria-hidden="true"></span><!-- E-mail REGISTER -->
-        </label>
-        <input id="input_sex" type="radio" name="input_sex" value="1">Hombre</input>
-        <input id="input_sex" type="radio" name="input_sex" value="2">Mujer</input>
+        <!-- <input id="input_sexh" type="radio" name="input_sex" value="1">
+        <label for="input_sexh">Hombre</label>
+        <input id="input_sexm" type="radio" name="input_sex" value="2">
+        <label for="input_sexm">Mujer</label> -->
+        <select class="" id="input_sex" name="input_sex">
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+        </select>
         <br>
         <label for="input_city">
             <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->

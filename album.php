@@ -17,7 +17,7 @@ include("include/nav.inc");
 <?php
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
-    $titulo = htmlspecialchars($_GET['titulo']);
+    $titulo = $_GET['titulo'];
     $sentencia = 'SELECT f.Titulo as titulofoto, a.Descripcion, u.NomUsuario, f.IdFoto, f.Fecha, a.Titulo as tituloalbum, p.NomPais, f.Fichero, f.Alternativo, a.IdAlbum
     FROM fotos f, albumes a, paises p, usuarios u
     WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais AND (a.Titulo  LIKE "'.$titulo.'") ORDER BY f.fecha ASC';

@@ -20,39 +20,39 @@ include("include/nav.inc");
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     // echo 'Página respuesta álbum, realizar la inserción en la DB aquí';
     //Title=&Description=&Date=&Country=&photo=&Alternative=&Album=
-    if(isset($_GET["Title"]) && isset($_GET["Description"]) && isset($_GET["Date"]) && isset($_GET["Country"]) && isset($_GET["photo"]) && isset($_GET["Alternative"]) && isset($_GET["Album"])){
-        if (!empty($_GET["Title"])) {
-            $titulo = $_GET["Title"];
+    if(isset($_GET["Titulo"]) && isset($_GET["Description"]) && isset($_GET["Date"]) && isset($_GET["Country"]) && isset($_GET["photo"]) && isset($_GET["Alternative"]) && isset($_GET["Album"])){
+        if (!empty($_GET["Titulo"])) {
+            $titulo = mysqli_real_escape_string($mysqli, $_GET["Titulo"]);
         } else {
             $titulo = 'NULL';
         }
         if (!empty($_GET["Description"])) {
-            $desc = $_GET["Description"];
+            $desc = mysqli_real_escape_string($mysqli, $_GET["Description"]);
         } else {
             $desc = 'NULL';
         }
         if (!empty($_GET["Date"])) {
-            $date = $_GET["Date"];
+            $date = mysqli_real_escape_string($mysqli, $_GET["Date"]);
         } else {
             $date = 'NULL';
         }
         if (!empty($_GET["Country"])) {
-            $country = $_GET["Country"];
+            $country = mysqli_real_escape_string($mysqli, $_GET["Country"]);
         } else {
             $country = 'NULL';
         }
         if (!empty($_GET["photo"])) {
-            $photo = $_GET["photo"];
+            $photo = mysqli_real_escape_string($mysqli, $_GET["photo"]);
         } else {
             $photo = 'NULL';
         }
         if (!empty($_GET["Alternative"])) {
-            $alter = $_GET["Alternative"];
+            $alter = mysqli_real_escape_string($mysqli, $_GET["Alternative"]);
         } else {
             $alter = 'NULL';
         }
         if (!empty($_GET["Album"])) {
-            $album = $_GET["Album"];
+            $album = mysqli_real_escape_string($mysqli, $_GET["Album"]);
         } else {
             $album = 'NULL';
         }

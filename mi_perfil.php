@@ -42,7 +42,7 @@ END;
             <div id="container_posting_perfil">
                 <?php
                 if(isset($_SESSION["user"])){
-                    $sentencia = 'SELECT * FROM usuarios where Email like "'.$_SESSION["user"].'"';
+                    $sentencia = 'SELECT * FROM usuarios where Email like "'.mysqli_real_escape_string($mysqli, $_SESSION["user"]).'"';
                     if(!($resultado = $mysqli->query($sentencia))) {
                         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
                         echo '</p>';
@@ -64,7 +64,7 @@ END;
                     echo '<p>Sexo: '.$sexo.'</p>';
                     echo '<p>Ciudad: '.$fila->Ciudad.'</p>';
 
-                    $sentencia = 'SELECT NomPais FROM usuarios u, paises p where p.IdPais = u.Pais and u.Email like "'.$_SESSION["user"].'"';
+                    $sentencia = 'SELECT NomPais FROM usuarios u, paises p where p.IdPais = u.Pais and u.Email like "'.mysqli_real_escape_string($mysqli, $_SESSION["user"]).'"';
                     if(!($resultado2 = $mysqli->query($sentencia))) {
                         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
                         echo '</p>';

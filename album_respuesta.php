@@ -46,21 +46,21 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
                 }
                 $precio = (($col_bn + $res +$ppag) * $paginas) * $numcop;
                 echo '<li>Precio: ' . $precio.'</li>';
-
-                $album = $_POST['Album'];
-                $nombre = $_POST['Autor'];
-                $titulo = $_POST['Title'];
+                //mysqli_real_escape_string($mysqli, nombre)
+                $album = mysqli_real_escape_string($mysqli, $_POST['Album']);
+                $nombre = mysqli_real_escape_string($mysqli, $_POST['Autor']);
+                $titulo = mysqli_real_escape_string($mysqli, $_POST['Title']);
                 $descripcion = NULL;
                 if(isset($_POST['Text'])){
-                    $descripcion = $_POST['Text'];
+                    $descripcion = mysqli_real_escape_string($mysqli, $_POST['Text']);
                 }
-                $email = $_POST['Email'];
-                $direccion = $_POST['Direccion'];
-                $color = $_POST['Portada'];
-                $copias = $_POST['numcop'];
-                $resolucion = $_POST['res'];
-                $fecha = $_POST['Entrega'];
-                $Icolor = $_POST['Impresion'];
+                $email = mysqli_real_escape_string($mysqli, $_POST['Email']);
+                $direccion = mysqli_real_escape_string($mysqli, $_POST['Direccion']);
+                $color = mysqli_real_escape_string($mysqli, $_POST['Portada']);
+                $copias = mysqli_real_escape_string($mysqli, $_POST['numcop']);
+                $resolucion = mysqli_real_escape_string($mysqli, $_POST['res']);
+                $fecha = mysqli_real_escape_string($mysqli, $_POST['Entrega']);
+                $Icolor = mysqli_real_escape_string($mysqli, $_POST['Impresion']);
                 $FRegistro = date("Y-m-d");
                 $coste = $precio;
 

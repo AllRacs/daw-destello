@@ -46,7 +46,7 @@ END;
             $clave= $_POST['input_current_pass'];
 
             function password(){
-              $clave= $_POST['input_current_pass'];
+              $clave= mysqli_real_escape_string($mysqli, $_POST['input_current_pass']);
               $pass = false;
               if($clave === $_SESSION['pass']){
                 $pass = true;
@@ -59,12 +59,12 @@ END;
             echo'<div id="container_posting_perfil">
                 <p>Cambios en los datos guardados.</p>
             </div>';
-            $name= $_POST['input_name'];
-            $email= $_POST['input_email'];
-            $password = $_POST['input_pass_modify'];
-            $fnac= $_POST['input_calendar'];
-            $ciudad= $_POST['input_city'];
-            $pais= $_POST['input_country'];
+            $name = mysqli_real_escape_string($mysqli, $_POST['input_name']);
+            $email = mysqli_real_escape_string($mysqli,  $_POST['input_email']);
+            $password = mysqli_real_escape_string($mysqli, $_POST['input_pass_modify']);
+            $fnac = mysqli_real_escape_string($mysqli,  $_POST['input_calendar']);
+            $ciudad = mysqli_real_escape_string($mysqli, $_POST['input_city']);
+            $pais = mysqli_real_escape_string($mysqli, $_POST['input_country']);
             $currentemail = $_SESSION["user"];
             $sentencia = "UPDATE usuarios SET
             NomUsuario = '$name',
