@@ -33,12 +33,24 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         echo '<li>'.$fila->Album.': '.$fila->cont.' fotos</li>';
     }
     echo '</ul>';
-    echo '<a id="volver_al_perfil" href="index.php">Borrar cuenta</a>';
+    //autentificación usuario
+    if(isset($_GET["err_auth"])){
+        echo '<p style="padding:1em 0em 0em 2em; color:red">Contraseña incorrecta</p><br>';
+    }
+    echo <<<HHH
+        <form action="baja_usuario_borrar.php" method="post">
+            <label for="pass_auth">Autentificación usuario: </label>
+            <input type="password" id="pass_auth" name="pass_auth" required>
+            <br>
+            <button id="baja_borrar_usuario" type="submit" name="baja_borrar_usuario">Borrar cuenta</button>
+        </form>
+HHH;
+    //-----------------------
 
     $resultado->close();
     $mysqli->close();
 } else { /*Si no has iniciado sesion se te recomiendo iniciarla*/
-    echo '¡Vaya! parece que no estás loggeado <a href="alta_usuario_borrar.php">Borrar cuenta</a>';
+    echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Crear cuenta</a>';
 }
 echo '</main>';
 require_once("include/fin.inc");

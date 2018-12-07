@@ -53,7 +53,6 @@ function filtrado(){
             echo 'Las contraseñas deben contener al menos un numero';
         }
     }else{ //Si viene de modificar datos
-
         if(strlen($_POST['input_pass_modify']) < 6 && strlen($_POST['input_pass_modify']) > 15){ // entre 6 y 15 solo caracteres ingleses, numeros y subrayado. Min una letra mayuscula, una minuscula y un numero
 
             $result = false;
@@ -83,8 +82,9 @@ function filtrado(){
             echo 'Las contraseñas deben contener al menos un numero';
 
         }
-        return $result;
+
     }
+    return $result;
 }
 
 

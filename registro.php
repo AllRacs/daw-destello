@@ -69,8 +69,8 @@ if(!($pais = $mysqli->query($sentencia))) {
             <span class="hiddeofscreen">Sexo:</span>
             <span class="" aria-hidden="true"></span><!-- E-mail REGISTER -->
         </label>
-        <input id="input_sex" type="radio" name="input_sex" value="0">Hombre</input>
-        <input id="input_sex" type="radio" name="input_sex" value="1">Mujer</input>
+        <input id="input_sex" type="radio" name="input_sex" value="1">Hombre</input>
+        <input id="input_sex" type="radio" name="input_sex" value="2">Mujer</input>
         <br>
         <label for="input_city">
             <span class="icon-home-outline" aria-hidden="true"></span><!-- Location REGISTER -->
