@@ -18,7 +18,7 @@ include("include/nav.inc");
 
 if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 
-    $sentencia = 'SELECT Titulo FROM Albumes, Usuarios WHERE usuarios.IdUsuario = albumes.usuario AND usuarios.Email LIKE "'.$_SESSION["user"].'"';
+    $sentencia = 'SELECT Titulo, IdAlbum  FROM Albumes, Usuarios WHERE usuarios.IdUsuario = albumes.usuario AND usuarios.Email = "'.$_SESSION["user"].'"';
     if(!($album = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';
