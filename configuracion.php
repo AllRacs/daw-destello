@@ -58,7 +58,7 @@ END;
                     if($_SESSION["estiloid"] == $fila->IdEstilo) {
                          echo 'selected';
                     }
-                    echo ' value="'.$fila->IdEstilo.'" >'.$fila->Fichero.'</option>';
+                    echo ' value="'.$fila->IdEstilo.'" >'.$fila->Nombre.'</option>';
                 }
                 echo "</select><br>";
                 echo '<button type="submit" name="input_submit" value="Guardar">Guardar estilo</button>';

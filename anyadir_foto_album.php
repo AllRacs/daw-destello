@@ -21,7 +21,6 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
 
       $title = mysqli_real_escape_string($mysqli, $_GET['album']);
       $desc = mysqli_real_escape_string($mysqli, $_GET['input_desc']);
-      echo $_SESSION['id'];
       $id = mysqli_real_escape_string($mysqli, $_SESSION['id']);
 
       $sentencia = "INSERT INTO albumes (IdAlbum, Titulo, Descripcion, Usuario)
