@@ -1,8 +1,7 @@
 <?php
 include("sesionstart.php");
-?>
-<?php
 include("include/cabecera.inc");
+include("include/fichero.php");
 if(isset($_SESSION["user"])){
     include("include/header_logged.inc");
 } else {
@@ -19,40 +18,44 @@ include("include/nav.inc");
     if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
         // echo 'Página respuesta álbum, realizar la inserción en la DB aquí';
         //Title=&Description=&Date=&Country=&photo=&Alternative=&Album=
-        if(isset($_GET["Titulo"]) && isset($_GET["Description"]) && isset($_GET["Date"]) && isset($_GET["Country"]) && isset($_GET["photo"]) && isset($_GET["Alternative"]) && isset($_GET["Album"])){
-            if (!empty($_GET["Titulo"])) {
-                $titulo = mysqli_real_escape_string($mysqli, $_GET["Titulo"]);
+
+
+        if(isset($_POST["Titulo"]) && isset($_POST["Description"]) && isset($_POST["Date"]) && isset($_POST["Country"]) &&
+        isset($_POST["Alternative"]) && isset($_POST["Album"])){
+            if (!empty($_POST["Titulo"])) {
+                $titulo = mysqli_real_escape_string($mysqli, $_POST["Titulo"]);
             } else {
                 $titulo = 'NULL';
             }
-            if (!empty($_GET["Description"])) {
-                $desc = mysqli_real_escape_string($mysqli, $_GET["Description"]);
+            if (!empty($_POST["Description"])) {
+                $desc = mysqli_real_escape_string($mysqli, $_POST["Description"]);
             } else {
                 $desc = 'NULL';
             }
-            if (!empty($_GET["Date"])) {
-                $date = mysqli_real_escape_string($mysqli, $_GET["Date"]);
+            if (!empty($_POST["Date"])) {
+                $date = mysqli_real_escape_string($mysqli, $_POST["Date"]);
             } else {
                 $date = 'NULL';
             }
-            if (!empty($_GET["Country"])) {
-                $country = mysqli_real_escape_string($mysqli, $_GET["Country"]);
+            if (!empty($_POST["Country"])) {
+                $country = mysqli_real_escape_string($mysqli, $_POST["Country"]);
             } else {
                 $country = 'NULL';
             }
-            if (!empty($_GET["photo"])) {
-                $photo = mysqli_real_escape_string($mysqli, $_GET["photo"]);
+            if (empty($_POST["photo"])) {
+                $photo = mysqli_real_escape_string($mysqli, comprobarfichero());
+
             } else {
+
                 $photo = 'NULL';
             }
-            if (!empty($_GET["Alternative"])) {
-                $alter = mysqli_real_escape_string($mysqli, $_GET["Alternative"]);
+            if (!empty($_POST["Alternative"])) {
+                $alter = mysqli_real_escape_string($mysqli, $_POST["Alternative"]);
             } else {
                 $alter = 'NULL';
             }
-            if (isset($_GET["Album"]) && !empty($_GET['Album'])) {
-                echo'album existe';
-                $album = mysqli_real_escape_string($mysqli, $_GET["Album"]);
+            if (isset($_POST["Album"]) && !empty($_POST['Album'])) {
+                $album = mysqli_real_escape_string($mysqli, $_POST["Album"]);
             } else {
                 $album = 'NULL';
             }
@@ -75,12 +78,12 @@ include("include/nav.inc");
             // Cierra la conexión con la base de datos
             $mysqli->close();
 
-            echo '<p style="padding-left:8em;padding-top:1em">La foto se ha añadido correctamente.</p>';
+            //echo '<p style="padding-left:8em;padding-top:1em">La foto se ha añadido correctamente.</p>';
 
             echo '<a id="volver_al_perfil" href="mi_perfil.php">Volver al perfil</a>';
-        }
+        }else{
             echo 'Vaya, algo salió mal, debes rellenar todos los campos obligatorios para poder subir una foto.';
-
+        }
 
     } else { /*Si no has iniciado sesion se te recomiendo iniciarla*/
         echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';

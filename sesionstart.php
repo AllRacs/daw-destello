@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 
 $mysqli = @new mysqli(
     'localhost',   // El servidor

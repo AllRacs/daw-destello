@@ -62,11 +62,12 @@ if(isset($_SESSION["user"])){/*Si has iniciado sesion puedes ver esto*/
     <main>
         <h1>Añadir foto a álbum</h1>
         <section>
-            <form id="form_photo" action="anyadir_foto_album_respuesta.php" method="GET">
+            <form id="form_photo" action="anyadir_foto_album_respuesta.php" method="POST" enctype="multipart/form-data">
                 <!--Advance Search Form-->
                 <label>
                     <span>Título:</span>
                     <input type="text" name="Titulo" id="input_title" value="" placeholder="Title" required>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="5000000"> <!-- 5Megas maximo-->
                 </label>
                 <br>
                 <label>

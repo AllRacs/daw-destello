@@ -55,7 +55,8 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
             <p>Ciudad: <?php echo htmlspecialchars($_POST['input_city']); ?></p>
         </main>
         <?php
-
+        $directory = 'img/users/'.$email.'';
+        mkdir($directory);
         $mysqli->close();
     }else{
         echo'<a href="registro.php">Vuelve a intentarlo</a>';
