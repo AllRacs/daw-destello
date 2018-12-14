@@ -1,6 +1,7 @@
 <?php
 include("sesionstart.php");
 include("filtrado.php");
+include("include/fichero.php");
 ?>
 <?php
 include("include/cabecera.inc");
@@ -46,14 +47,13 @@ END;
             $clave= $_POST['input_current_pass'];
 
             function password(){
-              $clave= mysqli_real_escape_string($mysqli, $_POST['input_current_pass']);
+              $clave= $_POST['input_current_pass'];
               $pass = false;
               if($clave === $_SESSION['pass']){
                 $pass = true;
               }
               return $pass;
             }
-
 
             if(filtrado()==true && password()==true){
             echo'<div id="container_posting_perfil">
@@ -65,18 +65,32 @@ END;
             $fnac = mysqli_real_escape_string($mysqli,  $_POST['input_calendar']);
             $ciudad = mysqli_real_escape_string($mysqli, $_POST['input_city']);
             $pais = mysqli_real_escape_string($mysqli, $_POST['input_country']);
+
             $currentemail = $_SESSION["user"];
             $sentencia = "UPDATE usuarios SET
             NomUsuario = '$name',
-            Clave = '$clave',
             Email= '$email',
             Clave= '$password',
             FNacimiento= '$fnac',
             Ciudad= '$ciudad',
-            Pais= '$pais'
-            WHERE
-            usuarios.email = '$currentemail'";
+            Pais= '$pais'";
+            // if(isset($_POST["register"])){
+            //     print "foto esta en el post";
+            // }
+            if (empty($_FILE['register'])) {
+                $s = 'SELECT Foto FROM usuarios WHERE Email = "'.$currentemail.'"';
+                if(!($r = $mysqli->query($s))) {
+                    echo "<p>Error al ejecutar la sentencia <b>$s</b>: " . $mysqli->error;
+                    echo '</p>';
+                    exit;
+                }
+                $fila = $r->fetch_object();
+                unlink('img/'.$fila->Foto);
+                $foto = comprobarficheroperfil();
+                $sentencia.=', Foto = "'.$foto.'"';
+            }
 
+            $sentencia.=" WHERE usuarios.email = '$currentemail'";
             if(!($mysqli->query($sentencia))) {
                 echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
                 echo '</p>';
@@ -101,6 +115,7 @@ END;
     </main>
     <?php
 $mysqli->close();
+$r->close();
 }else{/*Si no has iniciado sesion se te recomiendo iniciarla*/
     echo '¡Vaya! parece que no estás loggeado <a href="registro.php">Accede ahora</a>';
 }

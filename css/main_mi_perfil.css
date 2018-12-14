@@ -15,6 +15,10 @@ body > main > section {
     width: 16em;
 }
 
+main  img {
+    height: 8em;
+}
+
 body > main > section > div > label {
     margin: 0.5em;
     width: 15em;

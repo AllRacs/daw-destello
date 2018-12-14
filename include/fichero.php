@@ -34,20 +34,20 @@ function comprobarficherosubida(){
 
 function comprobarficheroperfil(){
     $value = null;
-    $name = $_FILES['photo']['name'];
-    $type = $_FILES['photo']['type'];
-    $size = $_FILES['photo']['size'];
+    $name = $_FILES['register']['name'];
+    $type = $_FILES['register']['type'];
+    $size = $_FILES['register']['size'];
     $date = strtotime(date("Y-m-d H:i:s"));
 
     if (!((strpos($type, "gif") || strpos($type, "jpeg")) || strpos($type, "png")) && ($size < 5000000)) {
         echo "La extensión o el tamaño de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten archivos .gif ,.jpg o .png<br><li>se permiten archivos de 5Mb  máximo.</td></tr></table>";
         $value = false;
     }else{
-        $tmp = $_FILES["photo"]["tmp_name"];
+        $tmp = $_FILES["register"]["tmp_name"];
         $directory= 'img/profile/'.$_POST['input_email'].$date.$name.'';
         $directory = limpia_espacios($directory);
         if (move_uploaded_file($tmp, $directory)){
-            echo "El archivo ha sido cargado correctamente.";
+            echo "<p style='padding-left:1em'>El archivo ha sido cargado correctamente.</p>";
             $value = 'profile/'.$_POST['input_email'].$date.$name.'';
             $value = limpia_espacios($value);
         }else{

@@ -82,7 +82,7 @@ END;
                 $usu = $usuu->fetch_object();
                 echo <<<ggg
 
-                <form id="form_registro" action="guardar_cambios.php" method="POST">
+                <form id="form_registro" action="guardar_cambios.php" method="POST" enctype="multipart/form-data">
                 <!--Register_Form-->
                 <label for="user_img">
                 <span class="hiddeofscreen">Profile Picture</span>

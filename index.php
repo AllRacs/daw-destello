@@ -125,7 +125,6 @@ ddd;
             <span class="icon-comment-empty"></span>
             <label>$fila->NomUsuario</label>
             <time datetime="2018-10-01">$fila->FRegistro</time>
-
 ddd;
             print '<p>Editor: '.$foto[1].' - '.$foto[2].'</p></div>';
         }

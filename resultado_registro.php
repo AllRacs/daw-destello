@@ -11,8 +11,25 @@ if(isset($_SESSION["user"])){
     include("include/nav.inc");
 }
 
+if(isset($_POST['input_email'])){
+    $existe=false;
+    $email=$_POST['input_email'];
 
-if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli, nombre)
+    $sentencia = "SELECT Email FROM usuarios where Email = '$email'";
+    if(!($resultado2 = $mysqli->query($sentencia))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+        echo '</p>';
+        exit;
+    }
+    $fila = $resultado2->fetch_object();
+
+    if($email == $fila["Email"]){
+        $existe = true;
+    }
+
+
+}
+if(filtrado() == true && !$existe){//Comprobacion datos -- mysqli_real_escape_string($mysqli, nombre)
     $name= mysqli_real_escape_string($mysqli, $_POST['input_name']);
     $clave= mysqli_real_escape_string($mysqli, $_POST['input_pass']);
     $email= mysqli_real_escape_string($mysqli, $_POST['input_email']);
@@ -26,7 +43,7 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
     $ciudad= mysqli_real_escape_string($mysqli, $_POST['input_city']);
     $pais= mysqli_real_escape_string($mysqli, $_POST['input_country']);
     if (empty($_POST["photo"])) {
-        $foto = mysqli_real_escape_string($mysqli, comprobarficheroperfil());
+        $foto = mysqli_real_escape_string($mysqli, comprobarficherosubida());
 
     } else {
 
@@ -70,6 +87,9 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
 
 $mysqli->close();
 }else{
+    if($existe){
+        echo '<p>Ya existe una cuenta con este correo: '.$email.'</p>';
+    }
     echo'<a href="registro.php">Vuelve a intentarlo</a>';
 }
 
