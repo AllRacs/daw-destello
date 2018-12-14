@@ -88,8 +88,52 @@ ddd;
             <time datetime="2018-10-01">01/10/2018</time>
         </div>-->
     </div>
+    <h2>Selección de los editores</h2><br>
+
+        <?php
+        $rows[0] = "";
+        $rcount = 0;
+        if(is_file("editorschoice.dat")){
+            $rows = file("editorschoice.dat");
+            $rcount = sizeof($rows);
+        }
+        $rand = rand(0, $rcount-1);
+        $foto = explode("##", $rows[$rand]);
+        //consusta a bd
+        $sentencia2 = 'SELECT u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
+        WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais AND f.IdFoto like "'.$foto[0].'"';
+        if(!($choice = $mysqli->query($sentencia2))) {
+            echo "<p>Error al ejecutar la sentencia <b>$sentencia2</b>: " . $mysqli->error;
+            echo '</p>';
+            exit;
+        }
+        //select > option para cada css
+        print '<div class="container_posting">';
+        while($fila = $choice->fetch_object()) {
+            echo <<<ddd
+            <div class="p_box">
+            <label class="title">$fila->Titulo</label>
+            <span> - </span>
+            <label class="ubicacion">$fila->NomPais</label>
+            <br>
+            <figure>
+            <a href="detalle_foto.php?id=$fila->IdFoto">
+            <img src="$fila->Fichero" alt="[foto_not_found]">
+            </a>
+            </figure>
+            <span class="icon-heart-empty"></span>
+            <span class="icon-comment-empty"></span>
+            <label>$fila->NomUsuario</label>
+            <time datetime="2018-10-01">$fila->FRegistro</time>
+
+ddd;
+            print '<p>Editor: '.$foto[1].' - '.$foto[2].'</p></div>';
+        }
+        ?>
+    </div>
 </main>
 <?php
+$choice->close();
 // Libera la memoria ocupada por el resultado
 $resultado->close();
 // Cierra la conexión

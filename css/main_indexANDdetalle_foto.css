@@ -10,6 +10,11 @@ h1 {
     font-size: 1.4em;
 }
 
+h2 {
+    padding-top: 1em;
+    border-top: 1px solid black;
+}
+
 /* container_posting */
 .container_posting {
     display: flex;
