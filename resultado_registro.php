@@ -1,6 +1,7 @@
 <?php
 include("sesionstart.php");
 include("filtrado.php");
+include("include/fichero.php");
 
 include("include/cabecera.inc");
 if(isset($_SESSION["user"])){
@@ -24,7 +25,13 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
     $fnac= mysqli_real_escape_string($mysqli, $_POST['input_calendar']);
     $ciudad= mysqli_real_escape_string($mysqli, $_POST['input_city']);
     $pais= mysqli_real_escape_string($mysqli, $_POST['input_country']);
-    $foto="img/defaul.img";
+    if (empty($_POST["photo"])) {
+        $foto = mysqli_real_escape_string($mysqli, comprobarficheroperfil());
+
+    } else {
+
+        $foto = 'img/default.img';
+    }
     $freg=date("Y-m-d");
     $estilo=1;
     $sentencia = "INSERT INTO usuarios (IdUsuario, NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, Foto, FRegistro, Estilo)
@@ -55,8 +62,7 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
             <p>Ciudad: <?php echo htmlspecialchars($_POST['input_city']); ?></p>
         </main>
         <?php
-        $directory = 'img/users/'.$email.'';
-        mkdir($directory);
+
         $mysqli->close();
     }else{
         echo'<a href="registro.php">Vuelve a intentarlo</a>';

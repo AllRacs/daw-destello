@@ -27,13 +27,13 @@ if(!($pais = $mysqli->query($sentencia))) {
 <main>
     <h1>Register</h1>
 
-    <form id="form_registro" action="resultado_registro.php" method="POST">
+    <form id="form_registro" action="resultado_registro.php" method="POST" enctype="multipart/form-data">
         <!--Register_Form-->
         <label for="user_img">
             <span class="hiddeofscreen">Profile Picture</span>
             <span class="icon-file-image" aria-hidden="true"></span><!-- User Picture REGISTER -->
         </label>
-        <input id="user_img" type="file" name="register" value="Upload image">
+        <input id="user_img" type="file" name="photo" value="Upload image">
         <br>
         <label for="input_name">
             <span class="hiddeofscreen">Usuario:</span>
