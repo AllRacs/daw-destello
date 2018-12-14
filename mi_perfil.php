@@ -50,8 +50,8 @@ END;
                     }
 
                     $fila = $resultado->fetch_object();
+                    echo'<img class="profile" src=img/'.$fila->Foto.' " alt="[foto_not_found]">';
                     echo '<p>Nombre: '.$fila->NomUsuario.'</p>';
-                    echo '<img src="'.$fila->Foto.'" alt="notfound">';
                     echo '<p>Email: '.$fila->Email.'</p>';
                     echo '<p>Nacimiento: '.$fila->FNacimiento.'</p>';
                     if ($fila->Sexo == 1) {
