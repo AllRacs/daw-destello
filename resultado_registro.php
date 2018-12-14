@@ -51,23 +51,28 @@ if(filtrado() == true){//Comprobacion datos -- mysqli_real_escape_string($mysqli
             echo '</p>';
             exit;
         }
-        ?>
 
-        <main class="main_album_respuesta">
-            <h1>Datos de Registro</h1>
-            <p>Nombre de Usuario: <?php echo htmlspecialchars($_POST['input_name']); ?></p>
-            <p>Contraseña: <?php echo htmlspecialchars($_POST['input_pass']); ?></p>
-            <p>Email: <?php echo htmlspecialchars($_POST['input_email']); ?></p>
-            <p>Fecha de Nacimiento: <?php echo htmlspecialchars($_POST['input_calendar']); ?></p>
-            <p>Ciudad: <?php echo htmlspecialchars($_POST['input_city']); ?></p>
-        </main>
-        <?php
-
-        $mysqli->close();
-    }else{
-        echo'<a href="registro.php">Vuelve a intentarlo</a>';
-    }
-
-
-    require_once("include/fin.inc");
     ?>
+
+    <main class="main_album_respuesta">
+        <h1>Datos de Registro</h1>
+        <p><figure>
+            <?php echo'<img class="profile" src=img/'.$foto.' " alt="[foto_not_found]">';?>
+        </a>
+    </figure>
+    <p>Nombre de Usuario: <?php echo htmlspecialchars($_POST['input_name']); ?></p>
+    <p>Contraseña: <?php echo htmlspecialchars($_POST['input_pass']); ?></p>
+    <p>Email: <?php echo htmlspecialchars($_POST['input_email']); ?></p>
+    <p>Fecha de Nacimiento: <?php echo htmlspecialchars($_POST['input_calendar']); ?></p>
+    <p>Ciudad: <?php echo htmlspecialchars($_POST['input_city']); ?></p>
+</main>
+<?php
+
+$mysqli->close();
+}else{
+    echo'<a href="registro.php">Vuelve a intentarlo</a>';
+}
+
+
+require_once("include/fin.inc");
+?>

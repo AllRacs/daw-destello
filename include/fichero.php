@@ -1,5 +1,8 @@
 <?php
-
+function limpia_espacios($cadena){
+	$cadena = str_replace(' ', '', $cadena);
+	return $cadena;
+}
 
 function comprobarficherosubida(){
     $value = null;
@@ -14,10 +17,11 @@ function comprobarficherosubida(){
     }else{
         $tmp = $_FILES["photo"]["tmp_name"];
         $directory= 'img/users/'.$_SESSION['id'].$date.$name.'';
-
+        $directory= limpia_espacios($directory);
         if (move_uploaded_file($tmp, $directory)){
             echo "El archivo ha sido cargado correctamente.";
             $value = 'users/'.$_SESSION['id'].$date.$name.'';
+            $value = limpia_espacios($value);
         }else{
             echo "Ocurrió algún error al subir el fichero. No pudo guardarse.";
             $value = false;
@@ -41,10 +45,11 @@ function comprobarficheroperfil(){
     }else{
         $tmp = $_FILES["photo"]["tmp_name"];
         $directory= 'img/profile/'.$_POST['input_email'].$date.$name.'';
-
+        $directory = limpia_espacios($directory);
         if (move_uploaded_file($tmp, $directory)){
             echo "El archivo ha sido cargado correctamente.";
             $value = 'profile/'.$_POST['input_email'].$date.$name.'';
+            $value = limpia_espacios($value);
         }else{
             echo "Ocurrió algún error al subir el fichero. No pudo guardarse.";
             $value = false;
