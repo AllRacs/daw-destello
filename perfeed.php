@@ -105,7 +105,6 @@ $freg->appendChild($text);
 
 
 //albumes
-
 $albumes = $dom->createElement("Albumes");
 $datos->appendChild($albumes);
 
@@ -114,7 +113,6 @@ $albumes->appendChild($album);
 $album->setAttribute('idfoto', $fila->IdAlbum);
 
 //Fotos
-
 $foto = $dom->createElement("foto");
 $pagina->appendChild($foto);
 $foto->setAttribute('idfoto', $fila->IdFoto);
@@ -162,11 +160,6 @@ $foto->appendChild($fecha);
 
 $text = $dom->createTextNode($fila->FRegistro);
 $fecha->appendChild($text);
-
-
-
-
-
 
 }
 
