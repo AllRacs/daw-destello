@@ -40,7 +40,7 @@ $text = $dom->createTextNode("es");
 $idioma->appendChild($text);
 
 include('sesionstart.php'); // conexión a la BBDD
-$sentencia = 'SELECT  a.Titulo album, f.alternativo, u.NomUsuario, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
+$sentencia = 'SELECT  a.Titulo album, f.alternativo, u.NomUsuario, u.FNacimiento, f.Titulo, f.FRegistro, p.NomPais, f.Fichero, f.IdFoto FROM usuarios u JOIN albumes a JOIN fotos f JOIN paises p
 WHERE u.IdUsuario = a.Usuario AND a.IdAlbum = f.Album AND f.Pais = p.IdPais ORDER BY f.FRegistro DESC';
 if(!($resultado = $mysqli->query($sentencia))) {
     echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
@@ -49,36 +49,102 @@ if(!($resultado = $mysqli->query($sentencia))) {
 }
 while ($fila = $resultado->fetch_object()) {
 
-//Contenido
-$seccion = $dom->createElement("Datos de Usuario");
-$pagina->appendChild($seccion);
+//DATOS PERSONALES
+$datos = $dom->createElement("DatosUsuario");
+$pagina->appendChild($datos);
 
-$titulo = $dom->createElement("titulo");
+$nombre = $dom->createElement("Nombre");
 $seccion->appendChild($titulo);
 
-$text = $dom->createTextNode($fila->Titulo);
-$titulo->appendChild($text);
+$text = $dom->createTextNode($fila->NomUsuario);
+$nombre->appendChild($text);
 
-$pais = $dom->createElement("pais");
+$email = $dom->createElement("Email");
+$seccion->appendChild($email);
+
+$text = $dom->createTextNode($_SESSION['user']);
+$email->appendChild($text);
+
+$fnac = $dom->createElement("FechaNacimiento");
+$seccion->appendChild($album);
+
+$text = $dom->createTextNode($fila->FNacimiento);
+$fnac->appendChild($text);
+
+if ($fila->Sexo == 1) {
+    $sexo = 'Masculino';
+} elseif ($fila->Sexo == 2) {
+    $sexo = 'Femenino';
+} elseif ($fila->Sexo == 3) {
+    $sexo = 'Otro';
+}
+
+$sexualidad = $dom->createElement("Sexo");
+$seccion->appendChild($sexualidad);
+
+$text = $dom->createTextNode($sexo);
+$fnac->appendChild($text);
+
+$diudad = $dom->createElement("Ciudad");
+$seccion->appendChild($diudad);
+
+$text = $dom->createTextNode("");//VALOR DE CIUDAD
+$ciudad->appendChild($text);
+
+$pais = $dom->createElement("Pais");
 $seccion->appendChild($pais);
 
 $text = $dom->createTextNode($fila->NomPais);
 $pais->appendChild($text);
 
+$freg = $dom->createElement("FechaRegistro");
+$seccion->appendChild($freg);
+
+$text = $dom->createTextNode($fila->FRegistro);
+$freg->appendChild($text);
+
+
+//albumes
+
+$albumes = $dom->createElement("Albumes");
+$datos->appendChild($albumes);
+
+$album = $dom->createElement("Album");
+$albumes->appendChild($album);
+$album->setAttribute('idfoto', $fila->IdAlbum);
+
+//Fotos
+
+$foto = $dom->createElement("foto");
+$pagina->appendChild($foto);
+$foto->setAttribute('idfoto', $fila->IdFoto);
+
+$titulo = $dom->createElement("titulo");
+$foto->appendChild($titulo);
+
+$text = $dom->createTextNode($fila->Titulo);
+$titulo->appendChild($text);
+
+$pais = $dom->createElement("pais");
+$foto->appendChild($pais);
+
+$text = $dom->createTextNode($fila->NomPais);
+$pais->appendChild($text);
+
 $album = $dom->createElement("album");
-$seccion->appendChild($album);
+$foto->appendChild($album);
 
 $text = $dom->createTextNode($fila->album);
 $album->appendChild($text);
 
 $alter = $dom->createElement("alternativo");
-$seccion->appendChild($alter);
+$foto->appendChild($alter);
 
 $text = $dom->createTextNode($fila->alternativo);
 $alter->appendChild($text);
 
 $link = $dom->createElement("link");
-$seccion->appendChild($link);
+$foto->appendChild($link);
 
 $url = "http://localhost/daw-destello/detalle_foto.php?id=$fila->IdFoto";
 
@@ -86,16 +152,21 @@ $text = $dom->createTextNode($url);
 $link->appendChild($text);
 
 $autor = $dom->createElement("autor");
-$seccion->appendChild($autor);
+$foto->appendChild($autor);
 
 $text = $dom->createTextNode($fila->NomUsuario);
 $autor->appendChild($text);
 
 $fecha = $dom->createElement("fecha");
-$seccion->appendChild($fecha);
+$foto->appendChild($fecha);
 
 $text = $dom->createTextNode($fila->FRegistro);
 $fecha->appendChild($text);
+
+
+
+
+
 
 }
 

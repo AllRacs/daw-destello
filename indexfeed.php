@@ -53,7 +53,6 @@ $titulo = $dom->createElement("titulo");
 $foto->appendChild($titulo);
 
 
-
 $text = $dom->createTextNode($fila->Titulo);
 $titulo->appendChild($text);
 
