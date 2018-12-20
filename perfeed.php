@@ -50,8 +50,7 @@ if(!($resultado = $mysqli->query($sentencia))) {
 while ($fila = $resultado->fetch_object()) {
 
 //Contenido
-
-$seccion = $dom->createElement("seccion");
+$seccion = $dom->createElement("Datos de Usuario");
 $pagina->appendChild($seccion);
 
 $titulo = $dom->createElement("titulo");

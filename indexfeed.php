@@ -45,35 +45,38 @@ while ($fila = $resultado->fetch_object()) {
 
 //Contenido
 
-$seccion = $dom->createElement("seccion");
-$pagina->appendChild($seccion);
+$foto = $dom->createElement("foto");
+$pagina->appendChild($foto);
+$foto->setAttribute('idfoto', $fila->IdFoto);
 
 $titulo = $dom->createElement("titulo");
-$seccion->appendChild($titulo);
+$foto->appendChild($titulo);
+
+
 
 $text = $dom->createTextNode($fila->Titulo);
 $titulo->appendChild($text);
 
 $pais = $dom->createElement("pais");
-$seccion->appendChild($pais);
+$foto->appendChild($pais);
 
 $text = $dom->createTextNode($fila->NomPais);
 $pais->appendChild($text);
 
 $album = $dom->createElement("album");
-$seccion->appendChild($album);
+$foto->appendChild($album);
 
 $text = $dom->createTextNode($fila->album);
 $album->appendChild($text);
 
 $alter = $dom->createElement("alternativo");
-$seccion->appendChild($alter);
+$foto->appendChild($alter);
 
 $text = $dom->createTextNode($fila->alternativo);
 $alter->appendChild($text);
 
 $link = $dom->createElement("link");
-$seccion->appendChild($link);
+$foto->appendChild($link);
 
 $url = "http://localhost/daw-destello/detalle_foto.php?id=$fila->IdFoto";
 
@@ -81,13 +84,13 @@ $text = $dom->createTextNode($url);
 $link->appendChild($text);
 
 $autor = $dom->createElement("autor");
-$seccion->appendChild($autor);
+$foto->appendChild($autor);
 
 $text = $dom->createTextNode($fila->NomUsuario);
 $autor->appendChild($text);
 
 $fecha = $dom->createElement("fecha");
-$seccion->appendChild($fecha);
+$foto->appendChild($fecha);
 
 $text = $dom->createTextNode($fila->FRegistro);
 $fecha->appendChild($text);
