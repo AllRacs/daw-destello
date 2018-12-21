@@ -1,0 +1,67 @@
+//solicitudes
+$solicitudes = $dom->createElement("Solicitudes");
+$datos->appendChild($solicitudes);
+
+$solicitud = $dom->createElement("Solicitud");
+$solicitudes->appendChild($solicitud);
+$solicitud->setAttribute('idsolicitud', $fila->solicitud);
+
+$titulosol = $dom->createElement("Titulo");
+$solicitud->appendChild($titulosol);
+
+$text = $dom->createTextNode($fila->titulo);
+$titulosol->appendChild($text);
+
+$descripcionsol = $dom->createElement("Descripcion");
+$solicitud->appendChild($descripcionsol);
+
+$text = $dom->createTextNode($fila->descripcion);
+$descripcionsol->appendChild($text);
+
+$direccion = $dom->createElement("Direccion");
+$solicitud->appendChild($direccion);
+
+$text = $dom->createTextNode($fila->direccion);
+$direccion->appendChild($text);
+
+$color = $dom->createElement("Color");
+$solicitud->appendChild($color);
+
+$text = $dom->createTextNode($fila->color);
+$color->appendChild($text);
+
+$copias = $dom->createElement("Copias");
+$solicitud->appendChild($copias);
+
+$text = $dom->createTextNode($fila->copias);
+$copias->appendChild($text);
+
+$resolucion = $dom->createElement("Resolucion");
+$solicitud->appendChild($resolucion);
+
+$text = $dom->createTextNode($fila->resolucion);
+$resolucion->appendChild($text);
+
+$fechaentrega = $dom->createElement("FechaEntrega");
+$solicitud->appendChild($fechaentrega);
+
+$text = $dom->createTextNode($fila->fecha);
+$fechaentrega->appendChild($text);
+
+$IColor = $dom->createElement("IColor");
+$solicitud->appendChild($IColor);
+
+$text = $dom->createTextNode($fila->IColor);
+$IColor->appendChild($text);
+
+$FRegistro = $dom->createElement("Registro");
+$solicitud->appendChild($FRegistro);
+
+$text = $dom->createTextNode($fila->FRegistro);
+$FRegistro->appendChild($text);
+
+$Coste = $dom->createElement("Coste");
+$solicitud->appendChild($Coste);
+
+$text = $dom->createTextNode($fila->Coste);
+$Coste->appendChild($text);
