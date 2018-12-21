@@ -140,7 +140,9 @@ while ($fila = $resultado->fetch_object()) {
     $text = $dom->createTextNode($fila->Descripcion);
     $descripcionalbum->appendChild($text);
 
-    $sentencia = 'SELECT * FROM albumes a JOIN fotos f JOIN paises p WHERE a.IdAlbum = f.Album AND f.Pais = p.IdPais AND a.IdAlbum = '.$fila->IdAlbum;
+    $id_album = $fila->IdAlbum;
+
+    $sentencia = 'SELECT * FROM albumes a JOIN fotos f JOIN paises p WHERE a.IdAlbum = f.Album AND f.Pais = p.IdPais AND a.IdAlbum = '.$id_album;
     if(!($resultado = $mysqli->query($sentencia))) {
         echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
         echo '</p>';
@@ -150,7 +152,7 @@ while ($fila = $resultado->fetch_object()) {
 
         //Fotos
         $foto = $dom->createElement("foto");
-        $pagina->appendChild($foto);
+        $album->appendChild($foto);
         $foto->setAttribute('idfoto', $fila->IdFoto);
 
         $titulo = $dom->createElement("titulo");
@@ -187,7 +189,88 @@ while ($fila = $resultado->fetch_object()) {
 
     }
 
+    //SELECT * FROM solicitudes s JOIN albumes a WHERE s.Album = a.IdAlbum AND a.IdAlbum = 1
+    $sentencia = 'SELECT * FROM solicitudes s JOIN albumes a WHERE s.Album = a.IdAlbum AND a.IdAlbum = '.$id_album;
+    if(!($resultado = $mysqli->query($sentencia))) {
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error;
+        echo '</p>';
+        exit;
+    }
+    while ($fila = $resultado->fetch_object()) {
+
+        //solicitudes
+        $solicitudes = $dom->createElement("Solicitudes");
+        $album->appendChild($solicitudes);
+
+        $solicitud = $dom->createElement("Solicitud");
+        $solicitudes->appendChild($solicitud);
+        $solicitud->setAttribute('idsolicitud', $fila->IdSolicitud);
+
+        $titulosol = $dom->createElement("Titulo");
+        $solicitud->appendChild($titulosol);
+
+        $text = $dom->createTextNode($fila->Titulo);
+        $titulosol->appendChild($text);
+
+        $descripcionsol = $dom->createElement("Descripcion");
+        $solicitud->appendChild($descripcionsol);
+
+        $text = $dom->createTextNode($fila->Descripcion);
+        $descripcionsol->appendChild($text);
+
+        $direccion = $dom->createElement("Direccion");
+        $solicitud->appendChild($direccion);
+
+        $text = $dom->createTextNode($fila->Direccion);
+        $direccion->appendChild($text);
+
+        $color = $dom->createElement("Color");
+        $solicitud->appendChild($color);
+
+        $text = $dom->createTextNode($fila->Color);
+        $color->appendChild($text);
+
+        $copias = $dom->createElement("Copias");
+        $solicitud->appendChild($copias);
+
+        $text = $dom->createTextNode($fila->Copias);
+        $copias->appendChild($text);
+
+        $resolucion = $dom->createElement("Resolucion");
+        $solicitud->appendChild($resolucion);
+
+        $text = $dom->createTextNode($fila->Resolucion);
+        $resolucion->appendChild($text);
+
+        $fechaentrega = $dom->createElement("FechaEntrega");
+        $solicitud->appendChild($fechaentrega);
+
+        $text = $dom->createTextNode($fila->Fecha);
+        $fechaentrega->appendChild($text);
+
+        $IColor = $dom->createElement("IColor");
+        $solicitud->appendChild($IColor);
+
+        $text = $dom->createTextNode($fila->IColor);
+        $IColor->appendChild($text);
+
+        $FRegistro = $dom->createElement("Registro");
+        $solicitud->appendChild($FRegistro);
+
+        $text = $dom->createTextNode($fila->FRegistro);
+        $FRegistro->appendChild($text);
+
+        $Coste = $dom->createElement("Coste");
+        $solicitud->appendChild($Coste);
+
+        $text = $dom->createTextNode($fila->Coste);
+        $Coste->appendChild($text);
+
+    }
+
 }
+
+
 
 // save and display tree
 $dom->save("perfilrss.xml");
