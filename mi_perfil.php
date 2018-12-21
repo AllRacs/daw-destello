@@ -73,7 +73,7 @@ END;
 
                     $fila = $resultado2->fetch_object();
                     echo '<p>Pais: '.$fila->NomPais.'</p>';
-                    echo '<p>Obtener mi infomación en feed: <a href="http://localhost/daw-destello/perfeed.php">RSS</a></p>'
+                    echo '<p>Obtener mi infomación en feed: <a href="perfeed.php">RSS</a></p>';
                 } else {
                     echo '<p>Se muestran todas las fotos del user...</p>';
                 }
