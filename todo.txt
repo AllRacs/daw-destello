@@ -1,15 +1,2 @@
 TODO:
-- cambios de php 1
-- acceso con sesiones de PHP
-    - con cookies
-        - recordar usuario "checkbox"
-    - al entrar "campos de login" cambia a "mensaje welcome + [button:acceso/salir]"
-    - Cambiar header a header_logged
-    - ...
-- Pagina menú usuario registrado: se muestra un mensaje de Welcome somewho-USER
-- Pagina detalle foto: solo accesible si se ha iniciado sesión
-- Conservar el estilo seleccionado por el usuario
-------------------------------------------------------------------------
-
-- restringir acceso por url a paginas privadas
-- no se si se crea o no las cookies, cuando se cierra el navegador y se accede de nuevo no inicia sesión
+acabao
