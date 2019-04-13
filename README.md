@@ -30,4 +30,10 @@ Social network similar to instagram.
 
 4. XAMPP Control panel: Start "Apache" and  "MySQL"
 
-5. Open browser: localhost/daw-destello
+5. Browser: "localhost/phpmyadmin"
+
+6. New database, name it "pibd" (enconding utf8 prefered)
+
+7. "Import" > "Choose File" > "..\daw-destello\pibd.sql" > "Go"
+
+8. Browser: localhost/daw-destello
